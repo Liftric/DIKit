@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BD95D4F2008B1AF009CE38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95D4E2008B1AF009CE38D /* AppDelegate.swift */; };
-		4BD95D512008B1AF009CE38D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95D502008B1AF009CE38D /* FirstViewController.swift */; };
-		4BD95D532008B1AF009CE38D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95D522008B1AF009CE38D /* SecondViewController.swift */; };
-		4BD95D562008B1AF009CE38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95D542008B1AF009CE38D /* Main.storyboard */; };
-		4BD95D582008B1AF009CE38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95D572008B1AF009CE38D /* Assets.xcassets */; };
-		4BD95D5B2008B1AF009CE38D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95D592008B1AF009CE38D /* LaunchScreen.storyboard */; };
-		4BD95D662008B1AF009CE38D /* DIKitExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95D652008B1AF009CE38D /* DIKitExampleTests.swift */; };
-		4BD95D712008B1AF009CE38D /* DIKitExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95D702008B1AF009CE38D /* DIKitExampleUITests.swift */; };
+		4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DC72008B379009CE38D /* FirstViewController.swift */; };
+		4BD95DD12008B379009CE38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95DC82008B379009CE38D /* Assets.xcassets */; };
+		4BD95DD22008B379009CE38D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95DC92008B379009CE38D /* LaunchScreen.storyboard */; };
+		4BD95DD32008B379009CE38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95DCB2008B379009CE38D /* Main.storyboard */; };
+		4BD95DD42008B379009CE38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DCD2008B379009CE38D /* AppDelegate.swift */; };
+		4BD95DD52008B379009CE38D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DCE2008B379009CE38D /* SecondViewController.swift */; };
+		4BD95DDA2008B385009CE38D /* DIKitExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DD82008B385009CE38D /* DIKitExampleTests.swift */; };
+		4BD95DDF2008B391009CE38D /* DIKitExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DDD2008B391009CE38D /* DIKitExampleUITests.swift */; };
+		4BD95DF52008B3DD009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95DE72008B3C1009CE38D /* DIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,16 +33,16 @@
 			remoteGlobalIDString = 4BD95D4A2008B1AF009CE38D;
 			remoteInfo = DIKitExample;
 		};
-		4BD95DA72008B1CA009CE38D /* PBXContainerItemProxy */ = {
+		4BD95DE62008B3C1009CE38D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4BD95DA22008B1C9009CE38D /* DIKit.xcodeproj */;
+			containerPortal = 4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4BD95D882008B1C8009CE38D;
 			remoteInfo = DIKit;
 		};
-		4BD95DA92008B1CA009CE38D /* PBXContainerItemProxy */ = {
+		4BD95DE82008B3C1009CE38D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4BD95DA22008B1C9009CE38D /* DIKit.xcodeproj */;
+			containerPortal = 4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4BD95D912008B1C9009CE38D;
 			remoteInfo = DIKitTests;
@@ -50,20 +51,20 @@
 
 /* Begin PBXFileReference section */
 		4BD95D4B2008B1AF009CE38D /* DIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD95D4E2008B1AF009CE38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BD95D502008B1AF009CE38D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		4BD95D522008B1AF009CE38D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		4BD95D552008B1AF009CE38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4BD95D572008B1AF009CE38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4BD95D5A2008B1AF009CE38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4BD95D5C2008B1AF009CE38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD95D612008B1AF009CE38D /* DIKitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD95D652008B1AF009CE38D /* DIKitExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKitExampleTests.swift; sourceTree = "<group>"; };
-		4BD95D672008B1AF009CE38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD95D6C2008B1AF009CE38D /* DIKitExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKitExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD95D702008B1AF009CE38D /* DIKitExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKitExampleUITests.swift; sourceTree = "<group>"; };
-		4BD95D722008B1AF009CE38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BD95DA22008B1C9009CE38D /* DIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DIKit.xcodeproj; path = DIKit/DIKit.xcodeproj; sourceTree = "<group>"; };
+		4BD95DC72008B379009CE38D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		4BD95DC82008B379009CE38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4BD95DCA2008B379009CE38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4BD95DCC2008B379009CE38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4BD95DCD2008B379009CE38D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4BD95DCE2008B379009CE38D /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		4BD95DCF2008B379009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BD95DD82008B385009CE38D /* DIKitExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIKitExampleTests.swift; sourceTree = "<group>"; };
+		4BD95DD92008B385009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BD95DDD2008B391009CE38D /* DIKitExampleUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIKitExampleUITests.swift; sourceTree = "<group>"; };
+		4BD95DDE2008B391009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DIKit.xcodeproj; path = ../DIKit/DIKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD95DF52008B3DD009CE38D /* DIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,11 +96,12 @@
 		4BD95D422008B1AF009CE38D = {
 			isa = PBXGroup;
 			children = (
-				4BD95DA22008B1C9009CE38D /* DIKit.xcodeproj */,
-				4BD95D4D2008B1AF009CE38D /* DIKitExample */,
-				4BD95D642008B1AF009CE38D /* DIKitExampleTests */,
-				4BD95D6F2008B1AF009CE38D /* DIKitExampleUITests */,
+				4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */,
+				4BD95DC62008B379009CE38D /* Sources */,
+				4BD95DD72008B385009CE38D /* Tests */,
+				4BD95DDC2008B391009CE38D /* UITests */,
 				4BD95D4C2008B1AF009CE38D /* Products */,
+				4BD95DF42008B3DD009CE38D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,45 +115,52 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4BD95D4D2008B1AF009CE38D /* DIKitExample */ = {
+		4BD95DC62008B379009CE38D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4BD95D4E2008B1AF009CE38D /* AppDelegate.swift */,
-				4BD95D502008B1AF009CE38D /* FirstViewController.swift */,
-				4BD95D522008B1AF009CE38D /* SecondViewController.swift */,
-				4BD95D542008B1AF009CE38D /* Main.storyboard */,
-				4BD95D572008B1AF009CE38D /* Assets.xcassets */,
-				4BD95D592008B1AF009CE38D /* LaunchScreen.storyboard */,
-				4BD95D5C2008B1AF009CE38D /* Info.plist */,
+				4BD95DC72008B379009CE38D /* FirstViewController.swift */,
+				4BD95DC82008B379009CE38D /* Assets.xcassets */,
+				4BD95DC92008B379009CE38D /* LaunchScreen.storyboard */,
+				4BD95DCB2008B379009CE38D /* Main.storyboard */,
+				4BD95DCD2008B379009CE38D /* AppDelegate.swift */,
+				4BD95DCE2008B379009CE38D /* SecondViewController.swift */,
+				4BD95DCF2008B379009CE38D /* Info.plist */,
 			);
-			path = DIKitExample;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		4BD95D642008B1AF009CE38D /* DIKitExampleTests */ = {
+		4BD95DD72008B385009CE38D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4BD95D652008B1AF009CE38D /* DIKitExampleTests.swift */,
-				4BD95D672008B1AF009CE38D /* Info.plist */,
+				4BD95DD82008B385009CE38D /* DIKitExampleTests.swift */,
+				4BD95DD92008B385009CE38D /* Info.plist */,
 			);
-			path = DIKitExampleTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		4BD95D6F2008B1AF009CE38D /* DIKitExampleUITests */ = {
+		4BD95DDC2008B391009CE38D /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				4BD95D702008B1AF009CE38D /* DIKitExampleUITests.swift */,
-				4BD95D722008B1AF009CE38D /* Info.plist */,
+				4BD95DDD2008B391009CE38D /* DIKitExampleUITests.swift */,
+				4BD95DDE2008B391009CE38D /* Info.plist */,
 			);
-			path = DIKitExampleUITests;
+			path = UITests;
 			sourceTree = "<group>";
 		};
-		4BD95DA32008B1C9009CE38D /* Products */ = {
+		4BD95DE22008B3C1009CE38D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BD95DA82008B1CA009CE38D /* DIKit.framework */,
-				4BD95DAA2008B1CA009CE38D /* DIKitTests.xctest */,
+				4BD95DE72008B3C1009CE38D /* DIKit.framework */,
+				4BD95DE92008B3C1009CE38D /* DIKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4BD95DF42008B3DD009CE38D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,8 +258,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4BD95DA32008B1C9009CE38D /* Products */;
-					ProjectRef = 4BD95DA22008B1C9009CE38D /* DIKit.xcodeproj */;
+					ProductGroup = 4BD95DE22008B3C1009CE38D /* Products */;
+					ProjectRef = 4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -262,18 +272,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4BD95DA82008B1CA009CE38D /* DIKit.framework */ = {
+		4BD95DE72008B3C1009CE38D /* DIKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = DIKit.framework;
-			remoteRef = 4BD95DA72008B1CA009CE38D /* PBXContainerItemProxy */;
+			remoteRef = 4BD95DE62008B3C1009CE38D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4BD95DAA2008B1CA009CE38D /* DIKitTests.xctest */ = {
+		4BD95DE92008B3C1009CE38D /* DIKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = DIKitTests.xctest;
-			remoteRef = 4BD95DA92008B1CA009CE38D /* PBXContainerItemProxy */;
+			remoteRef = 4BD95DE82008B3C1009CE38D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -283,9 +293,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD95D5B2008B1AF009CE38D /* LaunchScreen.storyboard in Resources */,
-				4BD95D582008B1AF009CE38D /* Assets.xcassets in Resources */,
-				4BD95D562008B1AF009CE38D /* Main.storyboard in Resources */,
+				4BD95DD32008B379009CE38D /* Main.storyboard in Resources */,
+				4BD95DD12008B379009CE38D /* Assets.xcassets in Resources */,
+				4BD95DD22008B379009CE38D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,9 +320,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD95D532008B1AF009CE38D /* SecondViewController.swift in Sources */,
-				4BD95D4F2008B1AF009CE38D /* AppDelegate.swift in Sources */,
-				4BD95D512008B1AF009CE38D /* FirstViewController.swift in Sources */,
+				4BD95DD52008B379009CE38D /* SecondViewController.swift in Sources */,
+				4BD95DD42008B379009CE38D /* AppDelegate.swift in Sources */,
+				4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD95D662008B1AF009CE38D /* DIKitExampleTests.swift in Sources */,
+				4BD95DDA2008B385009CE38D /* DIKitExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD95D712008B1AF009CE38D /* DIKitExampleUITests.swift in Sources */,
+				4BD95DDF2008B391009CE38D /* DIKitExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,20 +358,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4BD95D542008B1AF009CE38D /* Main.storyboard */ = {
+		4BD95DC92008B379009CE38D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4BD95D552008B1AF009CE38D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4BD95D592008B1AF009CE38D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BD95D5A2008B1AF009CE38D /* Base */,
+				4BD95DCA2008B379009CE38D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4BD95DCB2008B379009CE38D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BD95DCC2008B379009CE38D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -415,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -466,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -479,7 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DIKitExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -493,7 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DIKitExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,7 +518,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DIKitExampleTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -524,7 +534,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DIKitExampleTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,7 +549,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DIKitExampleUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -554,7 +564,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DIKitExampleUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
