@@ -9,6 +9,10 @@
 import Foundation
 
 class Backend: BackendProtocol {
+    init() {
+        print("Backend init")
+    }
+    
     func fetch() -> String {
         return "Test"
     }

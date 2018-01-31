@@ -8,6 +8,19 @@
 
 import Foundation
 
-public final class Component {
+public final class Component<T>: ComponentProtocol {
+    public let scope: Scope
+    public let type: Any.Type
+    public let weakFactory: WeakFactory
+    
+    init(scope: Scope, type: T.Type, factory: @escaping () throws -> T) {
+        self.scope = scope
+        self.type = type
+        self.weakFactory = { try factory() }
+    }
+}
 
+public protocol ComponentProtocol {
+    var weakFactory: WeakFactory { get }
+    var type: Any.Type { get }
 }

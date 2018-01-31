@@ -7,26 +7,36 @@
 //
 
 import Foundation
+
+public typealias WeakFactory = (() throws -> Any)!
+
 public final class DependencyContainer {
     // Constructor
     public typealias BootstrapBlock = (DependencyContainer) -> Void
     public init(boostrapBlock: BootstrapBlock = { _ in }) {
         boostrapBlock(self)
     }
-
-    // Simple Dependency Stack
-    var stack = [WeakFactory]()
+    
+    var componentStack = [ComponentProtocol]()
 }
 
 extension DependencyContainer {
-    // TODO need to move this to another class for having a generic factory holder
-     public func register<T, F>(scope: Component.Scope = .prototype, _ factory: @escaping (F) throws -> T) {
-        self.stack.append(Component.Factory(factory: factory) as WeakFactory)
+    public func register<T>(scope: Scope = .prototype, type: T.Type = T.self, _ factory: @escaping () throws -> T) {
+        let component = Component(scope: scope, type: type, factory: factory)
+        self.componentStack.append(component as ComponentProtocol)
     }
+}
+
+public class ResolveError: Error {
+    
 }
 
 extension DependencyContainer {
     public func resolve<T>() throws -> T {
-        return try self.stack[0].weakFactory(T.self) as! T
+        guard let index = self.componentStack.index(where: { $0.type == T.self }) else {
+            throw ResolveError()
+        }
+        let foundComponent = self.componentStack[index]
+        return try! foundComponent.weakFactory() as! T
     }
 }

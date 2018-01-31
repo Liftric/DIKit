@@ -8,9 +8,7 @@
 
 import Foundation
 
-extension Component {
-    public enum Scope {
-        case prototype
-        case singleton
-    }
+public enum Scope {
+    case prototype
+    case singleton
 }
