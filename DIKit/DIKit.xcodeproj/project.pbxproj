@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B5D4A322021BF3F008D76FB /* DIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A312021BF3F008D76FB /* DIKit.swift */; };
+		4B5D4A35202203C3008D76FB /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A34202203C3008D76FB /* Scope.swift */; };
+		4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A36202217CA008D76FB /* DependencyContainer.swift */; };
+		4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3E20221E2C008D76FB /* Component.swift */; };
+		4B5D4A4420222030008D76FB /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A4320222030008D76FB /* Factory.swift */; };
 		4BD95D922008B1C9009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95D882008B1C8009CE38D /* DIKit.framework */; };
-		4BD95DED2008B3CA009CE38D /* DIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD95DEB2008B3CA009CE38D /* DIKit.h */; };
+		4BD95DED2008B3CA009CE38D /* DIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD95DEB2008B3CA009CE38D /* DIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BD95DF22008B3CF009CE38D /* DIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DF02008B3CF009CE38D /* DIKitTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B5D4A312021BF3F008D76FB /* DIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKit.swift; sourceTree = "<group>"; };
+		4B5D4A34202203C3008D76FB /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
+		4B5D4A36202217CA008D76FB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		4B5D4A3E20221E2C008D76FB /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		4B5D4A4320222030008D76FB /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		4BD95D882008B1C8009CE38D /* DIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95D912008B1C9009CE38D /* DIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95DEB2008B3CA009CE38D /* DIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIKit.h; sourceTree = "<group>"; };
@@ -50,6 +60,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B5D4A4020221E54008D76FB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				4B5D4A3E20221E2C008D76FB /* Component.swift */,
+				4B5D4A34202203C3008D76FB /* Scope.swift */,
+				4B5D4A4320222030008D76FB /* Factory.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		4BD95D7E2008B1C8009CE38D = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +91,9 @@
 		4BD95DEA2008B3CA009CE38D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4B5D4A4020221E54008D76FB /* Component */,
+				4B5D4A36202217CA008D76FB /* DependencyContainer.swift */,
+				4B5D4A312021BF3F008D76FB /* DIKit.swift */,
 				4BD95DEB2008B3CA009CE38D /* DIKit.h */,
 				4BD95DEC2008B3CA009CE38D /* Info.plist */,
 			);
@@ -148,6 +171,7 @@
 				TargetAttributes = {
 					4BD95D872008B1C8009CE38D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					4BD95D902008B1C9009CE38D = {
@@ -196,6 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */,
+				4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */,
+				4B5D4A35202203C3008D76FB /* Scope.swift in Sources */,
+				4B5D4A322021BF3F008D76FB /* DIKit.swift in Sources */,
+				4B5D4A4420222030008D76FB /* Factory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +363,7 @@
 		4BD95D9D2008B1C9009CE38D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -346,6 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +385,7 @@
 		4BD95D9E2008B1C9009CE38D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -374,6 +406,7 @@
 		4BD95DA02008B1C9009CE38D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +420,7 @@
 		4BD95DA12008B1C9009CE38D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
