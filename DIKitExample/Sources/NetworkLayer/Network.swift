@@ -9,8 +9,8 @@
 import Foundation
 
 class Network: NetworkProtocol {
-    init() {
+    init(url: String) {
         print("Network init")
+        print(url)
     }
 }
-
