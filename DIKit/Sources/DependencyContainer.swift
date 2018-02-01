@@ -21,8 +21,8 @@ public final class DependencyContainer {
 }
 
 extension DependencyContainer {
-    public func register<T>(scope: Scope = .prototype, type: T.Type = T.self, _ factory: @escaping () throws -> T) {
-        let component = Component(scope: scope, type: type, factory: factory)
+    public func register<T>(scope: Scope = .prototype, _ factory: @escaping () throws -> T) {
+        let component = Component(scope: scope, type: T.self, factory: factory)
         self.componentStack.append(component as ComponentProtocol)
     }
 }
@@ -36,6 +36,7 @@ extension DependencyContainer {
         guard let index = self.componentStack.index(where: { $0.type == T.self }) else {
             throw ResolveError()
         }
+
         let foundComponent = self.componentStack[index]
         return try! foundComponent.weakFactory() as! T
     }

@@ -9,8 +9,8 @@
 import Foundation
 
 class Backend: BackendProtocol {
-    init() {
-        print("Backend init")
+    init(network: NetworkProtocol) {
+        print("Backend init with network \(network)")
     }
     
     func fetch() -> String {
