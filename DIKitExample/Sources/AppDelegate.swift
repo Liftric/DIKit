@@ -13,18 +13,17 @@ import DIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let container = DependencyContainer { container in
-        container.register(as: .prototype) { Network(url: "http://localhost") as NetworkProtocol }
-        container.register(as: .singleton) { Backend(network: try! container.resolve()) as BackendProtocol }
+        container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
+        container.register(as: .prototype) { Backend(network: try! container.resolve()) as BackendProtocol }
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         let network = try! container.resolve() as NetworkProtocol
-        print(network)
-
         let backend = try! container.resolve() as BackendProtocol
-        print(backend)
+        let backend2 = try! container.resolve() as BackendProtocol
 
         return true
     }
 }
+
