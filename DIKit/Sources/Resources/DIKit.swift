@@ -9,7 +9,9 @@
 import Foundation
 
 internal extension Bundle {
-
+    class var framework: Bundle {
+        return Bundle(for: DIKitMaker.self)
+    }
 }
 
 private class DIKitMaker {}
