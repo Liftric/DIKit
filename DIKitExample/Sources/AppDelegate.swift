@@ -12,6 +12,7 @@ import DIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+
     let container = DependencyContainer { container in
         container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
         container.register(as: .prototype) { Backend(network: container.resolve()) as BackendProtocol }
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let backend: BackendProtocol = container.resolve()
         print(backend.fetch())
+
         return true
     }
 }

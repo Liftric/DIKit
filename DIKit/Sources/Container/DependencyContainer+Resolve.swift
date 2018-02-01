@@ -10,20 +10,19 @@ import Foundation
 
 extension DependencyContainer {
     public func resolve<T>() -> T {
-        guard let index = self.componentStack.index(where: { $0.type == T.self }) else {
-            fatalError()
+        let tag = String(describing: T.self)
+        guard let foundComponent = self.componentStack[tag] else {
+            fatalError("Component could not be resolved.")
         }
-        let foundComponent = self.componentStack[index]
-        if foundComponent.scope == .singleton {
-            if let index = self.instanceStack.index(where: { $0 is T }) {
-                return self.instanceStack[index] as! T
-            } else {
-                let instance = foundComponent.weakFactory() as! T
-                self.instanceStack.append(instance)
-                return instance
-            }
+        if foundComponent.scope == .prototype {
+            return foundComponent.componentFactory() as! T
         }
-        return foundComponent.weakFactory() as! T
+        if let instanceOfComponent = self.instanceStack[tag] as? T {
+            return instanceOfComponent
+        }
+        let instance = foundComponent.componentFactory() as! T
+        self.instanceStack[tag] = instance
+        return instance
     }
 }
 

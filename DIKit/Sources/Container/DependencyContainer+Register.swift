@@ -12,7 +12,7 @@ extension DependencyContainer {
     public func register<T>(as scope: Scope = .prototype, _ factory: @escaping () -> T) {
         precondition(!bootstrapped, "After boostrap no more components can be registered.")
         let component = Component(scope: scope, type: T.self, factory: factory)
-        self.componentStack.append(component as ComponentProtocol)
+        self.componentStack[component.tag] = component
     }
 }
 

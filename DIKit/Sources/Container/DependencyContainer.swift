@@ -10,8 +10,8 @@ import Foundation
 
 public final class DependencyContainer {
     internal var bootstrapped = false
-    internal var componentStack = [ComponentProtocol]()
-    internal var instanceStack = [Any]()
+    internal var componentStack = [String: ComponentProtocol]()
+    internal var instanceStack = [String: Any]()
 
     public typealias BootstrapBlock = (DependencyContainer) -> Void
     public init(boostrapBlock: BootstrapBlock) {

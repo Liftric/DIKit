@@ -8,23 +8,25 @@
 
 import Foundation
 
-public typealias WeakFactory = () -> Any
+public typealias ComponentFactory = () -> Any
 
 public final class Component<T>: ComponentProtocol {
     public let scope: Scope
+    public let tag: String
     public let type: Any.Type
-    public let weakFactory: WeakFactory
+    public let componentFactory: ComponentFactory
 
     init(scope: Scope, type: T.Type, factory: @escaping () -> T) {
         self.scope = scope
+        self.tag = String(describing: type)
         self.type = type
-        self.weakFactory = { factory() }
+        self.componentFactory = { factory() }
     }
 }
 
 public protocol ComponentProtocol {
     var scope: Scope { get }
-    var weakFactory: WeakFactory { get }
+    var componentFactory: ComponentFactory { get }
     var type: Any.Type { get }
 }
 
