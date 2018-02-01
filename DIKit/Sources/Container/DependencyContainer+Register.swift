@@ -9,7 +9,7 @@
 import Foundation
 
 extension DependencyContainer {
-    public func register<T>(as scope: Scope = .prototype, _ factory: @escaping () throws -> T) {
+    public func register<T>(as scope: Scope = .prototype, _ factory: @escaping () -> T) {
         let component = Component(scope: scope, type: T.self, factory: factory)
         self.componentStack.append(component as ComponentProtocol)
     }

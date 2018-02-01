@@ -13,8 +13,6 @@
 		4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3E20221E2C008D76FB /* Component.swift */; };
 		4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */; };
 		4BBD038E202334C200D9E468 /* DependencyContainer+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */; };
-		4BBD0390202334D800D9E468 /* ResolveError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD038F202334D800D9E468 /* ResolveError.swift */; };
-		4BBD0392202334EC00D9E468 /* WeakFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD0391202334EC00D9E468 /* WeakFactory.swift */; };
 		4BD95D922008B1C9009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95D882008B1C8009CE38D /* DIKit.framework */; };
 		4BD95DED2008B3CA009CE38D /* DIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD95DEB2008B3CA009CE38D /* DIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BD95DF22008B3CF009CE38D /* DIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DF02008B3CF009CE38D /* DIKitTests.swift */; };
@@ -37,8 +35,6 @@
 		4B5D4A3E20221E2C008D76FB /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Register.swift"; sourceTree = "<group>"; };
 		4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Resolve.swift"; sourceTree = "<group>"; };
-		4BBD038F202334D800D9E468 /* ResolveError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolveError.swift; sourceTree = "<group>"; };
-		4BBD0391202334EC00D9E468 /* WeakFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakFactory.swift; sourceTree = "<group>"; };
 		4BD95D882008B1C8009CE38D /* DIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95D912008B1C9009CE38D /* DIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95DEB2008B3CA009CE38D /* DIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIKit.h; sourceTree = "<group>"; };
@@ -71,7 +67,6 @@
 			children = (
 				4B5D4A3E20221E2C008D76FB /* Component.swift */,
 				4B5D4A34202203C3008D76FB /* Scope.swift */,
-				4BBD0391202334EC00D9E468 /* WeakFactory.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -82,7 +77,6 @@
 				4B5D4A36202217CA008D76FB /* DependencyContainer.swift */,
 				4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */,
 				4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */,
-				4BBD038F202334D800D9E468 /* ResolveError.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -248,8 +242,6 @@
 				4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */,
 				4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */,
 				4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */,
-				4BBD0390202334D800D9E468 /* ResolveError.swift in Sources */,
-				4BBD0392202334EC00D9E468 /* WeakFactory.swift in Sources */,
 				4B5D4A35202203C3008D76FB /* Scope.swift in Sources */,
 				4B5D4A322021BF3F008D76FB /* DIKit.swift in Sources */,
 				4BBD038E202334C200D9E468 /* DependencyContainer+Resolve.swift in Sources */,

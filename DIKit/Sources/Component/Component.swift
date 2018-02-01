@@ -8,15 +8,17 @@
 
 import Foundation
 
+public typealias WeakFactory = () -> Any
+
 public final class Component<T>: ComponentProtocol {
     public let scope: Scope
     public let type: Any.Type
     public let weakFactory: WeakFactory
 
-    init(scope: Scope, type: T.Type, factory: @escaping () throws -> T) {
+    init(scope: Scope, type: T.Type, factory: @escaping () -> T) {
         self.scope = scope
         self.type = type
-        self.weakFactory = { try factory() }
+        self.weakFactory = { factory() }
     }
 }
 
