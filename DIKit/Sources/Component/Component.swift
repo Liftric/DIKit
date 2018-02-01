@@ -21,6 +21,8 @@ public final class Component<T>: ComponentProtocol {
 }
 
 public protocol ComponentProtocol {
+    var scope: Scope { get }
     var weakFactory: WeakFactory { get }
     var type: Any.Type { get }
 }
+

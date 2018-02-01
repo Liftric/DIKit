@@ -15,6 +15,18 @@ extension DependencyContainer {
         }
 
         let foundComponent = self.componentStack[index]
+
+        if foundComponent.scope == .singleton {
+            if let index = self.instanceStack.index(where: { type(of: $0.self) == T.self }) {
+                return self.instanceStack[index] as! T
+            } else {
+                let instance = try! foundComponent.weakFactory() as! T
+                self.instanceStack.append(instance)
+                return instance
+            }
+        }
+
         return try! foundComponent.weakFactory() as! T
     }
 }
+

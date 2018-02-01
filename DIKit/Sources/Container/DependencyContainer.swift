@@ -15,4 +15,6 @@ public final class DependencyContainer {
     }
     
     var componentStack = [ComponentProtocol]()
+    var instanceStack = [Any]()
 }
+

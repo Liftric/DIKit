@@ -9,5 +9,5 @@
 import Foundation
 
 protocol NetworkProtocol {
-    
+    var id: ObjectIdentifier { get }
 }

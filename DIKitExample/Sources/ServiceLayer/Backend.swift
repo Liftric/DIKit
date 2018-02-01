@@ -10,10 +10,16 @@ import Foundation
 
 class Backend: BackendProtocol {
     init(network: NetworkProtocol) {
-        print("Backend init with network \(network)")
+        print("Backend init with network \(network.id)")
+        print("Backend instance \(ObjectIdentifier.init(self))")
+    }
+
+    deinit {
+        print("Backend instance \(ObjectIdentifier.init(self)) deinit.")
     }
     
     func fetch() -> String {
         return "Test"
     }
 }
+

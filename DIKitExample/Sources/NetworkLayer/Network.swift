@@ -9,8 +9,16 @@
 import Foundation
 
 class Network: NetworkProtocol {
+    var id: ObjectIdentifier {
+        return ObjectIdentifier.init(self)
+    }
+
     init(url: String) {
-        print("Network init")
-        print(url)
+        print("Network init with url \(url)")
+        print("Network instance \(ObjectIdentifier.init(self))")
+    }
+
+    deinit {
+        print("Network instance \(ObjectIdentifier.init(self)) deinit.")
     }
 }
