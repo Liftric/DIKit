@@ -17,26 +17,10 @@
 		4BD95DD32008B379009CE38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95DCB2008B379009CE38D /* Main.storyboard */; };
 		4BD95DD42008B379009CE38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DCD2008B379009CE38D /* AppDelegate.swift */; };
 		4BD95DD52008B379009CE38D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DCE2008B379009CE38D /* SecondViewController.swift */; };
-		4BD95DDA2008B385009CE38D /* DIKitExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DD82008B385009CE38D /* DIKitExampleTests.swift */; };
-		4BD95DDF2008B391009CE38D /* DIKitExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DDD2008B391009CE38D /* DIKitExampleUITests.swift */; };
 		4BD95DF52008B3DD009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95DE72008B3C1009CE38D /* DIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4BD95D622008B1AF009CE38D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4BD95D432008B1AF009CE38D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4BD95D4A2008B1AF009CE38D;
-			remoteInfo = DIKitExample;
-		};
-		4BD95D6D2008B1AF009CE38D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4BD95D432008B1AF009CE38D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4BD95D4A2008B1AF009CE38D;
-			remoteInfo = DIKitExample;
-		};
 		4BD95DE62008B3C1009CE38D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */;
@@ -59,8 +43,6 @@
 		4BBD03842023010200D9E468 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		4BBD03862023010800D9E468 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		4BD95D4B2008B1AF009CE38D /* DIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD95D612008B1AF009CE38D /* DIKitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD95D6C2008B1AF009CE38D /* DIKitExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKitExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95DC72008B379009CE38D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		4BD95DC82008B379009CE38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BD95DCA2008B379009CE38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,10 +50,6 @@
 		4BD95DCD2008B379009CE38D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD95DCE2008B379009CE38D /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4BD95DCF2008B379009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BD95DD82008B385009CE38D /* DIKitExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIKitExampleTests.swift; sourceTree = "<group>"; };
-		4BD95DD92008B385009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BD95DDD2008B391009CE38D /* DIKitExampleUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIKitExampleUITests.swift; sourceTree = "<group>"; };
-		4BD95DDE2008B391009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DIKit.xcodeproj; path = ../DIKit/DIKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,20 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BD95DF52008B3DD009CE38D /* DIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4BD95D5E2008B1AF009CE38D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4BD95D692008B1AF009CE38D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,8 +108,6 @@
 			children = (
 				4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */,
 				4BD95DC62008B379009CE38D /* Sources */,
-				4BD95DD72008B385009CE38D /* Tests */,
-				4BD95DDC2008B391009CE38D /* UITests */,
 				4BD95D4C2008B1AF009CE38D /* Products */,
 				4BD95DF42008B3DD009CE38D /* Frameworks */,
 			);
@@ -155,8 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				4BD95D4B2008B1AF009CE38D /* DIKitExample.app */,
-				4BD95D612008B1AF009CE38D /* DIKitExampleTests.xctest */,
-				4BD95D6C2008B1AF009CE38D /* DIKitExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,24 +131,6 @@
 				4BD95DCD2008B379009CE38D /* AppDelegate.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		4BD95DD72008B385009CE38D /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				4BD95DD82008B385009CE38D /* DIKitExampleTests.swift */,
-				4BD95DD92008B385009CE38D /* Info.plist */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		4BD95DDC2008B391009CE38D /* UITests */ = {
-			isa = PBXGroup;
-			children = (
-				4BD95DDD2008B391009CE38D /* DIKitExampleUITests.swift */,
-				4BD95DDE2008B391009CE38D /* Info.plist */,
-			);
-			path = UITests;
 			sourceTree = "<group>";
 		};
 		4BD95DE22008B3C1009CE38D /* Products */ = {
@@ -227,42 +169,6 @@
 			productReference = 4BD95D4B2008B1AF009CE38D /* DIKitExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4BD95D602008B1AF009CE38D /* DIKitExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4BD95D782008B1AF009CE38D /* Build configuration list for PBXNativeTarget "DIKitExampleTests" */;
-			buildPhases = (
-				4BD95D5D2008B1AF009CE38D /* Sources */,
-				4BD95D5E2008B1AF009CE38D /* Frameworks */,
-				4BD95D5F2008B1AF009CE38D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4BD95D632008B1AF009CE38D /* PBXTargetDependency */,
-			);
-			name = DIKitExampleTests;
-			productName = DIKitExampleTests;
-			productReference = 4BD95D612008B1AF009CE38D /* DIKitExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		4BD95D6B2008B1AF009CE38D /* DIKitExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4BD95D7B2008B1AF009CE38D /* Build configuration list for PBXNativeTarget "DIKitExampleUITests" */;
-			buildPhases = (
-				4BD95D682008B1AF009CE38D /* Sources */,
-				4BD95D692008B1AF009CE38D /* Frameworks */,
-				4BD95D6A2008B1AF009CE38D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4BD95D6E2008B1AF009CE38D /* PBXTargetDependency */,
-			);
-			name = DIKitExampleUITests;
-			productName = DIKitExampleUITests;
-			productReference = 4BD95D6C2008B1AF009CE38D /* DIKitExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -276,16 +182,6 @@
 					4BD95D4A2008B1AF009CE38D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
-					};
-					4BD95D602008B1AF009CE38D = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 4BD95D4A2008B1AF009CE38D;
-					};
-					4BD95D6B2008B1AF009CE38D = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 4BD95D4A2008B1AF009CE38D;
 					};
 				};
 			};
@@ -309,8 +205,6 @@
 			projectRoot = "";
 			targets = (
 				4BD95D4A2008B1AF009CE38D /* DIKitExample */,
-				4BD95D602008B1AF009CE38D /* DIKitExampleTests */,
-				4BD95D6B2008B1AF009CE38D /* DIKitExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -343,20 +237,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4BD95D5F2008B1AF009CE38D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4BD95D6A2008B1AF009CE38D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,36 +254,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4BD95D5D2008B1AF009CE38D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4BD95DDA2008B385009CE38D /* DIKitExampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4BD95D682008B1AF009CE38D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4BD95DDF2008B391009CE38D /* DIKitExampleUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4BD95D632008B1AF009CE38D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4BD95D4A2008B1AF009CE38D /* DIKitExample */;
-			targetProxy = 4BD95D622008B1AF009CE38D /* PBXContainerItemProxy */;
-		};
-		4BD95D6E2008B1AF009CE38D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4BD95D4A2008B1AF009CE38D /* DIKitExample */;
-			targetProxy = 4BD95D6D2008B1AF009CE38D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4BD95DC92008B379009CE38D /* LaunchScreen.storyboard */ = {
@@ -560,68 +411,6 @@
 			};
 			name = Release;
 		};
-		4BD95D792008B1AF009CE38D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DIKitExample.app/DIKitExample";
-			};
-			name = Debug;
-		};
-		4BD95D7A2008B1AF009CE38D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DIKitExample.app/DIKitExample";
-			};
-			name = Release;
-		};
-		4BD95D7C2008B1AF009CE38D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DIKitExample;
-			};
-			name = Debug;
-		};
-		4BD95D7D2008B1AF009CE38D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DIKitExample;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -639,24 +428,6 @@
 			buildConfigurations = (
 				4BD95D762008B1AF009CE38D /* Debug */,
 				4BD95D772008B1AF009CE38D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4BD95D782008B1AF009CE38D /* Build configuration list for PBXNativeTarget "DIKitExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4BD95D792008B1AF009CE38D /* Debug */,
-				4BD95D7A2008B1AF009CE38D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4BD95D7B2008B1AF009CE38D /* Build configuration list for PBXNativeTarget "DIKitExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4BD95D7C2008B1AF009CE38D /* Debug */,
-				4BD95D7D2008B1AF009CE38D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
