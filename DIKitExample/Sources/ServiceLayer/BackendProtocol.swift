@@ -9,5 +9,6 @@
 import Foundation
 
 protocol BackendProtocol {
+    var id: ObjectIdentifier { get }
     func fetch() -> String
 }

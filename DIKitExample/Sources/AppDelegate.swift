@@ -16,16 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let container = DependencyContainer { container in
         container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
         container.register(as: .singleton) { Backend(network: container.resolve()) as BackendProtocol }
+        container.register(as: .prototype) { LocalStorage() as LocalStorageProtocol }
+        container.register(as: .singleton) {
+            Repository(backend: container.resolve(),
+                       storage: container.resolve()) as RepositoryProtocol
+        }
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        var backend: BackendProtocol = container.resolve()
-        backend = container.resolve()
-        backend = container.resolve()
-        print(backend.fetch())
+        listData()
+        listData()
+        listData()
 
         return true
+    }
+    
+    func listData() {
+        let repository: RepositoryProtocol = container.resolve()
+        print(repository.list())
     }
 }
 

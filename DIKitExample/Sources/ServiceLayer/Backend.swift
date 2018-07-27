@@ -9,6 +9,10 @@
 import Foundation
 
 class Backend: BackendProtocol {
+    var id: ObjectIdentifier {
+        return ObjectIdentifier.init(self)
+    }
+    
     init(network: NetworkProtocol) {
         print("Backend init with network \(network.id)")
         print("Backend instance \(ObjectIdentifier.init(self))")

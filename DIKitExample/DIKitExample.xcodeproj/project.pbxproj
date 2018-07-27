@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4B5D4A3B20221CA1008D76FB /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3A20221CA1008D76FB /* Backend.swift */; };
 		4B5D4A3D20221CA8008D76FB /* BackendProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3C20221CA8008D76FB /* BackendProtocol.swift */; };
+		4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2C210B839B00C3F07A /* LocalStorage.swift */; };
+		4B858B2F210B83B500C3F07A /* LocalStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */; };
+		4B858B31210B842000C3F07A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B30210B842000C3F07A /* Repository.swift */; };
+		4B858B33210B843200C3F07A /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B32210B843200C3F07A /* RepositoryProtocol.swift */; };
 		4BBD03852023010200D9E468 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD03842023010200D9E468 /* NetworkProtocol.swift */; };
 		4BBD03872023010800D9E468 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD03862023010800D9E468 /* Network.swift */; };
 		4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DC72008B379009CE38D /* FirstViewController.swift */; };
@@ -40,6 +44,10 @@
 /* Begin PBXFileReference section */
 		4B5D4A3A20221CA1008D76FB /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		4B5D4A3C20221CA8008D76FB /* BackendProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendProtocol.swift; sourceTree = "<group>"; };
+		4B858B2C210B839B00C3F07A /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageProtocol.swift; sourceTree = "<group>"; };
+		4B858B30210B842000C3F07A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		4B858B32210B843200C3F07A /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		4BBD03842023010200D9E468 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		4BBD03862023010800D9E468 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		4BD95D4B2008B1AF009CE38D /* DIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +73,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B858B28210B837F00C3F07A /* LocalStorageLayer */ = {
+			isa = PBXGroup;
+			children = (
+				4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */,
+				4B858B2C210B839B00C3F07A /* LocalStorage.swift */,
+			);
+			path = LocalStorageLayer;
+			sourceTree = "<group>";
+		};
+		4B858B2B210B838700C3F07A /* RepositoryLayer */ = {
+			isa = PBXGroup;
+			children = (
+				4B858B32210B843200C3F07A /* RepositoryProtocol.swift */,
+				4B858B30210B842000C3F07A /* Repository.swift */,
+			);
+			path = RepositoryLayer;
+			sourceTree = "<group>";
+		};
 		4BBD0380202300E300D9E468 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +150,8 @@
 		4BD95DC62008B379009CE38D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4B858B2B210B838700C3F07A /* RepositoryLayer */,
+				4B858B28210B837F00C3F07A /* LocalStorageLayer */,
 				4BBD0383202300F100D9E468 /* NetworkLayer */,
 				4BBD0380202300E300D9E468 /* ServiceLayer */,
 				4BBD03892023013D00D9E468 /* Resources */,
@@ -246,9 +274,13 @@
 			files = (
 				4B5D4A3B20221CA1008D76FB /* Backend.swift in Sources */,
 				4BD95DD52008B379009CE38D /* SecondViewController.swift in Sources */,
+				4B858B2F210B83B500C3F07A /* LocalStorageProtocol.swift in Sources */,
 				4BBD03852023010200D9E468 /* NetworkProtocol.swift in Sources */,
+				4B858B33210B843200C3F07A /* RepositoryProtocol.swift in Sources */,
 				4BD95DD42008B379009CE38D /* AppDelegate.swift in Sources */,
 				4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */,
+				4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */,
+				4B858B31210B842000C3F07A /* Repository.swift in Sources */,
 				4BBD03872023010800D9E468 /* Network.swift in Sources */,
 				4B5D4A3D20221CA8008D76FB /* BackendProtocol.swift in Sources */,
 			);
