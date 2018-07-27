@@ -17,14 +17,11 @@ extension DependencyContainer {
         if foundComponent.scope == .prototype {
             return foundComponent.componentFactory() as! T
         }
-        self.semaphore.wait()
         if let instanceOfComponent = self.instanceStack[tag] as? T {
-            self.semaphore.signal()
             return instanceOfComponent
         }
         let instance = foundComponent.componentFactory() as! T
         self.instanceStack[tag] = instance
-        self.semaphore.signal()
         return instance
     }
 }

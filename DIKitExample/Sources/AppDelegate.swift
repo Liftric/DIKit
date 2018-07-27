@@ -15,12 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let container = DependencyContainer { container in
         container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
-        container.register(as: .prototype) { Backend(network: container.resolve()) as BackendProtocol }
+        container.register(as: .singleton) { Backend(network: container.resolve()) as BackendProtocol }
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let backend: BackendProtocol = container.resolve()
+        var backend: BackendProtocol = container.resolve()
+        backend = container.resolve()
+        backend = container.resolve()
         print(backend.fetch())
 
         return true
