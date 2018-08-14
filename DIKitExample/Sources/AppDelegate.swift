@@ -23,11 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    var backend = Dependency<BackendProtocol>()
 
-        listData()
-        listData()
-        listData()
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        container.inject(into: self)
+
+        //listData()
+        //listData()
+        //listData()
 
         return true
     }
