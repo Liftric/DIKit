@@ -15,6 +15,11 @@ public final class DependencyContainer {
     let lock = NSRecursiveLock()
     
     public typealias BootstrapBlock = (DependencyContainer) -> Void
+    /// Creates the `DependencyContainer`.
+    ///
+    /// - Parameters:
+    ///     - boostrapBlock: The *boostrapBlock* is a closure `(DependencyContainer)
+    ///                       -> Void` for registering all `[Component]`.
     public init(boostrapBlock: BootstrapBlock) {
         threadSafe {
             boostrapBlock(self)

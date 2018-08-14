@@ -9,6 +9,9 @@
 import Foundation
 
 extension DependencyContainer {
+    /// Resolves a `Component<T>`.
+    ///
+    /// - Returns: The resolved `Component<T>`.
     public func resolve<T>() -> T {
         let tag = String(describing: T.self)
         guard let foundComponent = self.componentStack[tag] else {

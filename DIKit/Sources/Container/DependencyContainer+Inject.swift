@@ -11,32 +11,23 @@
 import Foundation
 
 extension DependencyContainer {
+    /// Injects all `[Dependency]`.
+    ///
+    /// In all instance variables which conform the `DependencyProtocol` the resolved
+    /// `Component` gets injected.
+    ///
+    /// - Parameters:
+    ///     - object: The *object* in which the `[Dependency]` are injected. Currently
+    ///               only works for `NSObject` classes.
     public func inject(into object: AnyObject) {
-        // Currently only works for `NSObject` classes.
-        let classForCoder: AnyClass = type(of: object)
-
-        var outCount = UInt32()
-        let ivarList = class_copyIvarList(classForCoder, &outCount)
-
-        for i in 0 ..< Int(outCount) {
-            guard let ivar: Ivar = ivarList?[i] else {
-                continue
+        let instanceVariables = Reflection.getInstanceVariables(for: object)
+        instanceVariables.forEach { (name: String, value: Any) in
+            guard let dependency = value as? DependencyProtocol else {
+                return
             }
-            guard let ivarName = ivar_getName(ivar) else {
-                continue
-            }
-            guard let ivarValue = object_getIvar(object, ivar) else {
-                continue
-            }
-            guard let dependency = ivarValue as? DependencyProtocol else {
-                continue
-            }
-
-            let ivarReadableName = String(cString: ivarName)
-            print("Dependency variable `\(ivarReadableName)` was found, inject service.")
-
+            print("Dependency variable `\(name)` was found, inject service.")
             dependency.inject(from: self)
-            object_setIvar(object, ivar, dependency)
+            // object_setIvar(object, ivar, dependency)
         }
     }
 }

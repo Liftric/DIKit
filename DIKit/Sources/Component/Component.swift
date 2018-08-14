@@ -8,13 +8,13 @@
 
 import Foundation
 
-public typealias ComponentFactory = () -> Any
+typealias ComponentFactory = () -> Any
 
-public final class Component<T>: ComponentProtocol {
-    public let scope: Scope
-    public let tag: String
-    public let type: Any.Type
-    public let componentFactory: ComponentFactory
+final class Component<T>: ComponentProtocol {
+    let scope: Scope
+    let tag: String
+    let type: Any.Type
+    let componentFactory: ComponentFactory
 
     init(scope: Scope, type: T.Type, factory: @escaping () -> T) {
         self.scope = scope
@@ -24,7 +24,7 @@ public final class Component<T>: ComponentProtocol {
     }
 }
 
-public protocol ComponentProtocol {
+protocol ComponentProtocol {
     var scope: Scope { get }
     var componentFactory: ComponentFactory { get }
     var type: Any.Type { get }
