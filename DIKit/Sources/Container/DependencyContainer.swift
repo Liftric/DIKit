@@ -9,11 +9,11 @@
 import Foundation
 
 public final class DependencyContainer {
-    internal var bootstrapped = false
-    internal var componentStack = [String: ComponentProtocol]()
-    internal var instanceStack = [String: Any]()
-    internal let lock = NSRecursiveLock()
-
+    var bootstrapped = false
+    var componentStack = [String: ComponentProtocol]()
+    var instanceStack = [String: Any]()
+    let lock = NSRecursiveLock()
+    
     public typealias BootstrapBlock = (DependencyContainer) -> Void
     public init(boostrapBlock: BootstrapBlock) {
         threadSafe {
@@ -21,8 +21,8 @@ public final class DependencyContainer {
             self.bootstrapped = true
         }
     }
-
-    internal func threadSafe(_ closure: () -> ()) -> () {
+    
+    func threadSafe(_ closure: () -> ()) -> () {
         lock.lock()
         defer {
             lock.unlock()

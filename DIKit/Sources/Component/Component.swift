@@ -29,4 +29,3 @@ public protocol ComponentProtocol {
     var componentFactory: ComponentFactory { get }
     var type: Any.Type { get }
 }
-
