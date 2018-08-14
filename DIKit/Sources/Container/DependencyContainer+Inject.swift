@@ -25,9 +25,8 @@ extension DependencyContainer {
             guard let dependency = value as? DependencyProtocol else {
                 return
             }
-            print("Dependency variable `\(name)` was found, inject service.")
+            // Dependency variable `name` was found, inject service.
             dependency.inject(from: self)
-            // object_setIvar(object, ivar, dependency)
         }
     }
 }
