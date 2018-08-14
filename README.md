@@ -26,8 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
 
 2. Resolve them.
 
-```
-swift
+```swift
 import DIKit
 
 class FirstViewController: UIViewController {
