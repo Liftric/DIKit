@@ -11,8 +11,12 @@ import Foundation
 extension DependencyContainer {
     public func register<T>(as scope: Scope = .prototype, _ factory: @escaping () -> T) {
         precondition(!bootstrapped, "After boostrap no more components can be registered.")
-        let component = Component(scope: scope, type: T.self, factory: factory)
-        self.componentStack[component.tag] = component
+        threadSafe {
+            let component = Component(scope: scope, type: T.self, factory: factory)
+            guard self.componentStack[component.tag] == nil else {
+                fatalError("A component can only be registered once.")
+            }
+            self.componentStack[component.tag] = component
+        }
     }
 }
-
