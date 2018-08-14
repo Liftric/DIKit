@@ -35,7 +35,7 @@ extension DependencyContainer {
             let ivarReadableName = String(cString: ivarName)
             print("Dependency variable `\(ivarReadableName)` was found, inject service.")
 
-            dependency.inject(with: self)
+            dependency.inject(from: self)
             object_setIvar(object, ivar, dependency)
         }
     }

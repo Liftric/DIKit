@@ -11,13 +11,13 @@
 import Foundation
 
 protocol DependencyProtocol {
-    func inject(with container: DependencyContainer)
+    func inject(from container: DependencyContainer)
 }
 
 public class Dependency<T>: DependencyProtocol {
     public var get: T?
 
-    func inject(with container: DependencyContainer) {
+    func inject(from container: DependencyContainer) {
         let dependency: T = container.resolve()
         self.get = dependency
     }
