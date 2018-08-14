@@ -15,11 +15,17 @@ protocol DependencyProtocol {
 }
 
 public class Dependency<T>: DependencyProtocol {
-    public var get: T?
+    var _service: T?
+    public var get: T! {
+        guard _service != nil else {
+            fatalError("You need to invoke `DIKit.inject(into: self)` before actually accessing a `Dependency`.")
+        }
+        return _service
+    }
 
     func inject(from container: DependencyContainer) {
         let dependency: T = container.resolve()
-        self.get = dependency
+        self._service = dependency
     }
 
     public init() {}
