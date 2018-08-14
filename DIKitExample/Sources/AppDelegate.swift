@@ -13,14 +13,12 @@ import DIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
     var window: UIWindow?
 
-    lazy var container = {
-        return DependencyContainer { container in
-            container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
-            container.register(as: .singleton) { Backend(network: container.resolve()) as BackendProtocol }
-            container.register(as: .prototype) { LocalStorage() as LocalStorageProtocol }
-            container.register(as: .prototype) { Repository(backend: container.resolve(), storage: container.resolve()) as RepositoryProtocol }
-        }
-    }()
+    let container = DependencyContainer { container in
+        container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
+        container.register(as: .singleton) { Backend(network: container.resolve()) as BackendProtocol }
+        container.register(as: .prototype) { LocalStorage() as LocalStorageProtocol }
+        container.register(as: .prototype) { Repository(backend: container.resolve(), storage: container.resolve()) as RepositoryProtocol }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true
