@@ -4,6 +4,22 @@ Dependency Injection Framework for Swift.
 
 > Nothing to see here right now.
 
+## Preconditions
+
+- Your dependency container is built and lives in your `AppDelegate`.
+- Your `AppDelegate` should implement `DIKitProtocol`.
+- Define your dependencies via `Dependency<T>` as instance variables.
+- Let them be resolved via `DIKit.inject(into: Any)`, where `Any` should be an `NSObject` derivative.
+
+You can also use the container straightforward without any injection magic:
+
+```swift
+let container = DependencyContainer { container in
+    container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
+}
+let network: NetworkProtocol = container.resolve()
+```
+
 ## Basic usage
 
 1. Define your dependencies.
