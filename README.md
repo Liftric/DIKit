@@ -59,3 +59,9 @@ class FirstViewController: UIViewController {
     }
 }
 ```
+
+## Known issues
+
+- Circular dependencies are not supported as of now.
+- Sub containers are not supported, thus a more fine-grained modular composition is not possible yet.
+- Lack of tests.
