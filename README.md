@@ -37,7 +37,7 @@ class FirstViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if let result = backend.service?.fetch() {
+        if let result = backend.get?.fetch() {
             print(result)
         }
     }

@@ -15,11 +15,11 @@ protocol DependencyProtocol {
 }
 
 public class Dependency<T>: DependencyProtocol {
-    public var service: T?
+    public var get: T?
 
     func inject(with container: DependencyContainer) {
-        let resolvedService: T = container.resolve()
-        self.service = resolvedService
+        let dependency: T = container.resolve()
+        self.get = dependency
     }
 
     public init() {}
