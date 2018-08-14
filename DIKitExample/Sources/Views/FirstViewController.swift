@@ -16,4 +16,10 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         DIKit.inject(into: self)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        if let result = backend.service?.fetch() {
+            print(result)
+        }
+    }
 }
