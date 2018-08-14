@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import DIKit
 
 class FirstViewController: UIViewController {
+    let backend = Dependency<BackendProtocol>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        DIKit.inject(into: self)
     }
 }
