@@ -15,7 +15,7 @@ extension DependencyContainer {
     public func resolve<T>() -> T {
         let tag = String(describing: T.self)
         guard let foundComponent = self.componentStack[tag] else {
-            fatalError("Component could not be resolved.")
+            fatalError("Component `\(tag)` could not be resolved.")
         }
         if foundComponent.scope == .prototype {
             return foundComponent.componentFactory() as! T
