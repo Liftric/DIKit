@@ -18,7 +18,7 @@ public class Dependency<T>: DependencyProtocol {
     var _service: T?
     public var get: T! {
         guard _service != nil else {
-            fatalError("You need to invoke `DIKit.inject(into: self)` before actually accessing a `Dependency`.")
+            fatalError("You need to invoke `DIKit.inject(into: self)` before actually accessing a `Dependency` or your class does not inherit from `NSObject`.")
         }
         return _service
     }
