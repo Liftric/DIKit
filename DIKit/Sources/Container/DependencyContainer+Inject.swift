@@ -19,7 +19,7 @@ extension DependencyContainer {
     /// - Parameters:
     ///     - object: The *object* in which the `[Dependency]` are injected. Currently
     ///               only works for `NSObject` classes.
-    public func inject(into object: NSObject) {
+    public func inject(into object: AnyObject) {
         let instanceVariables = Reflection.getInstanceVariables(for: object)
         instanceVariables.forEach { (name: String, value: Any) in
             guard let dependency = value as? DependencyProtocol else {

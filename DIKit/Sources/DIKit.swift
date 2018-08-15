@@ -16,7 +16,7 @@ public protocol DIKitProtocol {
 
 public class DIKit {
     /// Shortcut for using `DIKit.shared.container.inject`.
-    public class func inject(into object: NSObject) {
+    public class func inject(into object: AnyObject) {
         DIKit.shared.container.inject(into: object)
     }
 
