@@ -9,6 +9,7 @@
 
 
 import Foundation
+import ObjectiveC.runtime
 
 class Reflection {
     class func getInstanceVariables(for object: AnyObject,
@@ -30,6 +31,9 @@ class Reflection {
                 continue
             }
             guard let ivarName = ivar_getName(ivar) else {
+                continue
+            }
+            if class_getProperty(object.classForCoder, ivarName) != nil {
                 continue
             }
             let ivarReadableName = String(cString: ivarName)
