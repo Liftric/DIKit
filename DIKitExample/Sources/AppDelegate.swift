@@ -7,15 +7,8 @@
 //
 
 import UIKit
-import DIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
-    var window: UIWindow?
+final class AppDelegate: BaseAppDelegate {
 
-    let container = DependencyContainer.configure()
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        return true
-    }
 }

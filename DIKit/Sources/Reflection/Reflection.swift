@@ -6,17 +6,25 @@
 // - Date: 14.08.18
 //
 // Copyright © 2018 Ben John. All rights reserved.
-    
+
 
 import Foundation
 
 class Reflection {
-    class func getInstanceVariables(for object: AnyObject) -> [String: Any] {
-        let classForCoder: AnyClass = type(of: object)
-        var outCount = UInt32()
-        let ivarList = class_copyIvarList(classForCoder, &outCount)
+    class func getInstanceVariables(for object: AnyObject,
+                                    instanceVariables: [String: Any] = [String: Any](),
+                                    includeSuperclass: Bool = true,
+                                    root: AnyObject? = nil) -> [String: Any] {
 
-        var instanceVariables = [String: Any]()
+        guard object.classForCoder != NSObject.self else {
+            return instanceVariables
+        }
+
+        let accessibleObject = root ?? object
+        var outCount = UInt32()
+        let ivarList = class_copyIvarList(object.classForCoder, &outCount)
+
+        var instanceVariables = instanceVariables
         for i in 0 ..< Int(outCount) {
             guard let ivar: Ivar = ivarList?[i] else {
                 continue
@@ -24,13 +32,30 @@ class Reflection {
             guard let ivarName = ivar_getName(ivar) else {
                 continue
             }
-            guard let ivarValue = object_getIvar(object, ivar) else {
+            let ivarReadableName = String(cString: ivarName)
+            if ivarReadableName.starts(with: "_") {
                 continue
             }
-            let ivarReadableName = String(cString: ivarName)
+            guard let ivarValue = object_getIvar(accessibleObject, ivar) else {
+                continue
+            }
+            guard ivarValue is DependencyProtocol else {
+                continue
+            }
             instanceVariables[ivarReadableName] = ivarValue
         }
 
-        return instanceVariables
+        guard includeSuperclass else {
+            return instanceVariables
+        }
+
+        guard let superclazzInstance: AnyObject = object.superclass else {
+            return instanceVariables
+        }
+
+        return getInstanceVariables(for: superclazzInstance,
+                                    instanceVariables: instanceVariables,
+                                    includeSuperclass: true,
+                                    root: object)
     }
 }
