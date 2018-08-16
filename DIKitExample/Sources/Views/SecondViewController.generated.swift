@@ -1,4 +1,4 @@
-// FirstViewController.generated.swift
+// SecondViewController.generated.swift
 //
 // - Authors:
 // Ben John
@@ -11,15 +11,12 @@
 import Foundation
 import DIKit
 
-extension FirstViewController {    
+extension SecondViewController {
     var dependency: Dependency {
         return DependencyGenerated()
     }
     
     private class DependencyGenerated: Dependency, HasContainerContext {
-        lazy var backend: BackendProtocol = {
-            return container.resolve()
-        }()
         lazy var localStorage: LocalStorageProtocol = {
             return container.resolve()
         }()

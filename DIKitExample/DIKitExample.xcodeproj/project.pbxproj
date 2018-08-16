@@ -17,6 +17,7 @@
 		4BBD03852023010200D9E468 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD03842023010200D9E468 /* NetworkProtocol.swift */; };
 		4BBD03872023010800D9E468 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD03862023010800D9E468 /* Network.swift */; };
 		4BD3E7922125E954000371D3 /* FirstViewController.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3E7912125E954000371D3 /* FirstViewController.generated.swift */; };
+		4BD3E79A2125EFB3000371D3 /* SecondViewController.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3E7992125EFB3000371D3 /* SecondViewController.generated.swift */; };
 		4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DC72008B379009CE38D /* FirstViewController.swift */; };
 		4BD95DD12008B379009CE38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95DC82008B379009CE38D /* Assets.xcassets */; };
 		4BD95DD22008B379009CE38D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95DC92008B379009CE38D /* LaunchScreen.storyboard */; };
@@ -54,6 +55,7 @@
 		4BBD03842023010200D9E468 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		4BBD03862023010800D9E468 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		4BD3E7912125E954000371D3 /* FirstViewController.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.generated.swift; sourceTree = "<group>"; };
+		4BD3E7992125EFB3000371D3 /* SecondViewController.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.generated.swift; sourceTree = "<group>"; };
 		4BD95D4B2008B1AF009CE38D /* DIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95DC72008B379009CE38D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		4BD95DC82008B379009CE38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				4BD95DC72008B379009CE38D /* FirstViewController.swift */,
 				4BD3E7912125E954000371D3 /* FirstViewController.generated.swift */,
 				4BD95DCE2008B379009CE38D /* SecondViewController.swift */,
+				4BD3E7992125EFB3000371D3 /* SecondViewController.generated.swift */,
 				4BD95DCB2008B379009CE38D /* Main.storyboard */,
 			);
 			path = Views;
@@ -284,6 +287,7 @@
 				4B858B2F210B83B500C3F07A /* LocalStorageProtocol.swift in Sources */,
 				4BBD03852023010200D9E468 /* NetworkProtocol.swift in Sources */,
 				4B858B33210B843200C3F07A /* RepositoryProtocol.swift in Sources */,
+				4BD3E79A2125EFB3000371D3 /* SecondViewController.generated.swift in Sources */,
 				4BD95DD42008B379009CE38D /* AppDelegate.swift in Sources */,
 				4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */,
 				4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */,

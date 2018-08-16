@@ -9,12 +9,14 @@
 import UIKit
 import DIKit
 
-protocol Dependency {
+protocol FirstViewControllerDependency {
     var backend: BackendProtocol { get }
     var localStorage: LocalStorageProtocol { get }
 }
 
 class FirstViewController: UIViewController, HasDependencies {
+    typealias Dependency = FirstViewControllerDependency
+    
     override func viewWillAppear(_ animated: Bool) {
         print(self.dependency.backend.fetch())
     }
