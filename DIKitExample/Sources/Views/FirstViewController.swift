@@ -9,13 +9,19 @@
 import UIKit
 import DIKit
 
-protocol FirstViewControllerDependency {
-    var backend: BackendProtocol { get }
-    var localStorage: LocalStorageProtocol { get }
-}
-
 class FirstViewController: UIViewController, HasDependencies {
-    typealias Dependency = FirstViewControllerDependency
+    // MARK: - DIKit
+    struct Dependency {
+        let backend: BackendProtocol
+        let localStorage: LocalStorageProtocol
+    }
+    var dependency: Dependency!
+    
+    // MARK: - View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Dependency.inject(into: self)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         print(self.dependency.backend.fetch())

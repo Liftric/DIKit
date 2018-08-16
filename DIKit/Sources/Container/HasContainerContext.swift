@@ -11,11 +11,11 @@
 import Foundation
 
 public protocol HasContainerContext {
-    var container: DependencyContainer { get }
+    static var container: DependencyContainer { get }
 }
 
 public extension HasContainerContext {
-    var container: DependencyContainer {
+    static var container: DependencyContainer {
         return DIKit.shared.container
     }
 }

@@ -11,17 +11,12 @@
 import Foundation
 import DIKit
 
-extension FirstViewController {    
-    var dependency: Dependency {
-        return DependencyGenerated()
-    }
-    
-    private class DependencyGenerated: Dependency, HasContainerContext {
-        lazy var backend: BackendProtocol = {
-            return container.resolve()
-        }()
-        lazy var localStorage: LocalStorageProtocol = {
-            return container.resolve()
-        }()
+typealias Dependency = FirstViewController.Dependency
+extension Dependency: HasContainerContext {
+    static func inject(into instance: FirstViewController) {
+        instance.dependency = Dependency(
+            backend: container.resolve(),
+            localStorage: container.resolve()
+        )
     }
 }

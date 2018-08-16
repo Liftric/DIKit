@@ -12,5 +12,5 @@ import Foundation
 
 public protocol HasDependencies {
     associatedtype Dependency
-    var dependency: Dependency { get }
+    var dependency: Dependency! { get }
 }
