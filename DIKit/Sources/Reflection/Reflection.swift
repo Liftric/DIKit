@@ -13,6 +13,7 @@ import ObjectiveC.runtime
 
 class Reflection {
     class func getInstanceVariables(for object: AnyObject,
+                                    matches prefix: String = "__",
                                     instanceVariables: [String: Any] = [String: Any](),
                                     includeSuperclass: Bool = true,
                                     root: AnyObject? = nil) -> [String: Any] {
@@ -34,7 +35,7 @@ class Reflection {
                 continue
             }
             let ivarReadableName = String(cString: ivarName)
-            guard ivarReadableName.starts(with: "__") else {
+            guard ivarReadableName.starts(with: prefix) else {
                 continue
             }
             guard let ivarValue = object_getIvar(accessibleObject, ivar) else {
@@ -53,7 +54,7 @@ class Reflection {
 
         return getInstanceVariables(for: superclazzInstance,
                                     instanceVariables: instanceVariables,
-                                    includeSuperclass: true,
+                                    includeSuperclass: false,
                                     root: object)
     }
 }
