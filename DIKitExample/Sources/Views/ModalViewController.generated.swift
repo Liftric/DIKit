@@ -1,4 +1,4 @@
-// FirstViewController.generated.swift
+// ModalViewController.generated.swift
 //
 // - Authors:
 // Ben John
@@ -11,9 +11,9 @@
 import Foundation
 import DIKit
 
-private typealias Dependency = FirstViewController.Dependency
-extension FirstViewController.Dependency: HasContainerContext {
-    static func inject(into instance: FirstViewController) {
+private typealias Dependency = ModalViewController.Dependency
+extension Dependency: HasContainerContext {
+    static func inject(into instance: ModalViewController) {
         instance.dependency = Dependency(
             backend: container.resolve(),
             localStorage: container.resolve()
