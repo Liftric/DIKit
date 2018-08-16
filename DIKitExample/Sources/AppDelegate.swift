@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import DIKit
 
 @UIApplicationMain
-final class AppDelegate: BaseAppDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
+    var window: UIWindow?
+    let container = DependencyContainer.configure()
 }

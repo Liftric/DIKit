@@ -9,16 +9,13 @@
 import UIKit
 import DIKit
 
-class FirstViewController: UIViewController {
-    let __backend = Dependency<BackendProtocol>()
+protocol Dependency {
+    var backend: BackendProtocol { get }
+    var localStorage: LocalStorageProtocol { get }
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        DIKit.inject(into: self)
-    }
-
+class FirstViewController: UIViewController, HasDependencies {
     override func viewWillAppear(_ animated: Bool) {
-        let result = __backend.value.fetch()
-        print(result)
+        print(self.dependency.backend.fetch())
     }
 }
