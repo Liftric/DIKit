@@ -10,7 +10,7 @@ import UIKit
 import DIKit
 
 class FirstViewController: UIViewController {
-    let backend = Dependency<BackendProtocol>()
+    let __backend = Dependency<BackendProtocol>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class FirstViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        let result = backend.get.fetch()
+        let result = __backend.value.fetch()
         print(result)
     }
 }

@@ -8,7 +8,7 @@ Dependency Injection Framework for Swift.
 
 - Your dependency container is built and lives in your `AppDelegate`.
 - Your `AppDelegate` should implement `DIKitProtocol`.
-- Define your dependencies via `Dependency<T>` as instance variables.
+- Define your dependencies via `Dependency<T>` as instance variables, prefixed with `__`.
 - Let them be resolved via `DIKit.inject(into: Any)`, where `Any` should be an `NSObject` derivative.
 
 You can also use the container straightforward without any injection magic:
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
 import DIKit
 
 class FirstViewController: UIViewController {
-    let backend = Dependency<BackendProtocol>()
+    let __backend = Dependency<BackendProtocol>()
 
     override func viewDidLoad() {
         super.viewDidLoad()

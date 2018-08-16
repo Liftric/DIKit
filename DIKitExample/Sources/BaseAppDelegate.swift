@@ -13,10 +13,12 @@ class BaseAppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
     var window: UIWindow?
 
     let container = DependencyContainer.configure()
-    let backend = Dependency<BackendProtocol>()
+    let __backend = Dependency<BackendProtocol>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         DIKit.inject(into: self)
+        let result = __backend.value.fetch()
+        print(result)
         return true
     }
 }

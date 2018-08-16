@@ -33,17 +33,11 @@ class Reflection {
             guard let ivarName = ivar_getName(ivar) else {
                 continue
             }
-            if class_getProperty(object.classForCoder, ivarName) != nil {
-                continue
-            }
             let ivarReadableName = String(cString: ivarName)
-            if ivarReadableName.starts(with: "_") {
+            guard ivarReadableName.starts(with: "__") else {
                 continue
             }
             guard let ivarValue = object_getIvar(accessibleObject, ivar) else {
-                continue
-            }
-            guard ivarValue is DependencyProtocol else {
                 continue
             }
             instanceVariables[ivarReadableName] = ivarValue
