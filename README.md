@@ -6,10 +6,10 @@ Dependency Injection Framework for Swift.
 
 ## Preconditions
 
-- Your dependency container is built and lives in your `AppDelegate`.
-- Your `AppDelegate` should implement `DIKitProtocol`.
-- Define your dependencies via `Dependency<T>` as instance variables, prefixed with `__`.
-- Let them be resolved via `DIKit.inject(into: Any)`, where `Any` should be an `NSObject` derivative.
+- Your dependency container lives in your `AppDelegate`.
+- Your `AppDelegate` should implement `DefinesContainer`.
+- A class or struct, relying on dependencies should implement `HasDependencies`.
+- Define and resolve your dependencies via `struct Dependency: HasContainerContext`.
 
 You can also use the container straightforward without any injection magic:
 
