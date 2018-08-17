@@ -59,31 +59,16 @@
 		4BB4CE4D2122D82D007D8075 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				4BD3E7952125E9A7000371D3 /* HasDependencies.swift */,
-=======
-				4B13FBF82126AF8D00299034 /* HasDependencies.swift */,
->>>>>>> master
 			);
 			path = Dependency;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		4BBD038A2023349C00D9E468 /* Resolver */ = {
 			isa = PBXGroup;
 			children = (
 				4BF63A4B2126AE5F00EA604B /* DefinesResolver.swift */,
 				4BD3E7972125EB63000371D3 /* HasResolverContext.swift */,
-=======
-		4BBD038A2023349C00D9E468 /* Container */ = {
-			isa = PBXGroup;
-			children = (
-				4B5D4A36202217CA008D76FB /* DependencyContainer.swift */,
-				4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */,
-				4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */,
-				4B13FBFA2126AFBB00299034 /* HasContainerContext.swift */,
-				4B13FBFE2126B07C00299034 /* DefinesContainer.swift */,
->>>>>>> master
 			);
 			path = Resolver;
 			sourceTree = "<group>";
