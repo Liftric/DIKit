@@ -9,9 +9,4 @@
 import UIKit
 import DIKit
 
-class SecondViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        DIKit.inject(into: self)
-    }
-}
+class SecondViewController: UIViewController {}
