@@ -9,16 +9,13 @@
 import UIKit
 import DIKit
 
-class SecondViewController: UIViewController, HasDependencies {
-    // MARK: - Dependency declaration
-    struct Dependency: HasContainerContext {
-        let storage: LocalStorageProtocol = container.resolve()
-    }
-    var dependency: Dependency! = Dependency()
+class SecondViewController: UIViewController {
+    // MARK: - DIKit
+    let storage: LocalStorageProtocol = inject()
 
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(dependency.storage.id)
+        print(storage.id)
     }
 }

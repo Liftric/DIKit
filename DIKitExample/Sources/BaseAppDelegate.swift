@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import DIKit
 
-class BaseAppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
+class BaseAppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let container = DependencyContainer.derive(containers: .backendContainer, .storageContainer, .networkContainer)
 }

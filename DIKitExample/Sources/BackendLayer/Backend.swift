@@ -9,12 +9,9 @@
 import Foundation
 import DIKit
 
-class Backend: BackendProtocol, HasDependencies {
-    // MARK: - Dependency declaration
-    struct Dependency: HasContainerContext {
-        let network: NetworkProtocol = container.resolve()
-    }
-    var dependency: Dependency! = Dependency()
+class Backend: BackendProtocol {
+    // MARK: - DIKit
+    let network: NetworkProtocol = inject()
 
     // MARK: - Backend related stuff
     var id: ObjectIdentifier {
@@ -22,7 +19,7 @@ class Backend: BackendProtocol, HasDependencies {
     }
     
     init() {
-        print("Backend init with network \(dependency.network.id)")
+        print("Backend init with network \(network.id)")
         print("Backend instance \(ObjectIdentifier.init(self))")
     }
 

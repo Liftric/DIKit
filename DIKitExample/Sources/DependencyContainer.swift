@@ -11,7 +11,6 @@
 import Foundation
 import DIKit
 
-// framework B (LocalStorage)
 public extension DependencyContainer {
     static var storageContainer: DependencyContainer {
         return DependencyContainer { container in
@@ -20,7 +19,6 @@ public extension DependencyContainer {
     }
 }
 
-// framework C (Network)
 public extension DependencyContainer {
     static var networkContainer: DependencyContainer {
         return DependencyContainer { container in

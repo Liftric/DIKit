@@ -8,17 +8,11 @@
 
 import Foundation
 
-func += <K, V> (left: inout [K:V], right: [K:V]) {
-    for (k, v) in right {
-        left[k] = v
-    }
-}
-
 typealias ComponentStack = [String: ComponentProtocol]
 
 public final class DependencyContainer {
     var bootstrapped = false
-    var componentStack = [String: ComponentProtocol]()
+    var componentStack = ComponentStack()
     var instanceStack = [String: Any]()
     let lock = NSRecursiveLock()
 
@@ -26,9 +20,10 @@ public final class DependencyContainer {
     ///
     /// - Parameters:
     ///     - containers: *DependencyContainer...*.
+    /// TODO
     public static func derive(containers: DependencyContainer...) -> DependencyContainer {
         return DependencyContainer(containers.reduce(into: ComponentStack()) { (result, container) in
-            container.componentStack.merge(result) { (old, new) -> ComponentProtocol in
+            result.merge(container.componentStack) { (old, new) -> ComponentProtocol in
                 fatalError("A Component was declared at least twice `\(old)` -> `\(new)`.")
             }
         })

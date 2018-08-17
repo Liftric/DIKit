@@ -10,6 +10,6 @@ import UIKit
 import DIKit
 
 @UIApplicationMain
-final class AppDelegate: BaseAppDelegate {
-
+final class AppDelegate: BaseAppDelegate, DefinesContainer {
+    let container = DependencyContainer.derive(containers: .backendContainer, .storageContainer, .networkContainer)
 }
