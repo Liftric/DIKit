@@ -14,7 +14,7 @@ extension DependencyContainer {
     /// - Parameters:
     ///     - scope: The *scope* of the `Component`, defaults to `Scope.prototype`.
     ///     - factory: The *factory* for the initialization of the `Component`.
-    public func register<T>(as scope: Scope = .prototype, _ factory: @escaping () -> T) {
+    public func register<T>(as scope: Scope = .singleton, _ factory: @escaping () -> T) {
         precondition(!bootstrapped, "After boostrap no more components can be registered.")
         threadSafe {
             let component = Component(scope: scope, type: T.self, factory: factory)
