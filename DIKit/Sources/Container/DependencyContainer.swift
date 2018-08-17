@@ -22,18 +22,16 @@ public final class DependencyContainer {
     var instanceStack = [String: Any]()
     let lock = NSRecursiveLock()
 
+    /// Derives a `DependencyContainer` from multiple sub containers.
+    ///
+    /// - Parameters:
+    ///     - containers: *DependencyContainer...*.
     public static func derive(containers: DependencyContainer...) -> DependencyContainer {
-//        containers.reduce(into: [String: ComponentProtocol]) { (result: inout [String: ComponentProtocol], container) in
-//            container.componentStack.merge(result, uniquingKeysWith: { (a, b) -> ComponentProtocol in
-//                return true
-//            })
-//            componentStack.append(contentsOf: container.componentStack)
-//        }
-        var componentStack = [String: ComponentProtocol]()
-        containers.forEach { container in
-            componentStack += container.componentStack
-        }
-        return DependencyContainer(componentStack)
+        return DependencyContainer(containers.reduce(into: ComponentStack()) { (result, container) in
+            container.componentStack.merge(result) { (old, new) -> ComponentProtocol in
+                fatalError("A Component was declared at least twice `\(old)` -> `\(new)`.")
+            }
+        })
     }
     
     public typealias BootstrapBlock = (DependencyContainer) -> Void

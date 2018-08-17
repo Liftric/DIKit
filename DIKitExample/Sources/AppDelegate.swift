@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DIKit
 
 @UIApplicationMain
 final class AppDelegate: BaseAppDelegate {
