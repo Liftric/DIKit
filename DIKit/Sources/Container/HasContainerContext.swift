@@ -16,6 +16,6 @@ public protocol HasContainerContext {
 
 public extension HasContainerContext {
     static var container: DependencyContainer {
-        return DIKit.shared.container
+        return DependencyContainer.shared
     }
 }

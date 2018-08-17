@@ -9,7 +9,7 @@
 import UIKit
 import DIKit
 
-class BaseAppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
+class BaseAppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
     var window: UIWindow?
     let container = DependencyContainer.configure()
 }
