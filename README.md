@@ -1,8 +1,6 @@
 # DIKit
 
-Dependency Injection Framework for Swift.
-
-> Nothing to see here right now.
+Dependency Injection Framework for Swift, inspired by (KOIN)[https://insert-koin.io/].
 
 ## Preconditions
 

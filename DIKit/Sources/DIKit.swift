@@ -19,7 +19,9 @@ extension DependencyContainer {
     }
 }
 
-/// TODO
+/// Injects lazily given dependency.
+///
+///
 public func inject<T>() -> T {
     return DependencyContainer.shared.resolve()
 }
