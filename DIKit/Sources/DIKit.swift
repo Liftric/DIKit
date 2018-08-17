@@ -6,7 +6,7 @@
 // - Date: 17.08.18
 //
 // Copyright © 2018 Ben John. All rights reserved.
-    
+
 
 import Foundation
 
@@ -19,9 +19,9 @@ extension DependencyContainer {
     }
 }
 
-/// Injects lazily given dependency.
+/// Injects lazily given `Component<T>`.
 ///
-///
+/// - Returns: The resolved `Component<T>`.
 public func inject<T>() -> T {
     return DependencyContainer.shared.resolve()
 }

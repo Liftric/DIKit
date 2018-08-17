@@ -10,6 +10,7 @@
 
 import Foundation
 
+/// Exposes the `DependencyContainer` through `AppDelegate`.
 public protocol DefinesContainer {
     var container: DependencyContainer { get }
 }

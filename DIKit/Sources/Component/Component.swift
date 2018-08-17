@@ -10,7 +10,7 @@ import Foundation
 
 typealias ComponentFactory = () -> Any
 
-final class Component<T>: ComponentProtocol {
+class Component<T>: ComponentProtocol {
     let scope: Scope
     let tag: String
     let type: Any.Type

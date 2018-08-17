@@ -1,26 +1,12 @@
 # DIKit
 
-Dependency Injection Framework for Swift, inspired by (KOIN)[https://insert-koin.io/].
-
-## Preconditions
-
-- Your dependency container lives in your `AppDelegate`.
-- Your `AppDelegate` should implement `DefinesContainer`.
-- A class or struct, relying on dependencies should implement `HasDependencies`.
-- Define and resolve your dependencies via `struct Dependency: HasContainerContext`.
-
-You can also use the container straightforward without any injection magic:
-
-```swift
-let container = DependencyContainer { container in
-    container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
-}
-let network: NetworkProtocol = container.resolve()
-```
+Dependency Injection Framework for Swift, inspired by [KOIN](https://insert-koin.io/).
 
 ## Basic usage
 
-1. Define your dependencies.
+1. Define a module:
+
+2. Add DIKit to the AppDelegate:
 
 ```swift
 import DIKit
@@ -35,10 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
         container.register(as: .prototype) { Repository(backend: container.resolve(), storage: container.resolve()) as RepositoryProtocol }
     }
 }
-
 ```
 
-2. Resolve them.
+3. Inject the dependencies:
 
 ```swift
 import DIKit
@@ -57,9 +42,3 @@ class FirstViewController: UIViewController, HasDependencies {
     }
 }
 ```
-
-## Known issues
-
-- Sub containers are not supported, thus a more fine-grained modular composition is not possible yet.
-- Lack of tests.
-- Code generation missing.
