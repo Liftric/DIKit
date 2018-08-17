@@ -26,6 +26,7 @@
 		4BD95DD52008B379009CE38D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DCE2008B379009CE38D /* SecondViewController.swift */; };
 		4BD95DF52008B3DD009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95DE72008B3C1009CE38D /* DIKit.framework */; };
 		4BF63A462126A20700EA604B /* DependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF63A452126A20700EA604B /* DependencyResolver.swift */; };
+		4BF63A4E2126AE8600EA604B /* DependencyResolver.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF63A4D2126AE8600EA604B /* DependencyResolver.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		4BD95DCF2008B379009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DIKit.xcodeproj; path = ../DIKit/DIKit.xcodeproj; sourceTree = "<group>"; };
 		4BF63A452126A20700EA604B /* DependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.swift; sourceTree = "<group>"; };
+		4BF63A4D2126AE8600EA604B /* DependencyResolver.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				4BBD03882023012A00D9E468 /* Views */,
 				4BD95DCD2008B379009CE38D /* AppDelegate.swift */,
 				4BF63A452126A20700EA604B /* DependencyResolver.swift */,
+				4BF63A4D2126AE8600EA604B /* DependencyResolver.generated.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				4BF63A462126A20700EA604B /* DependencyResolver.swift in Sources */,
 				4B858B33210B843200C3F07A /* RepositoryProtocol.swift in Sources */,
 				4BD95DD42008B379009CE38D /* AppDelegate.swift in Sources */,
+				4BF63A4E2126AE8600EA604B /* DependencyResolver.generated.swift in Sources */,
 				4B711324212622090022DFAD /* ModalViewController.swift in Sources */,
 				4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */,
 				4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */,

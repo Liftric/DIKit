@@ -10,23 +10,7 @@
 
 import Foundation
 import UIKit
-
-protocol HasResolverContext {
-    static var resolver: DependencyResolver { get }
-}
-
-extension HasResolverContext {
-    static var resolver: DependencyResolver {
-        guard let sharedDelegateCasted = UIApplication.shared.delegate as? DefinesResolver else {
-            fatalError("The main application delegate needs to conform `DefinesResolver`.")
-        }
-        return sharedDelegateCasted.resolver
-    }
-}
-
-protocol DefinesResolver {
-    var resolver: DependencyResolver { get }
-}
+import DIKit
 
 protocol DependencyResolver {
     var network: NetworkProtocol { get }

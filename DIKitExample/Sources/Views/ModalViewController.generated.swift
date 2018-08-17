@@ -13,10 +13,11 @@ import DIKit
 
 private typealias Dependency = ModalViewController.Dependency
 extension Dependency: HasResolverContext {
+    static var r: DependencyResolver = resolver()
     static func inject(into instance: ModalViewController) {
         instance.dependency = Dependency(
-            backend: resolver.backend,
-            localStorage: resolver.localStorage
+            backend: r.backend,
+            localStorage: r.localStorage
         )
     }
 }

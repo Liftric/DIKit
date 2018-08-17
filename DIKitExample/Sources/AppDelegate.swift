@@ -11,6 +11,9 @@ import DIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, DefinesResolver {
+    func resolver<DependencyResolver>() -> DependencyResolver {
+        return DependencyResolverImpl() as! DependencyResolver
+    }
+
     var window: UIWindow?
-    let resolver: DependencyResolver = DependencyResolverImpl()
 }
