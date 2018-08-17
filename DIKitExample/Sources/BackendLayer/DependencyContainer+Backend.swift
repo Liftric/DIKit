@@ -12,7 +12,7 @@ import Foundation
 import DIKit
 
 public extension DependencyContainer {
-    static var backendContainer: DependencyContainer {
+    static var backend: DependencyContainer {
         return DependencyContainer { container in
             container.register(as: .singleton) { Backend() as BackendProtocol }
         }

@@ -10,6 +10,7 @@ import UIKit
 import DIKit
 
 class FirstViewController: UIViewController {
+    // MARK: - Dependencies
     let backend: BackendProtocol = inject()
 
     // MARK: - View lifecycle

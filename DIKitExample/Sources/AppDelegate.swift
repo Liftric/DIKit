@@ -11,5 +11,5 @@ import DIKit
 
 @UIApplicationMain
 final class AppDelegate: BaseAppDelegate, DefinesContainer {
-    let container = DependencyContainer.derive(from: .backendContainer, .storageContainer, .networkContainer)
+    let container = DependencyContainer.derive(from: .backend, .storage, .network)
 }

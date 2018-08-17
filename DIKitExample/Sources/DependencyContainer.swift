@@ -12,7 +12,7 @@ import Foundation
 import DIKit
 
 public extension DependencyContainer {
-    static var storageContainer: DependencyContainer {
+    static var storage: DependencyContainer {
         return DependencyContainer { container in
             container.register(as: .prototype) { LocalStorage() as LocalStorageProtocol }
         }
@@ -20,7 +20,7 @@ public extension DependencyContainer {
 }
 
 public extension DependencyContainer {
-    static var networkContainer: DependencyContainer {
+    static var network: DependencyContainer {
         return DependencyContainer { container in
             container.register(as: .singleton) { Network() as NetworkProtocol }
         }

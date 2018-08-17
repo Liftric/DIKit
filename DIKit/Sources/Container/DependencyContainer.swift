@@ -8,16 +8,20 @@
 
 import Foundation
 
-typealias ComponentStack = [String: ComponentProtocol]
-typealias InstanceStack = [String: Any]
-
 /// Container registry.
 public final class DependencyContainer {
+    // MARK: - Typealiases
+    public typealias BootstrapBlock = (DependencyContainer) -> Void
+    typealias ComponentStack = [String: ComponentProtocol]
+    typealias InstanceStack = [String: Any]
+
+    // MARK: - Properties
     var bootstrapped = false
     var componentStack = ComponentStack()
     var instanceStack = InstanceStack()
     let lock = NSRecursiveLock()
 
+    // MARK: - Public methods
     /// Derives a `DependencyContainer` from multiple sub containers.
     ///
     /// - Parameters:
@@ -32,8 +36,6 @@ public final class DependencyContainer {
         })
     }
 
-    public typealias BootstrapBlock = (DependencyContainer) -> Void
-
     /// Creates the `DependencyContainer`.
     ///
     /// - Parameters:
@@ -46,6 +48,7 @@ public final class DependencyContainer {
         }
     }
 
+    // MARK: - Internal methods
     init(_ componentStack: ComponentStack) {
         self.componentStack = componentStack
         self.bootstrapped = true
