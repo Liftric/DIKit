@@ -163,10 +163,10 @@
 		4BD95DC62008B379009CE38D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4BBD0380202300E300D9E468 /* BackendLayer */,
 				4B858B2B210B838700C3F07A /* RepositoryLayer */,
 				4B858B28210B837F00C3F07A /* LocalStorageLayer */,
 				4BBD0383202300F100D9E468 /* NetworkLayer */,
-				4BBD0380202300E300D9E468 /* BackendLayer */,
 				4BBD03892023013D00D9E468 /* Resources */,
 				4BBD03882023012A00D9E468 /* Views */,
 				4BD95DCD2008B379009CE38D /* AppDelegate.swift */,

@@ -8,5 +8,4 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-}
+class SecondViewController: UIViewController {}
