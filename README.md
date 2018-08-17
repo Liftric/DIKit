@@ -11,15 +11,17 @@ import DIKit
 public extension DependencyContainer {
     static var backend: DependencyContainer {
         return DependencyContainer { container in
-            container.register(as: .prototype) { Backend() as BackendProtocol }
+            container.register(as: .prototype) {
+                return Backend() as BackendProtocol
+            }
         }
     }
 }
 
 public extension DependencyContainer {
     static var network: DependencyContainer {
-        return DependencyContainer { container in
-            container.register { Network() as NetworkProtocol }
+        return DependencyContainer {
+            $0.register { Network() as NetworkProtocol }
         }
     }
 }
@@ -35,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
 }
 ```
 
-3. Inject the dependencies in e.g. another module or a `ViewController`:
+3. Inject the dependencies, for instance in another module or a `ViewController`:
 ```swift
 import DIKit
 
