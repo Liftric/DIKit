@@ -4,12 +4,12 @@ Dependency Injection Framework for Swift, inspired by [KOIN](https://insert-koin
 
 ## Basic usage
 
-1. Define a module:
+1. Define a sub `DependencyContainer` (basically some sort of module declaration):
 ```swift
 import DIKit
 
 public extension DependencyContainer {
-    static var backendFramework: DependencyContainer {
+    static var backend: DependencyContainer {
         return DependencyContainer { container in
             container.register(as: .prototype) { Backend() as BackendProtocol }
         }
@@ -19,13 +19,13 @@ public extension DependencyContainer {
 public extension DependencyContainer {
     static var network: DependencyContainer {
         return DependencyContainer { container in
-            container.register(as: .singleton) { Network() as NetworkProtocol }
+            container.register { Network() as NetworkProtocol }
         }
     }
 }
 ```
 
-2. Add DIKit to the AppDelegate:
+2. Let `AppDelegate` adhere `DefinesContainer`:
 ```swift
 import DIKit
 
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
 }
 ```
 
-3. Inject the dependencies in e.g. another module or a ViewController:
+3. Inject the dependencies in e.g. another module or a `ViewController`:
 ```swift
 import DIKit
 
