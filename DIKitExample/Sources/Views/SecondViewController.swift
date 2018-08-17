@@ -7,6 +7,5 @@
 //
 
 import UIKit
-import DIKit
 
 class SecondViewController: UIViewController {}

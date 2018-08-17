@@ -7,17 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B13FBF92126AF8D00299034 /* HasDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13FBF82126AF8D00299034 /* HasDependencies.swift */; };
-		4B13FBFB2126AFBB00299034 /* HasContainerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13FBFA2126AFBB00299034 /* HasContainerContext.swift */; };
-		4B13FBFF2126B07C00299034 /* DefinesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13FBFE2126B07C00299034 /* DefinesContainer.swift */; };
-		4B5D4A35202203C3008D76FB /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A34202203C3008D76FB /* Scope.swift */; };
-		4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A36202217CA008D76FB /* DependencyContainer.swift */; };
-		4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3E20221E2C008D76FB /* Component.swift */; };
-		4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */; };
-		4BBD038E202334C200D9E468 /* DependencyContainer+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */; };
+		4BD3E7962125E9A7000371D3 /* HasDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3E7952125E9A7000371D3 /* HasDependencies.swift */; };
+		4BD3E7982125EB63000371D3 /* HasResolverContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3E7972125EB63000371D3 /* HasResolverContext.swift */; };
 		4BD95D922008B1C9009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95D882008B1C8009CE38D /* DIKit.framework */; };
 		4BD95DED2008B3CA009CE38D /* DIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD95DEB2008B3CA009CE38D /* DIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BD95DF22008B3CF009CE38D /* DIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DF02008B3CF009CE38D /* DIKitTests.swift */; };
+		4BF63A4C2126AE5F00EA604B /* DefinesResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF63A4B2126AE5F00EA604B /* DefinesResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,20 +26,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B13FBF82126AF8D00299034 /* HasDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDependencies.swift; sourceTree = "<group>"; };
-		4B13FBFA2126AFBB00299034 /* HasContainerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasContainerContext.swift; sourceTree = "<group>"; };
-		4B13FBFE2126B07C00299034 /* DefinesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinesContainer.swift; sourceTree = "<group>"; };
-		4B5D4A34202203C3008D76FB /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
-		4B5D4A36202217CA008D76FB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
-		4B5D4A3E20221E2C008D76FB /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
-		4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Register.swift"; sourceTree = "<group>"; };
-		4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Resolve.swift"; sourceTree = "<group>"; };
+		4BD3E7952125E9A7000371D3 /* HasDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDependencies.swift; sourceTree = "<group>"; };
+		4BD3E7972125EB63000371D3 /* HasResolverContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasResolverContext.swift; sourceTree = "<group>"; };
 		4BD95D882008B1C8009CE38D /* DIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95D912008B1C9009CE38D /* DIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95DEB2008B3CA009CE38D /* DIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIKit.h; sourceTree = "<group>"; };
 		4BD95DEC2008B3CA009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD95DF02008B3CF009CE38D /* DIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIKitTests.swift; sourceTree = "<group>"; };
 		4BD95DF12008B3CF009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BF63A4B2126AE5F00EA604B /* DefinesResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinesResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,33 +56,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B5D4A4020221E54008D76FB /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				4B5D4A3E20221E2C008D76FB /* Component.swift */,
-				4B5D4A34202203C3008D76FB /* Scope.swift */,
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
 		4BB4CE4D2122D82D007D8075 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
-				4B13FBF82126AF8D00299034 /* HasDependencies.swift */,
+				4BD3E7952125E9A7000371D3 /* HasDependencies.swift */,
 			);
 			path = Dependency;
 			sourceTree = "<group>";
 		};
-		4BBD038A2023349C00D9E468 /* Container */ = {
+		4BBD038A2023349C00D9E468 /* Resolver */ = {
 			isa = PBXGroup;
 			children = (
-				4B5D4A36202217CA008D76FB /* DependencyContainer.swift */,
-				4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */,
-				4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */,
-				4B13FBFA2126AFBB00299034 /* HasContainerContext.swift */,
-				4B13FBFE2126B07C00299034 /* DefinesContainer.swift */,
+				4BF63A4B2126AE5F00EA604B /* DefinesResolver.swift */,
+				4BD3E7972125EB63000371D3 /* HasResolverContext.swift */,
 			);
-			path = Container;
+			path = Resolver;
 			sourceTree = "<group>";
 		};
 		4BBD03932023353B00D9E468 /* Resources */ = {
@@ -125,9 +103,8 @@
 		4BD95DEA2008B3CA009CE38D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4B5D4A4020221E54008D76FB /* Component */,
-				4BBD038A2023349C00D9E468 /* Container */,
 				4BB4CE4D2122D82D007D8075 /* Dependency */,
+				4BBD038A2023349C00D9E468 /* Resolver */,
 				4BBD03932023353B00D9E468 /* Resources */,
 			);
 			path = Sources;
@@ -253,14 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B13FBF92126AF8D00299034 /* HasDependencies.swift in Sources */,
-				4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */,
-				4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */,
-				4B13FBFB2126AFBB00299034 /* HasContainerContext.swift in Sources */,
-				4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */,
-				4B5D4A35202203C3008D76FB /* Scope.swift in Sources */,
-				4B13FBFF2126B07C00299034 /* DefinesContainer.swift in Sources */,
-				4BBD038E202334C200D9E468 /* DependencyContainer+Resolve.swift in Sources */,
+				4BD3E7982125EB63000371D3 /* HasResolverContext.swift in Sources */,
+				4BF63A4C2126AE5F00EA604B /* DefinesResolver.swift in Sources */,
+				4BD3E7962125E9A7000371D3 /* HasDependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

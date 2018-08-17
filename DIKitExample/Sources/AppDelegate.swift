@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import DIKit
 
 @UIApplicationMain
-final class AppDelegate: BaseAppDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, DefinesResolver {
+    func resolver<DependencyResolver>() -> DependencyResolver {
+        return DependencyResolverImpl() as! DependencyResolver
+    }
 
+    var window: UIWindow?
 }
