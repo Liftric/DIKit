@@ -8,8 +8,6 @@
 // Copyright © 2018 Ben John. All rights reserved.
 
 
-import Foundation
-
 extension DependencyContainer {
     static var shared: DependencyContainer {
         guard let sharedDelegateCasted = UIApplication.shared.delegate as? DefinesContainer else {

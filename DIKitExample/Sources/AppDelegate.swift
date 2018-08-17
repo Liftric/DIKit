@@ -1,15 +1,18 @@
+// AppDelegate.swift
 //
-//  AppDelegate.swift
-//  DIKitExample
+// - Authors:
+// Ben John
 //
-//  Created by Ben John on 12.01.18.
-//  Copyright © 2018 Ben John. All rights reserved.
+// - Date: 17.08.18
 //
+// Copyright © 2018 Ben John. All rights reserved.
+
 
 import UIKit
 import DIKit
 
 @UIApplicationMain
-final class AppDelegate: BaseAppDelegate, DefinesContainer {
-    let container = DependencyContainer.derive(from: .backend, .storage, .network)
+class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
+    var window: UIWindow?
+    let container = DependencyContainer.derive(from: .app, .backend)
 }

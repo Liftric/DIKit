@@ -6,9 +6,7 @@
 // - Date: 17.08.18
 //
 // Copyright © 2018 Ben John. All rights reserved.
-    
 
-import Foundation
 
 /// Exposes the `DependencyContainer` through `AppDelegate`.
 public protocol DefinesContainer {

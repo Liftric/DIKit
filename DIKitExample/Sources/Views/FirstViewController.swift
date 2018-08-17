@@ -1,16 +1,18 @@
+// FirstViewController.swift
 //
-//  FirstViewController.swift
-//  DIKitExample
+// - Authors:
+// Ben John
 //
-//  Created by Ben John on 12.01.18.
-//  Copyright © 2018 Ben John. All rights reserved.
+// - Date: 17.08.18
 //
+// Copyright © 2018 Ben John. All rights reserved.
+
 
 import UIKit
 import DIKit
 
 class FirstViewController: UIViewController {
-    // MARK: - Dependencies
+    // MARK: - DIKit
     let backend: BackendProtocol = inject()
 
     // MARK: - View lifecycle

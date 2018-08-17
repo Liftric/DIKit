@@ -1,14 +1,13 @@
+// BackendProtocol.swift
 //
-//  BackendProtocol.swift
-//  DIKitExample
+// - Authors:
+// Ben John
 //
-//  Created by Ben John on 31.01.18.
-//  Copyright © 2018 Ben John. All rights reserved.
+// - Date: 17.08.18
 //
+// Copyright © 2018 Ben John. All rights reserved.
 
-import Foundation
 
 protocol BackendProtocol {
-    var id: ObjectIdentifier { get }
     func fetch() -> String
 }

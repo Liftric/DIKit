@@ -1,12 +1,12 @@
+// DependencyContainer+Resolve.swift
 //
-//  DependencyContainer+Resolve.swift
-//  DIKit
+// - Authors:
+// Ben John
 //
-//  Created by Ben John on 01.02.18.
-//  Copyright © 2018 Ben John. All rights reserved.
+// - Date: 17.08.18
 //
+// Copyright © 2018 Ben John. All rights reserved.
 
-import Foundation
 
 extension DependencyContainer {
     /// Resolves a `Component<T>`.
