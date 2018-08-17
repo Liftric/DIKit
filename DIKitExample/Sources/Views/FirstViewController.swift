@@ -9,16 +9,16 @@
 import UIKit
 import DIKit
 
-class FirstViewController: UIViewController {
-    let __backend = Dependency<BackendProtocol>()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        DIKit.inject(into: self)
+class FirstViewController: UIViewController, HasDependencies {
+    // MARK: - Dependency declaration
+    struct Dependency: HasContainerContext {
+        let backend: BackendProtocol = container.resolve()
     }
+    var dependency: Dependency! = Dependency()
 
+    // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
-        let result = __backend.value.fetch()
+        let result = dependency.backend.fetch()
         print(result)
     }
 }

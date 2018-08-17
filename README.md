@@ -28,8 +28,9 @@ let network: NetworkProtocol = container.resolve()
 import DIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
+class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
     let container = DependencyContainer { container in
+        unowned let container = container
         container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
         container.register(as: .singleton) { Backend(network: container.resolve()) as BackendProtocol }
         container.register(as: .prototype) { LocalStorage() as LocalStorageProtocol }
@@ -44,24 +45,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
 ```swift
 import DIKit
 
-class FirstViewController: UIViewController {
-    let __backend = Dependency<BackendProtocol>()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        DIKit.inject(into: self)
+class FirstViewController: UIViewController, HasDependencies {
+    // MARK: - Dependency declaration
+    struct Dependency: HasContainerContext {
+        let backend: BackendProtocol = container.resolve()
     }
+    var dependency: Dependency! = Dependency()
 
+    // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
-        if let result = backend.get.fetch() {
-            print(result)
-        }
+        let result = dependency.backend.fetch()
+        print(result)
     }
 }
 ```
 
 ## Known issues
 
-- Circular dependencies are not supported as of now.
 - Sub containers are not supported, thus a more fine-grained modular composition is not possible yet.
 - Lack of tests.
+- Code generation missing.
