@@ -11,14 +11,20 @@
 import Foundation
 import DIKit
 
-extension DependencyContainer {
-    static func configure() -> DependencyContainer {
+// framework B (LocalStorage)
+public extension DependencyContainer {
+    static var storageContainer: DependencyContainer {
         return DependencyContainer { container in
-            unowned let container = container
-            container.register(as: .singleton) { Network(url: "http://localhost") as NetworkProtocol }
-            container.register(as: .singleton) { Backend(network: container.resolve()) as BackendProtocol }
             container.register(as: .prototype) { LocalStorage() as LocalStorageProtocol }
-            container.register(as: .prototype) { Repository(backend: container.resolve(), storage: container.resolve()) as RepositoryProtocol }
+        }
+    }
+}
+
+// framework C (Network)
+public extension DependencyContainer {
+    static var networkContainer: DependencyContainer {
+        return DependencyContainer { container in
+            container.register(as: .singleton) { Network() as NetworkProtocol }
         }
     }
 }

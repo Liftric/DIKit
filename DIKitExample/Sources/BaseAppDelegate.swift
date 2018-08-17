@@ -11,5 +11,5 @@ import DIKit
 
 class BaseAppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
     var window: UIWindow?
-    let container = DependencyContainer.configure()
+    let container = DependencyContainer.derive(containers: .backendContainer, .storageContainer, .networkContainer)
 }
