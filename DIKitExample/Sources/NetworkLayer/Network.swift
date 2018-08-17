@@ -13,8 +13,7 @@ class Network: NetworkProtocol {
         return ObjectIdentifier.init(self)
     }
 
-    init(url: String) {
-        print("Network init with url \(url)")
+    init() {
         print("Network instance \(ObjectIdentifier.init(self))")
     }
 

@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B5D4A35202203C3008D76FB /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A34202203C3008D76FB /* Scope.swift */; };
-		4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A36202217CA008D76FB /* DependencyContainer.swift */; };
 		4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3E20221E2C008D76FB /* Component.swift */; };
 		4BB4CE512122ECC2007D8075 /* DIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4CE502122ECC2007D8075 /* DIKit.swift */; };
-		4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */; };
-		4BBD038E202334C200D9E468 /* DependencyContainer+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */; };
 		4BD3E7962125E9A7000371D3 /* HasDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3E7952125E9A7000371D3 /* HasDependencies.swift */; };
 		4BD3E7982125EB63000371D3 /* HasContainerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3E7972125EB63000371D3 /* HasContainerContext.swift */; };
 		4BD95D922008B1C9009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95D882008B1C8009CE38D /* DIKit.framework */; };
@@ -32,11 +29,8 @@
 
 /* Begin PBXFileReference section */
 		4B5D4A34202203C3008D76FB /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
-		4B5D4A36202217CA008D76FB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		4B5D4A3E20221E2C008D76FB /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		4BB4CE502122ECC2007D8075 /* DIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKit.swift; sourceTree = "<group>"; };
-		4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Register.swift"; sourceTree = "<group>"; };
-		4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Resolve.swift"; sourceTree = "<group>"; };
 		4BD3E7952125E9A7000371D3 /* HasDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDependencies.swift; sourceTree = "<group>"; };
 		4BD3E7972125EB63000371D3 /* HasContainerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasContainerContext.swift; sourceTree = "<group>"; };
 		4BD95D882008B1C8009CE38D /* DIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,9 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				4BD3E7972125EB63000371D3 /* HasContainerContext.swift */,
-				4B5D4A36202217CA008D76FB /* DependencyContainer.swift */,
-				4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */,
-				4BBD038D202334C200D9E468 /* DependencyContainer+Resolve.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -255,12 +246,9 @@
 			files = (
 				4BD3E7982125EB63000371D3 /* HasContainerContext.swift in Sources */,
 				4BD3E7962125E9A7000371D3 /* HasDependencies.swift in Sources */,
-				4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */,
-				4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */,
 				4BB4CE512122ECC2007D8075 /* DIKit.swift in Sources */,
 				4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */,
 				4B5D4A35202203C3008D76FB /* Scope.swift in Sources */,
-				4BBD038E202334C200D9E468 /* DependencyContainer+Resolve.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

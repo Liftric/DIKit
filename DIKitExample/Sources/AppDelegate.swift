@@ -10,7 +10,7 @@ import UIKit
 import DIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, DIKitProtocol {
+class AppDelegate: UIResponder, UIApplicationDelegate, DefinesResolver {
     var window: UIWindow?
-    let container = DependencyContainer.configure()
+    let resolver: DependencyResolver = DependencyResolverImpl()
 }

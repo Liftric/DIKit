@@ -12,11 +12,11 @@ import Foundation
 import DIKit
 
 private typealias Dependency = FirstViewController.Dependency
-extension FirstViewController.Dependency: HasContainerContext {
+extension FirstViewController.Dependency: HasResolverContext {
     static func inject(into instance: FirstViewController) {
         instance.dependency = Dependency(
-            backend: container.resolve(),
-            localStorage: container.resolve()
+            backend: resolver.backend,
+            localStorage: resolver.localStorage
         )
     }
 }

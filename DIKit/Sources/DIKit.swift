@@ -11,7 +11,7 @@
 import Foundation
 
 public protocol DIKitProtocol {
-    var container: DependencyContainer { get }
+    // var resolver: DependencyResolver! { get }
 }
 
 public class DIKit {

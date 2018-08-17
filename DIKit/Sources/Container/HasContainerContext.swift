@@ -10,7 +10,7 @@
 
 import Foundation
 
-public protocol HasContainerContext {
+/*public protocol HasContainerContext {
     static var container: DependencyContainer { get }
 }
 
@@ -19,3 +19,4 @@ public extension HasContainerContext {
         return DIKit.shared.container
     }
 }
+*/
