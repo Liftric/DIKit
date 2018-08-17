@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
 }
 ```
 
-3. Inject the dependencies, for instance in another module or a `ViewController`:
+3. Inject the dependencies, for instance in a module:
 ```swift
 import DIKit
 
@@ -44,6 +44,7 @@ class Backend: BackendProtocol {
 }
 ```
 
+or a `ViewController`:
 ```swift
 import DIKit
 
