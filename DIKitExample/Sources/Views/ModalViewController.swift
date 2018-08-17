@@ -1,20 +1,18 @@
+// ModalViewController.swift
 //
-//  FirstViewController.swift
-//  DIKitExample
+// - Authors:
+// Ben John
 //
-//  Created by Ben John on 12.01.18.
-//  Copyright © 2018 Ben John. All rights reserved.
+// - Date: 16.08.18
 //
+// Copyright © 2018 Ben John. All rights reserved.
 
+
+import Foundation
 import UIKit
 import DIKit
 
-<<<<<<< HEAD
-class FirstViewController: UIViewController {
-    let backend: BackendProtocol = inject()
-
-=======
-class FirstViewController: UIViewController, HasDependencies {
+class ModalViewController: UIViewController, HasDependencies {
     // MARK: - DIKit
     struct Dependency {
         let backend: BackendProtocol
@@ -22,7 +20,6 @@ class FirstViewController: UIViewController, HasDependencies {
     }
     var dependency: Dependency!
     
->>>>>>> feature/codegen
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +27,15 @@ class FirstViewController: UIViewController, HasDependencies {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-<<<<<<< HEAD
-        let result = backend.fetch()
-        print(result)
-=======
         print(self.dependency.backend.fetch())
->>>>>>> feature/codegen
+    }
+    
+    deinit {
+        print("deinit")
+    }
+    
+    // MARK: - Actions
+    @IBAction func closeModal(_ sender: Any) {
+        dismiss(animated: true)
     }
 }
