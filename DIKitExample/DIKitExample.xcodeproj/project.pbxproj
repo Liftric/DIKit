@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B6F9F3A212BFAFA00B6CEDE /* DIKitExampleBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */; };
+		4B6F9F4F212BFC2400B6CEDE /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F9F4E212BFC2400B6CEDE /* ModalViewController.swift */; };
 		4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2C210B839B00C3F07A /* LocalStorage.swift */; };
 		4B858B2F210B83B500C3F07A /* LocalStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */; };
 		4BB4CE60212325CC007D8075 /* DependencyContainer+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4CE5F212325CC007D8075 /* DependencyContainer+App.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		4B6F9F31212BF75500B6CEDE /* DIKitExampleBackend.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DIKitExampleBackend.xcodeproj; path = DIKitExampleBackend/DIKitExampleBackend.xcodeproj; sourceTree = "<group>"; };
 		4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DIKitExampleBackend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6F9F4E212BFC2400B6CEDE /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		4B858B2C210B839B00C3F07A /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageProtocol.swift; sourceTree = "<group>"; };
 		4BB4CE5F212325CC007D8075 /* DependencyContainer+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+App.swift"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				4BD95DC72008B379009CE38D /* FirstViewController.swift */,
 				4BD95DCE2008B379009CE38D /* SecondViewController.swift */,
+				4B6F9F4E212BFC2400B6CEDE /* ModalViewController.swift */,
 				4BD95DCB2008B379009CE38D /* Main.storyboard */,
 			);
 			path = Views;
@@ -246,6 +249,7 @@
 				4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */,
 				4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */,
 				4BB4CE60212325CC007D8075 /* DependencyContainer+App.swift in Sources */,
+				4B6F9F4F212BFC2400B6CEDE /* ModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
