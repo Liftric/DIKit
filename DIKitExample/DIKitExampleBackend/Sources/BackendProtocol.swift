@@ -8,6 +8,6 @@
 // Copyright © 2018 Ben John. All rights reserved.
 
 
-protocol BackendProtocol {
+public protocol BackendProtocol {
     func fetch() -> String
 }

@@ -10,6 +10,7 @@
 
 import UIKit
 import DIKit
+import DIKitExampleBackend
 
 class FirstViewController: UIViewController {
     // MARK: - DIKit

@@ -13,7 +13,6 @@ import DIKit
 public extension DependencyContainer {
     static var app: DependencyContainer {
         return DependencyContainer { container in
-            container.register { Network() as NetworkProtocol }
             container.register(as: .prototype) { LocalStorage() as LocalStorageProtocol }
         }
     }

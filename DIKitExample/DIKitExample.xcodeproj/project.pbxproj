@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B5D4A3B20221CA1008D76FB /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3A20221CA1008D76FB /* Backend.swift */; };
-		4B5D4A3D20221CA8008D76FB /* BackendProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3C20221CA8008D76FB /* BackendProtocol.swift */; };
+		4B6F9F3A212BFAFA00B6CEDE /* DIKitExampleBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */; };
 		4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2C210B839B00C3F07A /* LocalStorage.swift */; };
 		4B858B2F210B83B500C3F07A /* LocalStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */; };
 		4BB4CE60212325CC007D8075 /* DependencyContainer+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4CE5F212325CC007D8075 /* DependencyContainer+App.swift */; };
-		4BBD03852023010200D9E468 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD03842023010200D9E468 /* NetworkProtocol.swift */; };
-		4BBD03872023010800D9E468 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD03862023010800D9E468 /* Network.swift */; };
-		4BC7ED842126BC790033BE1D /* DependencyContainer+Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC7ED832126BC790033BE1D /* DependencyContainer+Backend.swift */; };
 		4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DC72008B379009CE38D /* FirstViewController.swift */; };
 		4BD95DD12008B379009CE38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95DC82008B379009CE38D /* Assets.xcassets */; };
 		4BD95DD22008B379009CE38D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD95DC92008B379009CE38D /* LaunchScreen.storyboard */; };
@@ -42,14 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B5D4A3A20221CA1008D76FB /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
-		4B5D4A3C20221CA8008D76FB /* BackendProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendProtocol.swift; sourceTree = "<group>"; };
+		4B6F9F31212BF75500B6CEDE /* DIKitExampleBackend.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DIKitExampleBackend.xcodeproj; path = DIKitExampleBackend/DIKitExampleBackend.xcodeproj; sourceTree = "<group>"; };
+		4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DIKitExampleBackend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B858B2C210B839B00C3F07A /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageProtocol.swift; sourceTree = "<group>"; };
 		4BB4CE5F212325CC007D8075 /* DependencyContainer+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+App.swift"; sourceTree = "<group>"; };
-		4BBD03842023010200D9E468 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
-		4BBD03862023010800D9E468 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		4BC7ED832126BC790033BE1D /* DependencyContainer+Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Backend.swift"; sourceTree = "<group>"; };
 		4BD95D4B2008B1AF009CE38D /* DIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95DC72008B379009CE38D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		4BD95DC82008B379009CE38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B6F9F3A212BFAFA00B6CEDE /* DIKitExampleBackend.framework in Frameworks */,
 				4BD95DF52008B3DD009CE38D /* DIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,25 +74,6 @@
 				4B858B2C210B839B00C3F07A /* LocalStorage.swift */,
 			);
 			path = LocalStorageLayer;
-			sourceTree = "<group>";
-		};
-		4BBD0380202300E300D9E468 /* BackendLayer */ = {
-			isa = PBXGroup;
-			children = (
-				4B5D4A3C20221CA8008D76FB /* BackendProtocol.swift */,
-				4B5D4A3A20221CA1008D76FB /* Backend.swift */,
-				4BC7ED832126BC790033BE1D /* DependencyContainer+Backend.swift */,
-			);
-			path = BackendLayer;
-			sourceTree = "<group>";
-		};
-		4BBD0383202300F100D9E468 /* NetworkLayer */ = {
-			isa = PBXGroup;
-			children = (
-				4BBD03842023010200D9E468 /* NetworkProtocol.swift */,
-				4BBD03862023010800D9E468 /* Network.swift */,
-			);
-			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		4BBD03882023012A00D9E468 /* Views */ = {
@@ -125,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */,
+				4B6F9F31212BF75500B6CEDE /* DIKitExampleBackend.xcodeproj */,
 				4BD95DC62008B379009CE38D /* Sources */,
 				4BD95D4C2008B1AF009CE38D /* Products */,
 				4BD95DF42008B3DD009CE38D /* Frameworks */,
@@ -142,9 +118,7 @@
 		4BD95DC62008B379009CE38D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4BBD0380202300E300D9E468 /* BackendLayer */,
 				4B858B28210B837F00C3F07A /* LocalStorageLayer */,
-				4BBD0383202300F100D9E468 /* NetworkLayer */,
 				4BBD03892023013D00D9E468 /* Resources */,
 				4BBD03882023012A00D9E468 /* Views */,
 				4BD95DCD2008B379009CE38D /* AppDelegate.swift */,
@@ -165,6 +139,7 @@
 		4BD95DF42008B3DD009CE38D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -265,17 +240,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B5D4A3B20221CA1008D76FB /* Backend.swift in Sources */,
 				4BD95DD52008B379009CE38D /* SecondViewController.swift in Sources */,
 				4B858B2F210B83B500C3F07A /* LocalStorageProtocol.swift in Sources */,
-				4BC7ED842126BC790033BE1D /* DependencyContainer+Backend.swift in Sources */,
-				4BBD03852023010200D9E468 /* NetworkProtocol.swift in Sources */,
 				4BD95DD42008B379009CE38D /* AppDelegate.swift in Sources */,
 				4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */,
 				4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */,
-				4BBD03872023010800D9E468 /* Network.swift in Sources */,
 				4BB4CE60212325CC007D8075 /* DependencyContainer+App.swift in Sources */,
-				4B5D4A3D20221CA8008D76FB /* BackendProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 
 import UIKit
 import DIKit
+import DIKitExampleBackend
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
