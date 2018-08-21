@@ -2,7 +2,7 @@
 
 Dependency Injection Framework for Swift, inspired by [KOIN](https://insert-koin.io/).
 
-Basically an implementation of a service-locator pattern, living in the application context.
+Basically an implementation of service-locator pattern, living in the application context.
 
 ## Basic usage
 
