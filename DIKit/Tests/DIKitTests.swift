@@ -19,8 +19,20 @@ class DIKitTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
-    
-    func testExample() {
 
+    func testDependencyContainerCreation() {
+        struct ComponentA {}
+        struct ComponentB {}
+
+        let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
+            c.register { ComponentA() }
+            c.register { ComponentB() }
+        }
+
+        let componentA = dependencyContainer.componentStack.index(forKey: "ComponentA")
+        XCTAssertNotNil(componentA)
+
+        let componentB = dependencyContainer.componentStack.index(forKey: "ComponentA")
+        XCTAssertNotNil(componentB)
     }
 }
