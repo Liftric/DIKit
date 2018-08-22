@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B6F9F3A212BFAFA00B6CEDE /* DIKitExampleBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */; };
+		44044D0C212D7982002F595D /* DIKitExampleBackend.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		44044D0E212D79E1002F595D /* DIKitExampleBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F9FA4212C26B6004AA9F4 /* DIKitExampleBackend.framework */; };
+		44044D13212D7CDC002F595D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95DE72008B3C1009CE38D /* DIKit.framework */; };
+		44044D14212D7CDC002F595D /* DIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95DE72008B3C1009CE38D /* DIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B6F9F4F212BFC2400B6CEDE /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F9F4E212BFC2400B6CEDE /* ModalViewController.swift */; };
 		4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2C210B839B00C3F07A /* LocalStorage.swift */; };
 		4B858B2F210B83B500C3F07A /* LocalStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */; };
@@ -22,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		44044D15212D7CDC002F595D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BD95DE12008B3C1009CE38D /* DIKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BD95D872008B1C8009CE38D;
+			remoteInfo = DIKit;
+		};
 		4B5F9FA3212C26B6004AA9F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4B6F9F31212BF75500B6CEDE /* DIKitExampleBackend.xcodeproj */;
@@ -44,6 +54,21 @@
 			remoteInfo = DIKitTests;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		44044D0D212D7982002F595D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				44044D14212D7CDC002F595D /* DIKit.framework in Embed Frameworks */,
+				44044D0C212D7982002F595D /* DIKitExampleBackend.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4B6F9F31212BF75500B6CEDE /* DIKitExampleBackend.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DIKitExampleBackend.xcodeproj; path = DIKitExampleBackend/DIKitExampleBackend.xcodeproj; sourceTree = "<group>"; };
@@ -68,8 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B6F9F3A212BFAFA00B6CEDE /* DIKitExampleBackend.framework in Frameworks */,
 				4BD95DF52008B3DD009CE38D /* DIKit.framework in Frameworks */,
+				44044D0E212D79E1002F595D /* DIKitExampleBackend.framework in Frameworks */,
+				44044D13212D7CDC002F595D /* DIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,10 +198,12 @@
 				4BD95D472008B1AF009CE38D /* Sources */,
 				4BD95D482008B1AF009CE38D /* Frameworks */,
 				4BD95D492008B1AF009CE38D /* Resources */,
+				44044D0D212D7982002F595D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				44044D16212D7CDC002F595D /* PBXTargetDependency */,
 			);
 			name = DIKitExample;
 			productName = DIKitExample;
@@ -280,6 +308,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44044D16212D7CDC002F595D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DIKit;
+			targetProxy = 44044D15212D7CDC002F595D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4BD95DC92008B379009CE38D /* LaunchScreen.storyboard */ = {
@@ -415,13 +451,18 @@
 		4BD95D762008B1AF009CE38D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KEF5XYPC3G;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -430,13 +471,17 @@
 		4BD95D772008B1AF009CE38D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KEF5XYPC3G;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.benjohnde.DIKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
