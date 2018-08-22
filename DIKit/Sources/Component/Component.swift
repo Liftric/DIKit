@@ -11,13 +11,13 @@
 typealias ComponentFactory = () -> Any
 
 class Component<T>: ComponentProtocol {
-    let scope: Scope
+    let lifetime: Lifetime
     let tag: String
     let type: Any.Type
     let componentFactory: ComponentFactory
 
-    init(scope: Scope, type: T.Type, factory: @escaping () -> T) {
-        self.scope = scope
+    init(lifetime: Lifetime, type: T.Type, factory: @escaping () -> T) {
+        self.lifetime = lifetime
         self.tag = String(describing: type)
         self.type = type
         self.componentFactory = { factory() }
@@ -25,7 +25,7 @@ class Component<T>: ComponentProtocol {
 }
 
 protocol ComponentProtocol {
-    var scope: Scope { get }
+    var lifetime: Lifetime { get }
     var componentFactory: ComponentFactory { get }
     var type: Any.Type { get }
 }

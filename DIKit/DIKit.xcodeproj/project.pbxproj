@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B13FBFF2126B07C00299034 /* DefinesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13FBFE2126B07C00299034 /* DefinesContainer.swift */; };
-		4B5D4A35202203C3008D76FB /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A34202203C3008D76FB /* Scope.swift */; };
+		4B5D4A35202203C3008D76FB /* Lifetime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A34202203C3008D76FB /* Lifetime.swift */; };
 		4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A36202217CA008D76FB /* DependencyContainer.swift */; };
 		4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4A3E20221E2C008D76FB /* Component.swift */; };
 		4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */; };
@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		4B13FBFE2126B07C00299034 /* DefinesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinesContainer.swift; sourceTree = "<group>"; };
-		4B5D4A34202203C3008D76FB /* Scope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
+		4B5D4A34202203C3008D76FB /* Lifetime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lifetime.swift; sourceTree = "<group>"; };
 		4B5D4A36202217CA008D76FB /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		4B5D4A3E20221E2C008D76FB /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		4BBD038B202334B100D9E468 /* DependencyContainer+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Register.swift"; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				4B5D4A3E20221E2C008D76FB /* Component.swift */,
-				4B5D4A34202203C3008D76FB /* Scope.swift */,
+				4B5D4A34202203C3008D76FB /* Lifetime.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 				4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */,
 				4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */,
 				4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */,
-				4B5D4A35202203C3008D76FB /* Scope.swift in Sources */,
+				4B5D4A35202203C3008D76FB /* Lifetime.swift in Sources */,
 				4B13FBFF2126B07C00299034 /* DefinesContainer.swift in Sources */,
 				4BBD038E202334C200D9E468 /* DependencyContainer+Resolve.swift in Sources */,
 			);
