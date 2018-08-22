@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		44044D0C212D7982002F595D /* DIKitExampleBackend.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		44044D0E212D79E1002F595D /* DIKitExampleBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F9FA4212C26B6004AA9F4 /* DIKitExampleBackend.framework */; };
-		44044D13212D7CDC002F595D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95DE72008B3C1009CE38D /* DIKit.framework */; };
 		44044D14212D7CDC002F595D /* DIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95DE72008B3C1009CE38D /* DIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B6F9F4F212BFC2400B6CEDE /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F9F4E212BFC2400B6CEDE /* ModalViewController.swift */; };
 		4B858B2D210B839B00C3F07A /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B858B2C210B839B00C3F07A /* LocalStorage.swift */; };
@@ -95,7 +94,6 @@
 			files = (
 				4BD95DF52008B3DD009CE38D /* DIKit.framework in Frameworks */,
 				44044D0E212D79E1002F595D /* DIKitExampleBackend.framework in Frameworks */,
-				44044D13212D7CDC002F595D /* DIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
