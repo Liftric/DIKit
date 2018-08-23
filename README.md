@@ -1,8 +1,6 @@
 # DIKit
 
-Dependency Injection Framework for Swift, inspired by [KOIN](https://insert-koin.io/).
-
-Basically an implementation of service-locator pattern, living in the application context.
+Dependency Injection Framework for Swift, inspired by [KOIN](https://insert-koin.io/). Basically an implementation of service-locator pattern, living within the application's context (through the `AppDelegate`).
 
 > Grow as you go!
 
@@ -17,7 +15,7 @@ import DIKit
 public extension DependencyContainer {
     static var backend: DependencyContainer {
         return DependencyContainer { container in
-            container.register(as: .prototype) { Backend() as BackendProtocol }
+            container.register(lifetime: .transient) { Backend() as BackendProtocol }
         }
     }
 }
