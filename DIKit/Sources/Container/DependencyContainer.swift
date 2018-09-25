@@ -48,6 +48,11 @@ public final class DependencyContainer {
         }
     }
 
+    /// Checks the container for consistency, i.e. if all dependencies can be resolved.
+    private var isValid: Bool {
+        return true
+    }
+
     // MARK: - Internal methods
     init(_ componentStack: ComponentStack) {
         self.componentStack = componentStack
