@@ -16,6 +16,15 @@ DIKit can be installed using [Carthage](https://github.com/Carthage/Carthage). A
 github "benjohnde/DIKit" ~> 1.0
 ```
 
+### Via CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Swift and Objective-C Cocoa projects. After installing CocoaPods add DIKit to your Podfile:
+
+```ruby
+platform :ios, '9.0'
+pod 'DIKit', '~> 1.0.0'
+```
+
 ## Basic usage
 
 1. Define a sub `DependencyContainer` (basically some sort of module declaration):
