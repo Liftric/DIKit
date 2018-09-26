@@ -60,7 +60,7 @@ class DIKitTests: XCTestCase {
     }
 
     func testLifetimeOfComponents() {
-        struct ComponentA {}
+        class ComponentA {}
 
         let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
             c.register(lifetime: .transient) { ComponentA() }
@@ -71,5 +71,12 @@ class DIKitTests: XCTestCase {
 
         let componentAinstanceB: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentAinstanceB)
+
+        let componentAinstanceAobjectIdA = ObjectIdentifier.init(componentAinstanceA)
+        let componentAinstanceAobjectIdB = ObjectIdentifier.init(componentAinstanceA)
+        let componentAinstanceBobjectId = ObjectIdentifier.init(componentAinstanceB)
+
+        XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
+        XCTAssertNotEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
     }
 }
