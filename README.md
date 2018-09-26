@@ -6,6 +6,16 @@ Dependency Injection Framework for Swift, inspired by [KOIN](https://insert-koin
 
 We started small, it perfectly fits our use case.
 
+## Installation
+
+### Via Carthage
+
+DIKit can be installed using [Carthage](https://github.com/Carthage/Carthage). After installing Carthage just add DIKit to your Cartfile:
+
+```ogdl
+github "benjohnde/DIKit" ~> 1.0
+```
+
 ## Basic usage
 
 1. Define a sub `DependencyContainer` (basically some sort of module declaration):
