@@ -59,7 +59,34 @@ class DIKitTests: XCTestCase {
         XCTAssertNotNil(componentA)
     }
 
-    func testLifetimeOfComponents() {
+    func testDependencyContainerDerive() {
+        struct ComponentA {}
+        struct ComponentB {}
+        struct ComponentC {}
+
+        let dependencyContainerA = DependencyContainer { (c: DependencyContainer) in
+            c.register { ComponentA() }
+        }
+        let dependencyContainerB = DependencyContainer { (c: DependencyContainer) in
+            c.register { ComponentB() }
+        }
+        let dependencyContainerC = DependencyContainer { (c: DependencyContainer) in
+            c.register { ComponentC() }
+        }
+
+        let dependencyContainer = DependencyContainer.derive(from: dependencyContainerA, dependencyContainerB, dependencyContainerC)
+
+        let componentA: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentA)
+
+        let componentB: ComponentB = dependencyContainer.resolve()
+        XCTAssertNotNil(componentB)
+
+        let componentC: ComponentC = dependencyContainer.resolve()
+        XCTAssertNotNil(componentC)
+    }
+
+    func testTransientLifetimeOfComponents() {
         class ComponentA {}
 
         let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
@@ -78,5 +105,26 @@ class DIKitTests: XCTestCase {
 
         XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
         XCTAssertNotEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
+    }
+
+    func testSingletonLifetimeOfComponents() {
+        class ComponentA {}
+
+        let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
+            c.register(lifetime: .singleton) { ComponentA() }
+        }
+
+        let componentAinstanceA: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentAinstanceA)
+
+        let componentAinstanceB: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentAinstanceB)
+
+        let componentAinstanceAobjectIdA = ObjectIdentifier.init(componentAinstanceA)
+        let componentAinstanceAobjectIdB = ObjectIdentifier.init(componentAinstanceA)
+        let componentAinstanceBobjectId = ObjectIdentifier.init(componentAinstanceB)
+
+        XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
+        XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
     }
 }
