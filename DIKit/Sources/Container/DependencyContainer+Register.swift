@@ -18,10 +18,14 @@ extension DependencyContainer {
         precondition(!bootstrapped, "After boostrap no more components can be registered.")
         threadSafe {
             let component = Component(lifetime: lifetime, type: T.self, factory: factory)
-            guard self.componentStack[component.tag] == nil else {
+            guard var scopedComponentStack = self.componentStack[scope] else {
+                fatalError("Scope is not valid for this DependencyContainer.")
+            }
+            guard scopedComponentStack[component.tag] == nil else {
                 fatalError("A component can only be registered once.")
             }
-            self.componentStack[component.tag] = component
+            scopedComponentStack[component.tag] = component
+            self.componentStack[scope] = scopedComponentStack
         }
     }
 }

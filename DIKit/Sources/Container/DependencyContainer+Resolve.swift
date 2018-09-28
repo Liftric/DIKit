@@ -14,7 +14,10 @@ extension DependencyContainer {
     /// - Returns: The resolved `Component<T>`.
     public func resolve<T>() -> T {
         let tag = String(describing: T.self)
-        guard let foundComponent = self.componentStack[tag] else {
+        guard let scopedComponentStack = self.componentStack[scope] else {
+            fatalError("Scope is not valid for this DependencyContainer.")
+        }
+        guard let foundComponent = scopedComponentStack[tag] else {
             fatalError("Component `\(tag)` could not be resolved.")
         }
         if foundComponent.lifetime == .transient {

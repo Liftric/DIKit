@@ -12,7 +12,7 @@
 public final class DependencyContainer {
     // MARK: - Typealiases
     public typealias BootstrapBlock = (DependencyContainer) -> Void
-    typealias ComponentStack = [String: ComponentProtocol]
+    typealias ComponentStack = [String: [String: ComponentProtocol]]
     typealias InstanceStack = [String: Any]
 
     // MARK: - Properties
@@ -20,6 +20,7 @@ public final class DependencyContainer {
     var componentStack = ComponentStack()
     var instanceStack = InstanceStack()
     let lock = NSRecursiveLock()
+    let scope: String
 
     // MARK: - Public methods
     /// Derives a `DependencyContainer` from multiple sub containers.
@@ -30,18 +31,28 @@ public final class DependencyContainer {
     /// - Returns: The final `DependencyContainer`.
     public static func derive(from containers: DependencyContainer...) -> DependencyContainer {
         return DependencyContainer(containers.reduce(into: ComponentStack()) { (result, container) in
-            result.merge(container.componentStack) { (old, new) -> ComponentProtocol in
-                fatalError("A `Component` was declared at least twice `\(old)` -> `\(new)`.")
-            }
+            container.componentStack.forEach({ (key, value) in
+                if var scopedComponentStack = result[key] {
+                    scopedComponentStack.merge(value) { (old, new) -> ComponentProtocol in
+                        fatalError("A `Component` was declared at least twice `\(old)` -> `\(new)` within the same `Scope` `\(container.scope)`.")
+                    }
+                    result[key] = scopedComponentStack
+                } else {
+                    result[key] = container.componentStack[key]
+                }
+            })
         })
     }
 
     /// Creates the `DependencyContainer`.
     ///
     /// - Parameters:
+    ///     - scope: The associated *scope* of the Component as `String`.
     ///     - boostrapBlock: The *boostrapBlock* is a closure `(DependencyContainer)
     ///                       -> Void` for registering all `[Component]`.
-    public init(boostrapBlock: BootstrapBlock) {
+    public init(scope: String = "", boostrapBlock: BootstrapBlock) {
+        self.scope = scope
+        self.componentStack[scope] = [String: ComponentProtocol]()
         threadSafe {
             boostrapBlock(self)
             self.bootstrapped = true
@@ -49,7 +60,8 @@ public final class DependencyContainer {
     }
 
     // MARK: - Internal methods
-    init(_ componentStack: ComponentStack) {
+    init(scope: String = "", _ componentStack: ComponentStack) {
+        self.scope = scope
         self.componentStack = componentStack
         self.bootstrapped = true
     }
