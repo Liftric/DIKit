@@ -11,8 +11,11 @@
 extension DependencyContainer {
     /// Resolves a `Component<T>`.
     ///
+    /// - Parameters:
+    ///     - scope: The associated *scope* of the Component as `String`.
+    ///
     /// - Returns: The resolved `Component<T>`.
-    public func resolve<T>() -> T {
+    public func resolve<T>(from scope: String = "") -> T {
         let tag = String(describing: T.self)
         guard let scopedComponentStack = self.componentStack[scope] else {
             fatalError("Scope is not valid for this DependencyContainer.")
