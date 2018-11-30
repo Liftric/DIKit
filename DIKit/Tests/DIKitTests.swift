@@ -20,42 +20,6 @@ class DIKitTests: XCTestCase {
         super.tearDown()
     }
 
-    func testDependencyContainerScope() {
-        struct ComponentA {}
-        struct ComponentB {}
-
-        let dependencyContainer = DependencyContainer(scope: "session") { (c: DependencyContainer) in
-            c.register { ComponentA() }
-            c.register { ComponentB() }
-        }
-
-        guard let mainComponentStackA: [String: ComponentProtocol] = dependencyContainer.componentStack["session"] else {
-            return XCTFail()
-        }
-        guard let componentA = mainComponentStackA.index(forKey: "ComponentA") else {
-            return XCTFail()
-        }
-        let componentProtocolA = mainComponentStackA[componentA].value
-        XCTAssertEqual(componentProtocolA.lifetime, .singleton)
-        let instanceA = componentProtocolA.componentFactory()
-        XCTAssertTrue(instanceA is ComponentA)
-        XCTAssertFalse(instanceA is ComponentB)
-
-        guard let mainComponentStackB = dependencyContainer.componentStack["session"] else {
-            return XCTFail()
-        }
-        guard let componentB = mainComponentStackB.index(forKey: "ComponentB") else {
-            return XCTFail()
-        }
-        let componentProtocolB = mainComponentStackB[componentB].value
-        XCTAssertEqual(componentProtocolB.lifetime, .singleton)
-        let instanceB = componentProtocolB.componentFactory()
-        XCTAssertTrue(instanceB is ComponentB)
-        XCTAssertFalse(instanceB is ComponentA)
-
-        XCTAssertNil(dependencyContainer.componentStack[""])
-    }
-
     func testDependencyContainerCreation() {
         struct ComponentA {}
         struct ComponentB {}
@@ -65,25 +29,19 @@ class DIKitTests: XCTestCase {
             c.register { ComponentB() }
         }
 
-        guard let mainComponentStackA: [String: ComponentProtocol] = dependencyContainer.componentStack[""] else {
+        guard let componentA = dependencyContainer.componentStack.index(forKey: "ComponentA") else {
             return XCTFail()
         }
-        guard let componentA = mainComponentStackA.index(forKey: "ComponentA") else {
-            return XCTFail()
-        }
-        let componentProtocolA = mainComponentStackA[componentA].value
+        let componentProtocolA = dependencyContainer.componentStack[componentA].value
         XCTAssertEqual(componentProtocolA.lifetime, .singleton)
         let instanceA = componentProtocolA.componentFactory()
         XCTAssertTrue(instanceA is ComponentA)
         XCTAssertFalse(instanceA is ComponentB)
 
-        guard let mainComponentStackB = dependencyContainer.componentStack[""] else {
+        guard let componentB = dependencyContainer.componentStack.index(forKey: "ComponentB") else {
             return XCTFail()
         }
-        guard let componentB = mainComponentStackB.index(forKey: "ComponentB") else {
-            return XCTFail()
-        }
-        let componentProtocolB = mainComponentStackB[componentB].value
+        let componentProtocolB = dependencyContainer.componentStack[componentB].value
         XCTAssertEqual(componentProtocolB.lifetime, .singleton)
         let instanceB = componentProtocolB.componentFactory()
         XCTAssertTrue(instanceB is ComponentB)

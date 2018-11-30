@@ -19,10 +19,7 @@ extension DependencyContainer {
 
 /// Injects lazily given `Component<T>`.
 ///
-/// - Parameters:
-///     - scope: The associated *scope* of the Component as `String`.
-///
 /// - Returns: The resolved `Component<T>`.
-public func inject<T>(from scope: String = "") -> T {
-    return DependencyContainer.shared.resolve(from: scope)
+public func inject<T>() -> T {
+    return DependencyContainer.shared.resolve()
 }
