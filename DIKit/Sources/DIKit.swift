@@ -23,3 +23,16 @@ extension DependencyContainer {
 public func inject<T>() -> T {
     return DependencyContainer.shared.resolve()
 }
+
+/// A property wrapper (SE-0258) to make a `Component` easily injectable
+/// through `@Injectable var variableName: Component`.
+@propertyWrapper
+public struct Injectable<Component> {
+    public init() {}
+    
+    public var value: Component {
+        get {
+            return DependencyContainer.shared.resolve()
+        }
+    }
+}
