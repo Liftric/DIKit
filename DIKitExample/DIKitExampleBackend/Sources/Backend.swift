@@ -12,7 +12,7 @@ import DIKit
 
 class Backend: BackendProtocol {
     // MARK: - DIKit
-    let network: NetworkProtocol = inject()
+    @Injectable var network: NetworkProtocol
 
     // MARK: - Backend related stuff
     var id: ObjectIdentifier {
