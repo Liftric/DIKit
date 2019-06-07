@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
 import DIKit
 
 class Backend: BackendProtocol {
-    let network: NetworkProtocol = inject()
+    @Injectable var network: NetworkProtocol
 }
 ```
 
@@ -73,7 +73,7 @@ import DIKit
 
 class FirstViewController: UIViewController {
     // MARK: - Dependencies
-    let backend: BackendProtocol = inject()
+    @Injectable var backend: BackendProtocol
 
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
