@@ -24,6 +24,13 @@ public func inject<T>() -> T {
     return DependencyContainer.shared.resolve()
 }
 
+/// Injects lazily a generic method to resolve given `Component<T>`.
+public func get<T>() -> (() ->T) {
+    return {
+        return DependencyContainer.shared.resolve()
+    }
+}
+
 /// A property wrapper (SE-0258) to make a `Component` easily injectable
 /// through `@Injectable var variableName: Component`.
 @propertyWrapper
@@ -36,3 +43,16 @@ public struct Injectable<Component> {
         }
     }
 }
+
+
+
+///
+/// public extension DependencyContainer {
+///     static var backend = module {
+///         single { Backend(get()) as BackendProtocol }
+///         single { Network() as NetworkProtocol }
+///     }
+/// }
+///
+/// whereas `get()` should resolve a component lazy
+///

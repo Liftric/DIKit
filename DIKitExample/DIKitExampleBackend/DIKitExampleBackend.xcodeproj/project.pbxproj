@@ -125,7 +125,7 @@
 		4B6F9F1D212BF75500B6CEDE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Ben John";
 				TargetAttributes = {
 					4B6F9F25212BF75500B6CEDE = {
@@ -140,6 +140,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4B6F9F1C212BF75500B6CEDE;
 			productRefGroup = 4B6F9F27212BF75500B6CEDE /* Products */;
@@ -303,7 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
