@@ -35,6 +35,21 @@ public final class DependencyContainer {
             }
         })
     }
+    
+    // MARK: - Public methods
+    /// Derives a `DependencyContainer` from multiple sub containers.
+    ///
+    /// - Parameters:
+    ///     - from: *[DependencyContainer]* to derive the final `DependencyContainer` from.
+    ///
+    /// - Returns: The final `DependencyContainer`.
+    public static func derive(from containers: [DependencyContainer]) -> DependencyContainer {
+        return DependencyContainer(containers.reduce(into: ComponentStack()) { (result, container) in
+            result.merge(container.componentStack) { (old, new) -> ComponentProtocol in
+                fatalError("A `Component` was declared at least twice `\(old)` -> `\(new)`.")
+            }
+        })
+    }
 
     /// Creates the `DependencyContainer`.
     ///

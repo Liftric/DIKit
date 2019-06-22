@@ -15,5 +15,5 @@ import DIKitExampleBackend
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
     var window: UIWindow?
-    let container = DependencyContainer.derive(from: .app, .backend)
+    let container = modules { .app; .backend }
 }

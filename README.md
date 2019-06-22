@@ -50,7 +50,7 @@ import DIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
-    let container = DependencyContainer.derive(from: .backend, .network)
+    let container = modules { .backend; .network }
 }
 ```
 

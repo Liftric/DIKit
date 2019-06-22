@@ -63,6 +63,21 @@ public func module(@ModuleBuilder makeChildren: () -> [ComponentProtocol]) -> De
     }
 }
 
+@_functionBuilder
+public struct ModulesBuilder {
+    public static func buildBlock(_ children: DependencyContainer...) -> [DependencyContainer] {
+        return children.compactMap { $0 }
+    }
+    
+    public static func buildBlock(_ component: DependencyContainer) -> [DependencyContainer] {
+        return [component]
+    }
+}
+
+public func modules(@ModulesBuilder makeChildren: () -> [DependencyContainer]) -> DependencyContainer {
+    return DependencyContainer.derive(from: makeChildren())
+}
+
 public func resolvable<T>(lifetime: Lifetime = .singleton, _ factory: @escaping () -> T) -> ComponentProtocol {
     let component = Component(lifetime: lifetime, type: T.self, factory: factory)
     return component as ComponentProtocol
