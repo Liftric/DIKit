@@ -11,9 +11,7 @@
 import DIKit
 
 public extension DependencyContainer {
-    static var app: DependencyContainer {
-        return DependencyContainer { container in
-            container.register(lifetime: .transient) { LocalStorage() as LocalStorageProtocol }
-        }
+    static var app = module {
+        factory { LocalStorage() as LocalStorageProtocol }
     }
 }

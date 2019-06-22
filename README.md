@@ -32,18 +32,14 @@ pod 'DIKit', '~> 1.0.0'
 import DIKit
 
 public extension DependencyContainer {
-    static var backend: DependencyContainer {
-        return DependencyContainer { container in
-            container.register(lifetime: .transient) { Backend() as BackendProtocol }
-        }
+    static var backend = module {
+        factory { Backend() as BackendProtocol }
     }
 }
 
 public extension DependencyContainer {
-    static var network: DependencyContainer {
-        return DependencyContainer { container in
-            container.register { Network() as NetworkProtocol }
-        }
+    static var network = module {
+        single { Network() as NetworkProtocol }
     }
 }
 ```

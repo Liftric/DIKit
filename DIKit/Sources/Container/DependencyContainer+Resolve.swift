@@ -17,7 +17,7 @@ extension DependencyContainer {
         guard let foundComponent = self.componentStack[tag] else {
             fatalError("Component `\(tag)` could not be resolved.")
         }
-        if foundComponent.lifetime == .transient {
+        if foundComponent.lifetime == .factory {
             return foundComponent.componentFactory() as! T
         }
         if let instanceOfComponent = self.instanceStack[tag] as? T {

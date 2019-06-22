@@ -8,7 +8,7 @@
 // Copyright © 2018 Ben John. All rights reserved.
 
 
-typealias ComponentFactory = () -> Any
+public typealias ComponentFactory = () -> Any
 
 class Component<T>: ComponentProtocol {
     let lifetime: Lifetime
@@ -24,8 +24,9 @@ class Component<T>: ComponentProtocol {
     }
 }
 
-protocol ComponentProtocol {
+public protocol ComponentProtocol {
     var lifetime: Lifetime { get }
+    var tag: String { get }
     var componentFactory: ComponentFactory { get }
     var type: Any.Type { get }
 }

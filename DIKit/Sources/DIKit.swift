@@ -44,15 +44,34 @@ public struct Injectable<Component> {
     }
 }
 
+@_functionBuilder
+public struct ModuleBuilder {
+    public static func buildBlock(_ children: [ComponentProtocol]...) -> [ComponentProtocol] {
+        return children.flatMap { $0 }
+    }
+    
+    public static func buildBlock(_ component: [ComponentProtocol]) -> [ComponentProtocol] {
+        return component
+    }
+}
 
+public func module(@ModuleBuilder makeChildren: () -> [ComponentProtocol]) -> DependencyContainer {
+    return DependencyContainer { container in
+        for c in makeChildren() {
+            container.register(c)
+        }
+    }
+}
 
-///
-/// public extension DependencyContainer {
-///     static var backend = module {
-///         single { Backend(get()) as BackendProtocol }
-///         single { Network() as NetworkProtocol }
-///     }
-/// }
-///
-/// whereas `get()` should resolve a component lazy
-///
+public func resolvable<T>(lifetime: Lifetime = .singleton, _ factory: @escaping () -> T) -> ComponentProtocol {
+    let component = Component(lifetime: lifetime, type: T.self, factory: factory)
+    return component as ComponentProtocol
+}
+
+public func factory<T>(factory: @escaping () -> T) -> [ComponentProtocol] {
+    return [resolvable(lifetime: .factory, factory)]
+}
+
+public func single<T>(factory: @escaping () -> T) -> [ComponentProtocol] {
+    return [resolvable(lifetime: .singleton, factory)]
+}

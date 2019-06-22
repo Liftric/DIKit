@@ -16,5 +16,5 @@ public enum Lifetime {
 
     /// A new instance of the class is created each time it is injected. The
     /// container holds no reference to it.
-    case transient
+    case factory
 }
