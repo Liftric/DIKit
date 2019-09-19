@@ -85,12 +85,60 @@ class DIKitTests: XCTestCase {
         let componentC: ComponentC = dependencyContainer.resolve()
         XCTAssertNotNil(componentC)
     }
+    
+    func testDependencyContainerDeriveDSL() {
+        struct ComponentA {}
+        struct ComponentB {}
+        struct ComponentC {}
 
-    func testTransientLifetimeOfComponents() {
+        let dependencyContainerA = module {
+            single { ComponentA() }
+        }
+        let dependencyContainerB = module {
+            single { ComponentB() }
+        }
+        let dependencyContainerC = module {
+            single { ComponentC() }
+        }
+
+        let dependencyContainer = modules{ dependencyContainerA; dependencyContainerB; dependencyContainerC }
+
+        let componentA: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentA)
+
+        let componentB: ComponentB = dependencyContainer.resolve()
+        XCTAssertNotNil(componentB)
+
+        let componentC: ComponentC = dependencyContainer.resolve()
+        XCTAssertNotNil(componentC)
+    }
+
+    func testFactoryOfComponents() {
         class ComponentA {}
 
         let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
-            c.register(lifetime: .transient) { ComponentA() }
+            c.register(lifetime: .factory) { ComponentA() }
+        }
+
+        let componentAinstanceA: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentAinstanceA)
+
+        let componentAinstanceB: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentAinstanceB)
+
+        let componentAinstanceAobjectIdA = ObjectIdentifier.init(componentAinstanceA)
+        let componentAinstanceAobjectIdB = ObjectIdentifier.init(componentAinstanceA)
+        let componentAinstanceBobjectId = ObjectIdentifier.init(componentAinstanceB)
+
+        XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
+        XCTAssertNotEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
+    }
+    
+    func testFactoryOfComponentsDSL() {
+        class ComponentA {}
+
+        let dependencyContainer = module {
+            factory { ComponentA() }
         }
 
         let componentAinstanceA: ComponentA = dependencyContainer.resolve()
@@ -112,6 +160,27 @@ class DIKitTests: XCTestCase {
 
         let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
             c.register(lifetime: .singleton) { ComponentA() }
+        }
+
+        let componentAinstanceA: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentAinstanceA)
+
+        let componentAinstanceB: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentAinstanceB)
+
+        let componentAinstanceAobjectIdA = ObjectIdentifier.init(componentAinstanceA)
+        let componentAinstanceAobjectIdB = ObjectIdentifier.init(componentAinstanceA)
+        let componentAinstanceBobjectId = ObjectIdentifier.init(componentAinstanceB)
+
+        XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
+        XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
+    }
+    
+    func testSingletonLifetimeOfComponentsDSL() {
+        class ComponentA {}
+
+        let dependencyContainer = module {
+            single { ComponentA() }
         }
 
         let componentAinstanceA: ComponentA = dependencyContainer.resolve()
