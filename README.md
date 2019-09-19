@@ -13,7 +13,7 @@ We started small, it perfectly fits our use case.
 DIKit can be installed using [Carthage](https://github.com/Carthage/Carthage). After installing Carthage just add DIKit to your Cartfile:
 
 ```ogdl
-github "benjohnde/DIKit" ~> 1.0
+github "benjohnde/DIKit" ~> 1.1
 ```
 
 ### Via CocoaPods
@@ -22,7 +22,7 @@ github "benjohnde/DIKit" ~> 1.0
 
 ```ruby
 platform :ios, '9.0'
-pod 'DIKit', '~> 1.0.0'
+pod 'DIKit', '~> 1.1.0'
 ```
 
 ## Basic usage
