@@ -7,13 +7,20 @@
 //
 // Copyright © 2018 Ben John. All rights reserved.
 
+#if canImport(UIKit)
+import UIKit
+#endif
 
 extension DependencyContainer {
     static var shared: DependencyContainer {
+        #if os(iOS)
         guard let sharedDelegateCasted = UIApplication.shared.delegate as? DefinesContainer else {
             fatalError("The main application delegate needs to conform `DefinesContainer`.")
         }
         return sharedDelegateCasted.container
+        #else
+        fatalError("DIKit currently only runs on iOS.")
+        #endif
     }
 }
 

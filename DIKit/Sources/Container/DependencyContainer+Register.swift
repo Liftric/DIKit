@@ -7,7 +7,6 @@
 //
 // Copyright © 2018 Ben John. All rights reserved.
 
-
 extension DependencyContainer {
     /// Registers a `Component`.
     ///

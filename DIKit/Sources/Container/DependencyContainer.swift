@@ -7,6 +7,10 @@
 //
 // Copyright © 2018 Ben John. All rights reserved.
 
+import Foundation
+#if canImport(UIKit)
+import UIKit
+#endif
 
 /// Container registry.
 public final class DependencyContainer {
@@ -14,13 +18,13 @@ public final class DependencyContainer {
     public typealias BootstrapBlock = (DependencyContainer) -> Void
     typealias ComponentStack = [String: ComponentProtocol]
     typealias InstanceStack = [String: Any]
-
+    
     // MARK: - Properties
     var bootstrapped = false
     var componentStack = ComponentStack()
     var instanceStack = InstanceStack()
     let lock = NSRecursiveLock()
-
+    
     // MARK: - Public methods
     /// Derives a `DependencyContainer` from multiple sub containers.
     ///
@@ -50,7 +54,7 @@ public final class DependencyContainer {
             }
         })
     }
-
+    
     /// Creates the `DependencyContainer`.
     ///
     /// - Parameters:
@@ -62,7 +66,7 @@ public final class DependencyContainer {
             self.bootstrapped = true
         }
     }
-
+    
     // MARK: - Internal methods
     init(_ componentStack: ComponentStack) {
         self.componentStack = componentStack

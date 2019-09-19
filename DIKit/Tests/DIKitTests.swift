@@ -7,7 +7,6 @@
 //
 // Copyright © 2018 Ben John. All rights reserved.
 
-
 import XCTest
 @testable import DIKit
 
