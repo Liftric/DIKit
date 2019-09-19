@@ -37,7 +37,7 @@ public func get<T>() -> (() ->T) {
 public struct Injectable<Component> {
     public init() {}
     
-    public var value: Component {
+    public var wrappedValue: Component {
         get {
             return DependencyContainer.shared.resolve()
         }
