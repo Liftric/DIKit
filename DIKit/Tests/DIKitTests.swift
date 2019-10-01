@@ -4,7 +4,7 @@
 // Ben John
 //
 // - Date: 17.08.18
-//
+// swiftlint:disable nesting
 // Copyright © 2018 Ben John. All rights reserved.
 
 import XCTest
@@ -14,7 +14,7 @@ class DIKitTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
@@ -73,7 +73,9 @@ class DIKitTests: XCTestCase {
             c.register { ComponentC() }
         }
 
-        let dependencyContainer = DependencyContainer.derive(from: dependencyContainerA, dependencyContainerB, dependencyContainerC)
+        let dependencyContainer = DependencyContainer.derive(from: dependencyContainerA,
+                                                             dependencyContainerB,
+                                                             dependencyContainerC)
 
         let componentA: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentA)
@@ -84,7 +86,7 @@ class DIKitTests: XCTestCase {
         let componentC: ComponentC = dependencyContainer.resolve()
         XCTAssertNotNil(componentC)
     }
-    
+
     func testDependencyContainerDeriveDSL() {
         struct ComponentA {}
         struct ComponentB {}
@@ -100,7 +102,7 @@ class DIKitTests: XCTestCase {
             single { ComponentC() }
         }
 
-        let dependencyContainer = modules{ dependencyContainerA; dependencyContainerB; dependencyContainerC }
+        let dependencyContainer = modules { dependencyContainerA; dependencyContainerB; dependencyContainerC }
 
         let componentA: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentA)
@@ -125,14 +127,14 @@ class DIKitTests: XCTestCase {
         let componentAinstanceB: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentAinstanceB)
 
-        let componentAinstanceAobjectIdA = ObjectIdentifier.init(componentAinstanceA)
-        let componentAinstanceAobjectIdB = ObjectIdentifier.init(componentAinstanceA)
-        let componentAinstanceBobjectId = ObjectIdentifier.init(componentAinstanceB)
+        let componentAinstanceAobjectIdA = ObjectIdentifier(componentAinstanceA)
+        let componentAinstanceAobjectIdB = ObjectIdentifier(componentAinstanceA)
+        let componentAinstanceBobjectId = ObjectIdentifier(componentAinstanceB)
 
         XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
         XCTAssertNotEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
     }
-    
+
     func testFactoryOfComponentsDSL() {
         class ComponentA {}
 
@@ -146,9 +148,9 @@ class DIKitTests: XCTestCase {
         let componentAinstanceB: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentAinstanceB)
 
-        let componentAinstanceAobjectIdA = ObjectIdentifier.init(componentAinstanceA)
-        let componentAinstanceAobjectIdB = ObjectIdentifier.init(componentAinstanceA)
-        let componentAinstanceBobjectId = ObjectIdentifier.init(componentAinstanceB)
+        let componentAinstanceAobjectIdA = ObjectIdentifier(componentAinstanceA)
+        let componentAinstanceAobjectIdB = ObjectIdentifier(componentAinstanceA)
+        let componentAinstanceBobjectId = ObjectIdentifier(componentAinstanceB)
 
         XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
         XCTAssertNotEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
@@ -167,14 +169,14 @@ class DIKitTests: XCTestCase {
         let componentAinstanceB: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentAinstanceB)
 
-        let componentAinstanceAobjectIdA = ObjectIdentifier.init(componentAinstanceA)
-        let componentAinstanceAobjectIdB = ObjectIdentifier.init(componentAinstanceA)
-        let componentAinstanceBobjectId = ObjectIdentifier.init(componentAinstanceB)
+        let componentAinstanceAobjectIdA = ObjectIdentifier(componentAinstanceA)
+        let componentAinstanceAobjectIdB = ObjectIdentifier(componentAinstanceA)
+        let componentAinstanceBobjectId = ObjectIdentifier(componentAinstanceB)
 
         XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
         XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
     }
-    
+
     func testSingletonLifetimeOfComponentsDSL() {
         class ComponentA {}
 
@@ -188,9 +190,9 @@ class DIKitTests: XCTestCase {
         let componentAinstanceB: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentAinstanceB)
 
-        let componentAinstanceAobjectIdA = ObjectIdentifier.init(componentAinstanceA)
-        let componentAinstanceAobjectIdB = ObjectIdentifier.init(componentAinstanceA)
-        let componentAinstanceBobjectId = ObjectIdentifier.init(componentAinstanceB)
+        let componentAinstanceAobjectIdA = ObjectIdentifier(componentAinstanceA)
+        let componentAinstanceAobjectIdB = ObjectIdentifier(componentAinstanceA)
+        let componentAinstanceBobjectId = ObjectIdentifier(componentAinstanceB)
 
         XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
         XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)

@@ -32,7 +32,7 @@ public func inject<T>() -> T {
 }
 
 /// Injects lazily a generic method to resolve given `Component<T>`.
-public func get<T>() -> (() ->T) {
+public func get<T>() -> (() -> T) {
     return {
         return DependencyContainer.shared.resolve()
     }
@@ -43,7 +43,7 @@ public func get<T>() -> (() ->T) {
 @propertyWrapper
 public struct Injectable<Component> {
     public init() {}
-    
+
     public var wrappedValue: Component {
         get {
             return DependencyContainer.shared.resolve()
@@ -56,7 +56,7 @@ public struct ModuleBuilder {
     public static func buildBlock(_ children: [ComponentProtocol]...) -> [ComponentProtocol] {
         return children.flatMap { $0 }
     }
-    
+
     public static func buildBlock(_ component: [ComponentProtocol]) -> [ComponentProtocol] {
         return component
     }
@@ -75,7 +75,7 @@ public struct ModulesBuilder {
     public static func buildBlock(_ children: DependencyContainer...) -> [DependencyContainer] {
         return children.compactMap { $0 }
     }
-    
+
     public static func buildBlock(_ component: DependencyContainer) -> [DependencyContainer] {
         return [component]
     }

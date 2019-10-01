@@ -1,0 +1,48 @@
+disabled_rules: # rule identifiers to exclude from running
+  - block_based_kvo
+  - class_delegate_protocol
+  - cyclomatic_complexity
+  - discarded_notification_center_observer
+  - empty_parentheses_with_trailing_closure
+  - fallthrough
+  - identifier_name
+  - implicit_getter
+  - multiple_closures_with_trailing_closure
+  - no_fallthrough_only
+  - operator_whitespace
+  - statement_position
+  - todo
+  - trailing_comma
+  - type_name
+  - unused_optional_binding
+  - vertical_whitespace
+  - void_return
+  - weak_delegate
+  - file_length
+  - function_body_length
+  - type_body_length
+
+opt_in_rules: # some rules are "opt-in" (disabled by default)
+  - array_init
+  - closure_end_indentation
+  - closure_spacing
+  - contains_over_first_not_nil
+  - explicit_init
+  - joined_default_parameter
+  - literal_expression_end_indentation
+  - multiline_parameters
+  - redundant_nil_coalescing
+  - sorted_first_last
+
+included: # paths to include during linting. `--path` is ignored if present.
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - Carthage
+
+#file_length: XXX
+force_cast: error
+#function_body_length: XXX
+#line_length: XXX
+shorthand_operator: warning
+#type_body_length: XXX

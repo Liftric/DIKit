@@ -153,6 +153,8 @@
 				4BD95D842008B1C8009CE38D /* Frameworks */,
 				4BD95D852008B1C8009CE38D /* Headers */,
 				4BD95D862008B1C8009CE38D /* Resources */,
+				A24242A72343AA95002FAD54 /* SwiftLint */,
+				A24242A82343AAA0002FAD54 /* SwiftLint Autocorrect */,
 			);
 			buildRules = (
 			);
@@ -238,6 +240,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A24242A72343AA95002FAD54 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		A24242A82343AAA0002FAD54 /* SwiftLint Autocorrect */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Autocorrect";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nif which swiftlint >/dev/null; then\nswiftlint autocorrect\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint or run brew install swiftlint from your CLI\"\nfi\nelse\necho \"warning: Skipping SwiftLint autocorrect, this is not a Debug build\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4BD95D832008B1C8009CE38D /* Sources */ = {

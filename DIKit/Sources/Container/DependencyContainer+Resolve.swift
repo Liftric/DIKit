@@ -4,7 +4,7 @@
 // Ben John
 //
 // - Date: 17.08.18
-//
+// swiftlint:disable force_cast
 // Copyright © 2018 Ben John. All rights reserved.
 
 extension DependencyContainer {
