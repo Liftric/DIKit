@@ -23,7 +23,7 @@ extension DependencyContainer {
             self.componentStack[component.tag] = component
         }
     }
-    
+
     public func register(_ component: ComponentProtocol) {
         precondition(!bootstrapped, "After boostrap no more components can be registered.")
         threadSafe {

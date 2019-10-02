@@ -18,13 +18,13 @@ public final class DependencyContainer {
     public typealias BootstrapBlock = (DependencyContainer) -> Void
     typealias ComponentStack = [String: ComponentProtocol]
     typealias InstanceStack = [String: Any]
-    
+
     // MARK: - Properties
     var bootstrapped = false
     var componentStack = ComponentStack()
     var instanceStack = InstanceStack()
     let lock = NSRecursiveLock()
-    
+
     // MARK: - Public methods
     /// Derives a `DependencyContainer` from multiple sub containers.
     ///
@@ -39,7 +39,7 @@ public final class DependencyContainer {
             }
         })
     }
-    
+
     // MARK: - Public methods
     /// Derives a `DependencyContainer` from multiple sub containers.
     ///
@@ -54,7 +54,7 @@ public final class DependencyContainer {
             }
         })
     }
-    
+
     /// Creates the `DependencyContainer`.
     ///
     /// - Parameters:
@@ -66,14 +66,14 @@ public final class DependencyContainer {
             self.bootstrapped = true
         }
     }
-    
+
     // MARK: - Internal methods
     init(_ componentStack: ComponentStack) {
         self.componentStack = componentStack
         self.bootstrapped = true
     }
-    
-    func threadSafe(_ closure: () -> ()) -> () {
+
+    func threadSafe(_ closure: () -> ()) {
         lock.lock()
         defer {
             lock.unlock()
