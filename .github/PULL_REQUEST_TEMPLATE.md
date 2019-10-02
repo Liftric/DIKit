@@ -1,11 +1,8 @@
 
 <!--
     If there is an issue that prompted this change, please replace the XX's below with the issue number. 
-
     If not, delete the line of Markdown.
-
     For formatting help please see our Contrubuting Documentation:
-
     https://github.com/Liftric/DIKit/blob/master/CONTRIBUTING.md
 
 -->
@@ -19,7 +16,6 @@
 
 <!--
     If there is an issue that prompted this change, please replace the XX's below with the issue number. 
-
     If not, delete the line of Markdown.
 -->
 
