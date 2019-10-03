@@ -1,6 +1,6 @@
-[![Build Status](https://app.bitrise.io/app/dc5ea4c384eb9b4a/status.svg?token=OjaZqMJaMx4HBb3JZEvoKQ&branch=master)](https://app.bitrise.io/app/dc5ea4c384eb9b4a)
+# DIKit 
 
-# DIKit
+## [![Build Status](https://app.bitrise.io/app/dc5ea4c384eb9b4a/status.svg?token=OjaZqMJaMx4HBb3JZEvoKQ&branch=master)](https://app.bitrise.io/app/dc5ea4c384eb9b4a)
 
 Dependency Injection Framework for Swift, inspired by [KOIN](https://insert-koin.io/). Basically an implementation of service-locator pattern, living within the application's context (through the `AppDelegate`).
 
