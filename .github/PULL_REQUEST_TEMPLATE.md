@@ -4,7 +4,7 @@
     If not, delete the line of Markdown.
     For formatting help please see our Contrubuting Documentation:
     https://github.com/Liftric/DIKit/blob/master/CONTRIBUTING.md
-    
+
 -->
 
 ## Why was this change made (Body)
