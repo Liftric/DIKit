@@ -1,6 +1,6 @@
 # DIKit 
 
-## [![Build Status](https://app.bitrise.io/app/dc5ea4c384eb9b4a/status.svg?token=OjaZqMJaMx4HBb3JZEvoKQ&branch=master)](https://app.bitrise.io/app/dc5ea4c384eb9b4a) [![codecov](https://codecov.io/gh/JZDesign/DIKit/branch/master/graph/badge.svg)](https://codecov.io/gh/JZDesign/DIKit)
+##[![Build Status](https://app.bitrise.io/app/a899d102bac91736/status.svg?token=hVFYMn5hFSdJfaN85bOlTw&branch=master)](https://app.bitrise.io/app/a899d102bac91736) [![codecov](https://codecov.io/gh/Liftric/DIKit/branch/master/graph/badge.svg)](https://codecov.io/gh/Liftric/DIKit)
 
 
 
