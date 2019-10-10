@@ -39,9 +39,9 @@ public func get<T>() -> (() -> T) {
 }
 
 /// A property wrapper (SE-0258) to make a `Component` easily injectable
-/// through `@Injectable var variableName: Component`.
+/// through `@Inject var variableName: Component`.
 @propertyWrapper
-public struct Injectable<Component> {
+public struct Inject<Component> {
     public init() {}
 
     public var wrappedValue: Component {

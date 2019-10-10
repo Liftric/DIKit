@@ -13,7 +13,7 @@ import DIKit
 
 class SecondViewController: UIViewController {
     // MARK: - DIKit
-    @Injectable var storage: LocalStorageProtocol
+    @Inject var storage: LocalStorageProtocol
 
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {

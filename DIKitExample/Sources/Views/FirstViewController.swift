@@ -14,7 +14,7 @@ import DIKitExampleBackend
 
 class FirstViewController: UIViewController {
     // MARK: - DIKit
-    @Injectable var backend: BackendProtocol
+    @Inject var backend: BackendProtocol
     
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
