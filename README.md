@@ -52,8 +52,10 @@ struct Modules: DefinesContainer {
     let container = modules { .backend; .network }
 }
 
-class ApplicationLayer {
-    public onBootstrap() {
+@UIApplicationMain
+class AppDelegate: UIApplicationDelegate {
+    override init() {
+        super.init()
         DependencyContainer.defined(by: Modules())
     }
 }

@@ -13,7 +13,11 @@ import DIKit
 import DIKitExampleBackend
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let container = modules { .app; .backend }
+    
+    override init() {
+        super.init()
+        DependencyContainer.defined(by: Modules())
+    }
 }
