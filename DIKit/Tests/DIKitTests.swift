@@ -135,6 +135,44 @@ class DIKitTests: XCTestCase {
         XCTAssertNotEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
     }
 
+    func testLazyInjection() {
+        struct TestStateHolder {
+            static var initializedA = false
+            static var initializedB = false
+        }
+        class ComponentA {
+            init() {
+                TestStateHolder.initializedA = true
+            }
+        }
+        class ComponentB {
+            init() {
+                TestStateHolder.initializedB = true
+            }
+        }
+        class TestApplication: DefinesContainer {
+            let container = module {
+                single { ComponentA() }
+                factory { ComponentB() }
+            }
+        }
+        DependencyContainer.defines = TestApplication()
+
+        class TestViewController {
+            @Inject var componentA: ComponentA
+            @Inject(.lazy) var componentB: ComponentB
+        }
+
+        let testVC = TestViewController()
+        XCTAssertTrue(TestStateHolder.initializedA)
+        _ = testVC.componentA
+        XCTAssertTrue(TestStateHolder.initializedA)
+
+        XCTAssertFalse(TestStateHolder.initializedB)
+        _ = testVC.componentB
+        XCTAssertTrue(TestStateHolder.initializedB)
+    }
+
     func testFactoryOfComponentsDSL() {
         class ComponentA {}
 

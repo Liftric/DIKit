@@ -38,7 +38,7 @@ public enum Inject<Component> {
         self = .resolved(resolve())
     }
 
-    public init(relationship: Relationship = .direct) {
+    public init(_ relationship: Relationship = .direct) {
         if relationship == .lazy {
             self = .unresolved({ resolve() })
         } else {
