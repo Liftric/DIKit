@@ -7,7 +7,6 @@
 //
 // Copyright © 2018 Ben John. All rights reserved.
 
-
 public typealias ComponentFactory = () -> Any
 
 class Component<T>: ComponentProtocol {

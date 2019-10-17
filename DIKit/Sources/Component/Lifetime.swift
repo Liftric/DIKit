@@ -7,7 +7,6 @@
 //
 // Copyright © 2018 Ben John. All rights reserved.
 
-
 /// Defines the `Component` lifetime.
 public enum Lifetime {
     /// The same instance of the class is returned each time it is injected.

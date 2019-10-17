@@ -8,9 +8,6 @@
 // Copyright © 2018 Ben John. All rights reserved.
 
 import Foundation
-#if canImport(UIKit)
-import UIKit
-#endif
 
 /// Container registry.
 public final class DependencyContainer {
