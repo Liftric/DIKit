@@ -25,6 +25,21 @@ public final class DependencyContainer {
     var instanceStack = InstanceStack()
     let lock = NSRecursiveLock()
 
+    private static var _defines: DefinesContainer?
+    public static var defines: DefinesContainer {
+        get {
+            guard let defines = _defines else {
+                fatalError("DefinesContainer is not yet set.")
+            }
+            return defines
+        }
+        set {
+            guard _defines == nil else {
+                fatalError("It is not allowed to override the `DefinesContainer` at runtime.")
+            }
+        }
+    }
+
     // MARK: - Public methods
     /// Derives a `DependencyContainer` from multiple sub containers.
     ///
