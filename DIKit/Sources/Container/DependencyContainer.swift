@@ -37,6 +37,7 @@ public final class DependencyContainer {
             guard _defines == nil else {
                 fatalError("It is not allowed to override the `DefinesContainer` at runtime.")
             }
+            _defines = newValue
         }
     }
 
