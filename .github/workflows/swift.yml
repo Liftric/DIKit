@@ -1,14 +1,21 @@
-name: Swift
+name: DIKit
 
 on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: macOS-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+        swift-version: ['5.1', 'DEVELOPMENT-SNAPSHOT-2019-09-30-a']
+    runs-on: ${{ matrix.os }}
+    name: Build & Test DIKit
     steps:
     - uses: actions/checkout@v1
       with:
-        swift-version: "5.1"
+        swift-version: ${{ matrix.swift-version }}
+    - name: View Swift Version
+      run: swift --version
     - name: Build
       run: swift build -v
     - name: Run tests
