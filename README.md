@@ -52,7 +52,11 @@ struct Modules: DefinesContainer {
     let container = modules { .backend; .network }
 }
 
-DependencyContainer.defines = Modules()
+class ApplicationLayer {
+    public onBootstrap() {
+        DependencyContainer.defined(by: Modules())
+    }
+}
 ```
 
 3. Inject the dependencies, for instance in a module:
