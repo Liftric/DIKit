@@ -7,7 +7,7 @@
 //
 // Copyright © 2018 Ben John. All rights reserved.
 
-/// Exposes the `DependencyContainer` through `AppDelegate`.
+/// Exposes the `DependencyContainer` through for instance `AppDelegate`.
 public protocol DefinesContainer {
     var container: DependencyContainer { get }
 }
