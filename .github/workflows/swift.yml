@@ -4,11 +4,11 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: macOS-latest
-
     steps:
     - uses: actions/checkout@v1
+      with:
+        swift-version: "5.1"
     - name: Build
       run: swift build -v
     - name: Run tests
