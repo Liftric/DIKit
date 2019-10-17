@@ -44,14 +44,15 @@ public extension DependencyContainer {
 }
 ```
 
-2. Let `AppDelegate` adhere `DefinesContainer`:
+2. Let some `struct` adhere `DefinesContainer` and set it as defining module declaration:
 ```swift
 import DIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, DefinesContainer {
+struct Modules: DefinesContainer {
     let container = modules { .backend; .network }
 }
+
+DependencyContainer.defines = Modules()
 ```
 
 3. Inject the dependencies, for instance in a module:
