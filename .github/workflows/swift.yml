@@ -4,16 +4,13 @@ on: [push, pull_request]
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest]
-        swift-version: ['5.1', 'DEVELOPMENT-SNAPSHOT-2019-09-30-a']
-    runs-on: ${{ matrix.os }}
+    runs-on: macOS-latest
     name: Build & Test DIKit
     steps:
     - uses: actions/checkout@v1
+    - uses: YOCKOW/Action-setup-swift@master
       with:
-        swift-version: ${{ matrix.swift-version }}
+        swift-version: "5.1"
     - name: View Swift Version
       run: swift --version
     - name: Build
