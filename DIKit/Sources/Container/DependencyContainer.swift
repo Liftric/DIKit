@@ -25,23 +25,28 @@ public final class DependencyContainer {
     var instanceStack = InstanceStack()
     let lock = NSRecursiveLock()
 
-    private static var _defines: DefinesContainer?
-    public static var defines: DefinesContainer {
-        get {
-            guard let defines = _defines else {
-                fatalError("DefinesContainer is not yet set.")
-            }
-            return defines
+    private static var definesContainer: DefinesContainer?
+    public static var shared: DefinesContainer {
+        guard let shared = DependencyContainer.definesContainer else {
+            fatalError("DefinesContainer is not yet set.")
         }
-        set {
-            guard _defines == nil else {
-                fatalError("It is not allowed to override the `DefinesContainer` at runtime.")
-            }
-            _defines = newValue
-        }
+        return shared
     }
 
     // MARK: - Public methods
+    /// Defines the used `DependencyContainer` root for resolving components via `DefinesContainer`.
+    /// Basically a container which holds an instance of a `DependencyContainer` which can be statically
+    /// resolved for injection.
+    ///
+    /// - Parameters:
+    ///     - by: *DependencyContainer* the root `DependencyContainer`
+    public static func defined(by definesContainer: DefinesContainer) {
+        guard self.definesContainer == nil else {
+            fatalError("It is not allowed to override the `DefinesContainer` at runtime.")
+        }
+        self.definesContainer = definesContainer
+    }
+
     /// Derives a `DependencyContainer` from multiple sub containers.
     ///
     /// - Parameters:
@@ -56,7 +61,6 @@ public final class DependencyContainer {
         })
     }
 
-    // MARK: - Public methods
     /// Derives a `DependencyContainer` from multiple sub containers.
     ///
     /// - Parameters:

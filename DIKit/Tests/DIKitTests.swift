@@ -156,7 +156,8 @@ class DIKitTests: XCTestCase {
                 factory { ComponentB() }
             }
         }
-        DependencyContainer.defines = TestApplication()
+
+        DependencyContainer.defined(by: TestApplication())
 
         class TestViewController {
             @Inject var componentA: ComponentA
