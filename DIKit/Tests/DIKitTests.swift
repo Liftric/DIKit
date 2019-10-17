@@ -137,41 +137,83 @@ class DIKitTests: XCTestCase {
 
     func testLazyInjection() {
         struct TestStateHolder {
-            static var initializedA = false
-            static var initializedB = false
+            static var initialized = [String]()
+            static func isInitialized(_ object: Any) -> Bool { initialized.contains(String(describing: object)) }
         }
+
+        TestStateHolder.initialized.removeAll()
+
         class ComponentA {
-            init() {
-                TestStateHolder.initializedA = true
-            }
+            init() { TestStateHolder.initialized.append(String(describing: Self.self)) }
         }
         class ComponentB {
-            init() {
-                TestStateHolder.initializedB = true
-            }
+            init() { TestStateHolder.initialized.append(String(describing: Self.self)) }
         }
+        class ComponentC {
+            init() { TestStateHolder.initialized.append(String(describing: Self.self)) }
+        }
+        class ComponentD {
+            init() { TestStateHolder.initialized.append(String(describing: Self.self)) }
+        }
+
         class TestApplication: DefinesContainer {
             let container = module {
                 single { ComponentA() }
                 factory { ComponentB() }
+                single { ComponentC() }
+                factory { ComponentD() }
             }
         }
 
         DependencyContainer.defined(by: TestApplication())
 
+        XCTAssertFalse(TestStateHolder.isInitialized(ComponentD.self))
+
         class TestViewController {
             @Inject var componentA: ComponentA
             @Inject(.lazy) var componentB: ComponentB
+            @Inject(.lazy) var componentC: ComponentC
+            @Inject var componentD: ComponentD
         }
 
         let testVC = TestViewController()
-        XCTAssertTrue(TestStateHolder.initializedA)
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentA.self))
         _ = testVC.componentA
-        XCTAssertTrue(TestStateHolder.initializedA)
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentA.self))
 
-        XCTAssertFalse(TestStateHolder.initializedB)
+        XCTAssertFalse(TestStateHolder.isInitialized(ComponentB.self))
         _ = testVC.componentB
-        XCTAssertTrue(TestStateHolder.initializedB)
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentB.self))
+
+        XCTAssertFalse(TestStateHolder.isInitialized(ComponentC.self))
+        _ = testVC.componentC
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentC.self))
+
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentD.self))
+        _ = testVC.componentD
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentD.self))
+
+        TestStateHolder.initialized.removeAll()
+
+        class Test2ViewController {
+            @Inject(.lazy) var componentC: ComponentC
+            @Inject var componentD: ComponentD
+        }
+
+        let test2VC = Test2ViewController()
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentD.self))
+        _ = test2VC.componentD
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentD.self))
+
+        XCTAssertNotEqual(
+                ObjectIdentifier.init(testVC.componentD),
+                ObjectIdentifier.init(test2VC.componentD)
+        )
+
+        XCTAssertEqual(
+                ObjectIdentifier.init(testVC.componentC),
+                ObjectIdentifier.init(test2VC.componentC)
+        )
     }
 
     func testFactoryOfComponentsDSL() {
