@@ -33,13 +33,20 @@ import DIKit
 
 public extension DependencyContainer {
     static var backend = module {
-        factory { Backend() as BackendProtocol }
+        single { Backend() as BackendProtocol }
     }
 }
 
 public extension DependencyContainer {
     static var network = module {
         single { Network() as NetworkProtocol }
+    }
+}
+
+public extension DependenyContainer {
+    static var app = module {
+        single { AppState() as AppStateProtocol }
+        factory { StopWatch() as StopWatchProtocol }
     }
 }
 ```
@@ -49,7 +56,7 @@ public extension DependencyContainer {
 import DIKit
 
 struct Modules: DefinesContainer {
-    let container = modules { .backend; .network }
+    let container = modules { .backend; .network; .app }
 }
 
 @UIApplicationMain
@@ -82,6 +89,19 @@ class FirstViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let result = backend.fetch()
         print(result)
+    }
+}
+```
+
+Injection via constructor:
+
+```swift
+import DIKit
+
+struct AppState: AppStateProtocol {
+    private let backend: BackendProtocol
+    init(backend: BackendProtocol = resolve()) {
+        self.backend = backend
     }
 }
 ```
