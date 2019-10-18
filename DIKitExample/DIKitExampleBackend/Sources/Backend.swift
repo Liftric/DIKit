@@ -11,15 +11,15 @@
 import DIKit
 
 class Backend: BackendProtocol {
-    // MARK: - DIKit
-    @Inject var network: NetworkProtocol
+    private var network: NetworkProtocol
 
     // MARK: - Backend related stuff
     var id: ObjectIdentifier {
         return ObjectIdentifier.init(self)
     }
     
-    init() {
+    init(network: NetworkProtocol = resolve()) {
+        self.network = network
         print("Backend init with network \(network.id)")
         print("Backend instance \(ObjectIdentifier.init(self))")
     }

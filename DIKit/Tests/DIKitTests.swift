@@ -206,13 +206,13 @@ class DIKitTests: XCTestCase {
         XCTAssertTrue(TestStateHolder.isInitialized(ComponentD.self))
 
         XCTAssertNotEqual(
-                ObjectIdentifier.init(testVC.componentD),
-                ObjectIdentifier.init(test2VC.componentD)
+                ObjectIdentifier(testVC.componentD),
+                ObjectIdentifier(test2VC.componentD)
         )
 
         XCTAssertEqual(
-                ObjectIdentifier.init(testVC.componentC),
-                ObjectIdentifier.init(test2VC.componentC)
+                ObjectIdentifier(testVC.componentC),
+                ObjectIdentifier(test2VC.componentC)
         )
     }
 

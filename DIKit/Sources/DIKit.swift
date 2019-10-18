@@ -15,7 +15,7 @@ public func resolve<T>() -> T {
 }
 
 /// Injects a generic method to resolve given `Component<T>`.
-public func get<T>() -> (() -> T) { { resolve() } }
+public func resolveFunc<T>() -> (() -> T) { { resolve() } }
 
 /// A property wrapper (SE-0258) to make a `Component` easily injectable
 /// through `@Inject var variableName: Component`.
@@ -36,7 +36,7 @@ public enum Inject<Component> {
 
     public init(_ relationship: Relationship = .direct) {
         if relationship == .lazy {
-            self = .unresolved({ resolve() })
+            self = .unresolved(resolveFunc())
         } else {
             self = .resolved(resolve())
         }
