@@ -17,31 +17,10 @@ public func resolve<T>() -> T {
 /// Injects a generic method to resolve given `Component<T>`.
 public func resolveFunc<T>() -> (() -> T) { { resolve() } }
 
-/// A property wrapper (SE-0258) to make a `Component` easily injectable
-/// through `@Inject var variableName: Component`.
-@propertyWrapper
-public enum Inject<Component> {
+public enum Instance<Component> {
     case unresolved(() -> Component)
     case resolved(Component)
-
-    public enum Relationship {
-        case direct
-        case lazy
-    }
-
-    /// To overcome compiler errors.
-    public init() {
-        self = .resolved(resolve())
-    }
-
-    public init(_ relationship: Relationship = .direct) {
-        if relationship == .lazy {
-            self = .unresolved(resolveFunc())
-        } else {
-            self = .resolved(resolve())
-        }
-    }
-
+    
     public var wrappedValue: Component {
         mutating get {
             switch self {
@@ -53,5 +32,34 @@ public enum Inject<Component> {
                 return component
             }
         }
+    }
+}
+
+/// A property wrapper (SE-0258) to make a `Component` easily injectable
+/// through `@Inject var variableName: Component`.
+@propertyWrapper
+public class Inject<Component> {
+    public enum Fetch {
+        case eager
+        case lazy
+    }
+    
+    private var instance: Instance<Component>
+    
+    /// To overcome compiler errors.
+    public init() {
+        self.instance = .resolved(resolve())
+    }
+    
+    public init(_ fetch: Fetch = .eager) {
+        if fetch == .lazy {
+            self.instance = .unresolved(resolveFunc())
+        } else {
+            self.instance = .resolved(resolve())
+        }
+    }
+    
+    public var wrappedValue: Component {
+        return self.instance.wrappedValue
     }
 }
