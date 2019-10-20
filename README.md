@@ -76,7 +76,7 @@ import DIKit
 
 class FirstViewController: UIViewController {
     // MARK: - Dependencies
-    @Inject(.lazy) var backend: BackendProtocol
+    @LazyInject var backend: BackendProtocol
 
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
