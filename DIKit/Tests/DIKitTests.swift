@@ -171,8 +171,8 @@ class DIKitTests: XCTestCase {
 
         class TestViewController {
             @Inject var componentA: ComponentA
-            @Inject(.lazy) var componentB: ComponentB
-            @Inject(.lazy) var componentC: ComponentC
+            @LazyInject var componentB: ComponentB
+            @LazyInject var componentC: ComponentC
             @Inject var componentD: ComponentD
         }
 
@@ -196,7 +196,7 @@ class DIKitTests: XCTestCase {
         TestStateHolder.initialized.removeAll()
 
         class Test2ViewController {
-            @Inject(.lazy) var componentC: ComponentC
+            @LazyInject var componentC: ComponentC
             @Inject var componentD: ComponentD
         }
 
