@@ -18,6 +18,7 @@
 		4BD95D922008B1C9009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95D882008B1C8009CE38D /* DIKit.framework */; };
 		4BD95DED2008B3CA009CE38D /* DIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD95DEB2008B3CA009CE38D /* DIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BD95DF22008B3CF009CE38D /* DIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DF02008B3CF009CE38D /* DIKitTests.swift */; };
+		52914F00235C85270084611C /* DIKit+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52914EFF235C85270084611C /* DIKit+Inject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		4BD95DEC2008B3CA009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD95DF02008B3CF009CE38D /* DIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIKitTests.swift; sourceTree = "<group>"; };
 		4BD95DF12008B3CF009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52914EFF235C85270084611C /* DIKit+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DIKit+Inject.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				4BBD038A2023349C00D9E468 /* Container */,
 				4BBD03932023353B00D9E468 /* Resources */,
 				4BC7ED852126C19A0033BE1D /* DIKit.swift */,
+				52914EFF235C85270084611C /* DIKit+Inject.swift */,
 				31DD07E9893668F62429F016 /* DIKitDSL.swift */,
 			);
 			path = Sources;
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC7ED862126C19A0033BE1D /* DIKit.swift in Sources */,
+				52914F00235C85270084611C /* DIKit+Inject.swift in Sources */,
 				4BBD038C202334B100D9E468 /* DependencyContainer+Register.swift in Sources */,
 				4B5D4A37202217CA008D76FB /* DependencyContainer.swift in Sources */,
 				4B5D4A3F20221E2C008D76FB /* Component.swift in Sources */,
