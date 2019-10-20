@@ -9,14 +9,15 @@
 
 /// A property wrapper (SE-0258) to make a `Component` lazily injectable
 /// through `@LazyInject var variableName: Component`.
+@propertyWrapper
 public enum LazyInject<Component> {
     case unresolved(() -> Component)
     case resolved(Component)
-
+    
     public init() {
         self = .unresolved(resolveFunc())
     }
-
+    
     public var wrappedValue: Component {
         mutating get {
             switch self {
@@ -35,9 +36,9 @@ public enum LazyInject<Component> {
 /// through `@Inject var variableName: Component`.
 @propertyWrapper
 public struct Inject<Component> {
-    public init() {}
-
-    public var wrappedValue: Component {
-        resolve()
+    public let wrappedValue: Component
+    
+    public init() {
+        self.wrappedValue = resolve()
     }
 }
