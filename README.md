@@ -13,7 +13,7 @@ We started small, it perfectly fits our use case.
 DIKit can be installed using [Carthage](https://github.com/Carthage/Carthage). After installing Carthage just add DIKit to your Cartfile:
 
 ```ogdl
-github "benjohnde/DIKit" ~> 1.3
+github "benjohnde/DIKit" ~> 1.4
 ```
 
 ### Via CocoaPods
@@ -22,7 +22,7 @@ github "benjohnde/DIKit" ~> 1.3
 
 ```ruby
 platform :ios, '9.0'
-pod 'DIKit', '~> 1.3.0'
+pod 'DIKit', '~> 1.4'
 ```
 
 ## Basic usage
@@ -64,6 +64,23 @@ class AppDelegate: UIApplicationDelegate {
     override init() {
         super.init()
         DependencyContainer.defined(by: Modules())
+    }
+}
+```
+
+One could also use some shorthand writing like:
+
+```swift
+import DIKit
+
+@UIApplicationMain
+class AppDelegate: UIApplicationDelegate {
+    override init() {
+        super.init()
+        DependencyContainer.defined(by: module {
+            single { AppState() as AppStateProtocol }
+            factory { StopWatch() as StopWatchProtocol }
+        })
     }
 }
 ```
