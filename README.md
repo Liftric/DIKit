@@ -27,7 +27,7 @@ pod 'DIKit', '~> 1.4'
 
 ## Basic usage
 
-1. Define a sub `DependencyContainer` (basically some sort of module declaration):
+1. Define some sub `DependencyContainer` (basically some sort of module declaration):
 ```swift
 import DIKit
 
@@ -51,24 +51,20 @@ public extension DependenyContainer {
 }
 ```
 
-2. Let some `struct` adhere `DefinesContainer` and set it as defining module declaration:
+2. Set the root `DependencyContainer` and set it before the application gets initialised:
 ```swift
 import DIKit
-
-struct Modules: DefinesContainer {
-    let container = modules { .backend; .network; .app }
-}
 
 @UIApplicationMain
 class AppDelegate: UIApplicationDelegate {
     override init() {
         super.init()
-        DependencyContainer.defined(by: Modules())
+        DependencyContainer.defined(by: modules { .backend; .network; .app })
     }
 }
 ```
 
-One could also use some shorthand writing like:
+Without sub `DependencyContainer` the following shorthand writing also does the job:
 
 ```swift
 import DIKit
