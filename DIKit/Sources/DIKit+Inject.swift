@@ -13,11 +13,11 @@
 public enum LazyInject<Component> {
     case unresolved(() -> Component)
     case resolved(Component)
-    
+
     public init() {
         self = .unresolved(resolveFunc())
     }
-    
+
     public var wrappedValue: Component {
         mutating get {
             switch self {
@@ -37,7 +37,7 @@ public enum LazyInject<Component> {
 @propertyWrapper
 public struct Inject<Component> {
     public let wrappedValue: Component
-    
+
     public init() {
         self.wrappedValue = resolve()
     }

@@ -10,7 +10,7 @@
 /// Resolves given `Component<T>`.
 ///
 /// - Returns: The resolved `Component<T>`.
-public func resolve<T>() -> T { DependencyContainer.shared.container.resolve() }
+public func resolve<T>() -> T { DependencyContainer.shared.resolve() }
 
 /// Injects a generic method to resolve given `Component<T>`.
 public func resolveFunc<T>() -> (() -> T) { { resolve() } }

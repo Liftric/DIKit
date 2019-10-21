@@ -13,37 +13,24 @@ import Foundation
 public final class DependencyContainer {
     // MARK: - Typealiases
     public typealias BootstrapBlock = (DependencyContainer) -> Void
-    typealias ComponentStack = [String: ComponentProtocol]
-    typealias InstanceStack = [String: Any]
+    internal typealias ComponentStack = [String: ComponentProtocol]
+    internal typealias InstanceStack = [String: Any]
 
     // MARK: - Properties
-    var bootstrapped = false
-    var componentStack = ComponentStack()
-    var instanceStack = InstanceStack()
-    let lock = NSRecursiveLock()
+    internal var bootstrapped = false
+    internal var componentStack = ComponentStack()
+    internal var instanceStack = InstanceStack()
+    private let lock = NSRecursiveLock()
 
-    private static var definesContainer: DefinesContainer?
-    public static var shared: DefinesContainer {
-        guard let shared = DependencyContainer.definesContainer else {
-            fatalError("DefinesContainer is not yet set.")
+    internal static var root: DependencyContainer?
+    public static var shared: DependencyContainer {
+        guard let root = DependencyContainer.root else {
+            fatalError("`root` DependencyContainer is not yet set.")
         }
-        return shared
+        return root
     }
 
     // MARK: - Public methods
-    /// Defines the used `DependencyContainer` root for resolving components via `DefinesContainer`.
-    /// Basically a container which holds an instance of a `DependencyContainer` which can be statically
-    /// resolved for injection.
-    ///
-    /// - Parameters:
-    ///     - by: *DependencyContainer* the root `DependencyContainer`
-    public static func defined(by definesContainer: DefinesContainer) {
-        guard self.definesContainer == nil else {
-            fatalError("It is not allowed to override the `DefinesContainer` at runtime.")
-        }
-        self.definesContainer = definesContainer
-    }
-
     /// Derives a `DependencyContainer` from multiple sub containers.
     ///
     /// - Parameters:

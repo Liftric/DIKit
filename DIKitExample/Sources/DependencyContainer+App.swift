@@ -15,7 +15,3 @@ public extension DependencyContainer {
         factory { LocalStorage() as LocalStorageProtocol }
     }
 }
-
-struct Modules: DefinesContainer {
-    let container = modules { .app; .backend }
-}
