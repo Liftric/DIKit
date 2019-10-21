@@ -29,7 +29,7 @@ class DIKitTests: XCTestCase {
         }
 
         guard let componentA = dependencyContainer.componentStack.index(forKey: "ComponentA") else {
-            return XCTFail()
+            return XCTFail("ComponentStack does not contain `ComponentA`.")
         }
         let componentProtocolA = dependencyContainer.componentStack[componentA].value
         XCTAssertEqual(componentProtocolA.lifetime, .singleton)
@@ -38,7 +38,7 @@ class DIKitTests: XCTestCase {
         XCTAssertFalse(instanceA is ComponentB)
 
         guard let componentB = dependencyContainer.componentStack.index(forKey: "ComponentB") else {
-            return XCTFail()
+            return XCTFail("ComponentStack does not contain `ComponentB`.")
         }
         let componentProtocolB = dependencyContainer.componentStack[componentB].value
         XCTAssertEqual(componentProtocolB.lifetime, .singleton)
@@ -156,16 +156,12 @@ class DIKitTests: XCTestCase {
             init() { TestStateHolder.initialized.append(String(describing: Self.self)) }
         }
 
-        class TestApplication: DefinesContainer {
-            let container = module {
-                single { ComponentA() }
-                factory { ComponentB() }
-                single { ComponentC() }
-                factory { ComponentD() }
-            }
-        }
-
-        DependencyContainer.defined(by: TestApplication())
+        DependencyContainer.defined(by: module {
+            single { ComponentA() }
+            factory { ComponentB() }
+            single { ComponentC() }
+            factory { ComponentD() }
+        })
 
         XCTAssertFalse(TestStateHolder.isInitialized(ComponentD.self))
 
