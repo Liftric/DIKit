@@ -26,4 +26,23 @@ extension DependencyContainer {
         self.instanceStack[tag] = instance
         return instance
     }
+
+    /// Resolves a `Component<T>`.
+    ///
+    /// - Returns: The resolved `Component<T>`.
+    public func resolveOptional<T>() -> T? {
+        let tag = String(describing: T.self) // TODO solve?
+        guard let foundComponent = self.componentStack[tag] else {
+            return nil
+        }
+        if foundComponent.lifetime == .factory {
+            return foundComponent.componentFactory() as? T
+        }
+        if let instanceOfComponent = self.instanceStack[tag] as? T {
+            return instanceOfComponent
+        }
+        let instance = foundComponent.componentFactory() as! T
+        self.instanceStack[tag] = instance
+        return instance
+    }
 }

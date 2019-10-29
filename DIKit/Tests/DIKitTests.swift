@@ -155,12 +155,19 @@ class DIKitTests: XCTestCase {
         class ComponentD {
             init() { TestStateHolder.initialized.append(String(describing: Self.self)) }
         }
+        class ComponentE {
+            init() { TestStateHolder.initialized.append(String(describing: Self.self)) }
+        }
+        class ComponentF {
+            init() { TestStateHolder.initialized.append(String(describing: Self.self)) }
+        }
 
         DependencyContainer.defined(by: module {
             single { ComponentA() }
             factory { ComponentB() }
             single { ComponentC() }
             factory { ComponentD() }
+            single { ComponentF() }
         })
 
         XCTAssertFalse(TestStateHolder.isInitialized(ComponentD.self))
@@ -194,12 +201,26 @@ class DIKitTests: XCTestCase {
         class Test2ViewController {
             @LazyInject var componentC: ComponentC
             @Inject var componentD: ComponentD
+            @OptionalInject var componentE: ComponentE?
+            @OptionalInject var componentF: ComponentF?
         }
 
         let test2VC = Test2ViewController()
         XCTAssertTrue(TestStateHolder.isInitialized(ComponentD.self))
         _ = test2VC.componentD
         XCTAssertTrue(TestStateHolder.isInitialized(ComponentD.self))
+        
+        XCTAssertFalse(TestStateHolder.isInitialized(ComponentE.self))
+        XCTAssertNil(test2VC.componentE)
+        _ = test2VC.componentE
+        XCTAssertNil(test2VC.componentE)
+        XCTAssertFalse(TestStateHolder.isInitialized(ComponentE.self))
+        
+        XCTAssertFalse(TestStateHolder.isInitialized(ComponentF.self))
+        XCTAssertNotNil(test2VC.componentF)
+        _ = test2VC.componentF
+        XCTAssertNotNil(test2VC.componentF)
+        XCTAssertTrue(TestStateHolder.isInitialized(ComponentF.self))
 
         XCTAssertNotEqual(
                 ObjectIdentifier(testVC.componentD),

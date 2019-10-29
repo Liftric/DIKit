@@ -12,5 +12,9 @@
 /// - Returns: The resolved `Component<T>`.
 public func resolve<T>() -> T { DependencyContainer.shared.resolve() }
 
+public func resolveOptional<T>() -> T? { DependencyContainer.shared.resolveOptional() }
+
 /// Injects a generic method to resolve given `Component<T>`.
 public func resolveFunc<T>() -> (() -> T) { { resolve() } }
+
+public func resolveOptionalFunc<T>() -> (() -> T?) { { resolveOptional() } }
