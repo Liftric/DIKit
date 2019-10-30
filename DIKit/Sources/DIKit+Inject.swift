@@ -15,7 +15,7 @@ public enum LazyInject<Component> {
     case resolved(Component)
 
     public init() {
-        self = .unresolved(resolveFunc())
+        self = .unresolved({ resolve() })
     }
 
     public var wrappedValue: Component {
@@ -40,5 +40,30 @@ public struct Inject<Component> {
 
     public init() {
         self.wrappedValue = resolve()
+    }
+}
+
+/// A property wrapper (SE-0258) to make a `Optional<Component>` injectable
+/// through `@OptionalInject var variableName: Component?`. Lazy by default.
+@propertyWrapper
+public enum OptionalInject<Component> {
+    case unresolved(() -> Component?)
+    case resolved(Component?)
+
+    public init() {
+        self = .unresolved({ resolveOptional() })
+    }
+
+    public var wrappedValue: Component? {
+        mutating get {
+            switch self {
+            case .unresolved(let resolver):
+                let component = resolver()
+                self = .resolved(component)
+                return component
+            case .resolved(let component):
+                return component
+            }
+        }
     }
 }
