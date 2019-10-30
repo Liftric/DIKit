@@ -97,6 +97,7 @@ import DIKit
 class FirstViewController: UIViewController {
     // MARK: - Dependencies
     @LazyInject var backend: BackendProtocol
+    @OptionalInject var stopwatch: StopWatchProtocol?
 
     // MARK: - View lifecycle
     override func viewWillAppear(_ animated: Bool) {
