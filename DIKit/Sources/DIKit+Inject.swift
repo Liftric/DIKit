@@ -15,7 +15,7 @@ public enum LazyInject<Component> {
     case resolved(Component)
 
     public init() {
-        self = .unresolved(resolveFunc())
+        self = .unresolved({ resolve() })
     }
 
     public var wrappedValue: Component {
@@ -51,7 +51,7 @@ public enum OptionalInject<Component> {
     case resolved(Component?)
 
     public init() {
-        self = .unresolved(resolveOptionalFunc())
+        self = .unresolved({ resolveOptional() })
     }
 
     public var wrappedValue: Component? {
