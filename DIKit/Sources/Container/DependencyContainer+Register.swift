@@ -17,20 +17,20 @@ extension DependencyContainer {
         precondition(!bootstrapped, "After boostrap no more components can be registered.")
         threadSafe {
             let component = Component(lifetime: lifetime, type: T.self, factory: factory)
-            guard self.componentStack[component.tag] == nil else {
+            guard self.componentStack[component.identifier] == nil else {
                 fatalError("A component can only be registered once.")
             }
-            self.componentStack[component.tag] = component
+            self.componentStack[component.identifier] = component
         }
     }
 
     public func register(_ component: ComponentProtocol) {
         precondition(!bootstrapped, "After boostrap no more components can be registered.")
         threadSafe {
-            guard self.componentStack[component.tag] == nil else {
+            guard self.componentStack[component.identifier] == nil else {
                 fatalError("A component can only be registered once.")
             }
-            self.componentStack[component.tag] = component
+            self.componentStack[component.identifier] = component
         }
     }
 }

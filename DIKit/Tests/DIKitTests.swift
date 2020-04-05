@@ -28,7 +28,8 @@ class DIKitTests: XCTestCase {
             c.register { ComponentB() }
         }
 
-        guard let componentA = dependencyContainer.componentStack.index(forKey: "ComponentA") else {
+        let componentAIdentifier = ComponentIdentifier(type: ComponentA.self)
+        guard let componentA = dependencyContainer.componentStack.index(forKey: componentAIdentifier) else {
             return XCTFail("ComponentStack does not contain `ComponentA`.")
         }
         let componentProtocolA = dependencyContainer.componentStack[componentA].value
@@ -37,7 +38,8 @@ class DIKitTests: XCTestCase {
         XCTAssertTrue(instanceA is ComponentA)
         XCTAssertFalse(instanceA is ComponentB)
 
-        guard let componentB = dependencyContainer.componentStack.index(forKey: "ComponentB") else {
+        let componentBIdentifier = ComponentIdentifier(type: ComponentB.self)
+        guard let componentB = dependencyContainer.componentStack.index(forKey: componentBIdentifier) else {
             return XCTFail("ComponentStack does not contain `ComponentB`.")
         }
         let componentProtocolB = dependencyContainer.componentStack[componentB].value
