@@ -18,6 +18,10 @@ public enum LazyInject<Component> {
         self = .unresolved({ resolve() })
     }
 
+    public init(tag: AnyHashable? = nil) {
+        self = .unresolved({ resolve(tag: tag) })
+    }
+
     public var wrappedValue: Component {
         mutating get {
             switch self {
@@ -41,6 +45,10 @@ public struct Inject<Component> {
     public init() {
         self.wrappedValue = resolve()
     }
+
+    public init(tag: AnyHashable? = nil) {
+        self.wrappedValue = resolve(tag: tag)
+    }
 }
 
 /// A property wrapper (SE-0258) to make a `Optional<Component>` injectable
@@ -52,6 +60,10 @@ public enum OptionalInject<Component> {
 
     public init() {
         self = .unresolved({ resolveOptional() })
+    }
+
+    public init(tag: AnyHashable? = nil) {
+        self = .unresolved({ resolveOptional(tag: tag) })
     }
 
     public var wrappedValue: Component? {
