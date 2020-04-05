@@ -38,7 +38,7 @@ public func modules(@ModulesBuilder makeChildren: () -> [DependencyContainer]) -
 }
 
 public func resolvable<T>(lifetime: Lifetime = .singleton, _ factory: @escaping () -> T) -> ComponentProtocol {
-    Component(lifetime: lifetime, type: T.self, factory: factory) as ComponentProtocol
+    Component(lifetime: lifetime, factory: factory) as ComponentProtocol
 }
 
 public func factory<T>(factory: @escaping () -> T) -> [ComponentProtocol] {
