@@ -96,10 +96,14 @@ class DIKitTests: XCTestCase {
         let dependencyContainerC = DependencyContainer { (c: DependencyContainer) in
             c.register { ComponentC() }
         }
+        let dependencyContainerD = DependencyContainer { (c: DependencyContainer) in
+            c.register(tag: "tag") { ComponentC() }
+        }
 
         let dependencyContainer = DependencyContainer.derive(from: dependencyContainerA,
                                                              dependencyContainerB,
-                                                             dependencyContainerC)
+                                                             dependencyContainerC,
+                                                             dependencyContainerD)
 
         let componentA: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentA)
@@ -109,6 +113,9 @@ class DIKitTests: XCTestCase {
 
         let componentC: ComponentC = dependencyContainer.resolve()
         XCTAssertNotNil(componentC)
+
+        let taggedComponentC: ComponentC = dependencyContainer.resolve(tag: "tag")
+        XCTAssertNotNil(taggedComponentC)
     }
 
     func testDependencyContainerDeriveDSL() {
@@ -125,8 +132,11 @@ class DIKitTests: XCTestCase {
         let dependencyContainerC = module {
             single { ComponentC() }
         }
+        let dependencyContainerD = module {
+            single(tag: "tag") { ComponentC() }
+        }
 
-        let dependencyContainer = modules { dependencyContainerA; dependencyContainerB; dependencyContainerC }
+        let dependencyContainer = modules { dependencyContainerA; dependencyContainerB; dependencyContainerC; dependencyContainerD }
 
         let componentA: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentA)
@@ -136,6 +146,9 @@ class DIKitTests: XCTestCase {
 
         let componentC: ComponentC = dependencyContainer.resolve()
         XCTAssertNotNil(componentC)
+
+        let taggedComponentC: ComponentC = dependencyContainer.resolve(tag: "tag")
+        XCTAssertNotNil(taggedComponentC)
     }
 
     func testFactoryOfComponents() {
