@@ -12,6 +12,8 @@ import DIKit
 
 public extension DependencyContainer {
     static var app = module {
-        factory { LocalStorage() as LocalStorageProtocol }
+        // We create two different kind of storages. One for both kind of contexts.
+        factory(tag: StorageContext.systemdata) { LocalStorage() as LocalStorageProtocol }
+        factory(tag: StorageContext.userdata) { LocalStorage() as LocalStorageProtocol }
     }
 }
