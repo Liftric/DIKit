@@ -15,7 +15,7 @@ import DIKitExampleBackend
 
 class ModalViewController: UIViewController {
     @Inject var backend: BackendProtocol
-    @Inject var storage: LocalStorageProtocol
+    @Inject(tag: StorageContext.userdata) var storage: LocalStorageProtocol
 
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true)

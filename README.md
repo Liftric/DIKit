@@ -119,3 +119,41 @@ struct AppState: AppStateProtocol {
     }
 }
 ```
+
+## Advanced usage
+### Resolving by Tag
+
+When registering your dependencies you can optionally define a tag. The tag can be anything, as long as it is `AnyHashable`.
+
+This way you can register different resolvable dependencies for the same Type.
+
+```swift
+enum StorageContext: String {
+    case userdata
+    case systemdata
+}
+
+public extension DependencyContainer {
+    static var app = module {
+        factory(tag: StorageContext.systemdata) { LocalStorage() as LocalStorageProtocol }
+        factory(tag: StorageContext.userdata) { LocalStorage() as LocalStorageProtocol }
+    }
+}
+```
+
+You can then reference the same tag when resolving the type and can thus resolve different instances. Referencing the tag works with all injection methods.
+
+```swift
+import DIKit
+
+class Backend: BackendProtocol {
+    @Inject(tag: StorageContext.systemdata) var injectedStorage: LocalStorageProtocol
+    @LazyInject(tag: StorageContext.systemdata) var lazyInjectedStorage: LocalStorageProtocol
+    @OptionalInject(tag: StorageContext.systemdata) var optionalInjectedStorage: LocalStorageProtocol?
+    
+    private let constructorInjectedStorage: LocalStorageProtocol
+    init(storage: LocalStorageProtocol = resolve(tag: StorageContext.systemdata)) {
+        self.constructorInjectedStorage = storage
+    }
+}
+```

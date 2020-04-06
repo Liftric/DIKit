@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FA1997D243BB1F70042CE9B /* StorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1997C243BB1F70042CE9B /* StorageContext.swift */; };
 		44044D0C212D7982002F595D /* DIKitExampleBackend.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		44044D0E212D79E1002F595D /* DIKitExampleBackend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5F9FA4212C26B6004AA9F4 /* DIKitExampleBackend.framework */; };
 		44044D14212D7CDC002F595D /* DIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95DE72008B3C1009CE38D /* DIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1FA1997C243BB1F70042CE9B /* StorageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageContext.swift; sourceTree = "<group>"; };
 		4B6F9F31212BF75500B6CEDE /* DIKitExampleBackend.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DIKitExampleBackend.xcodeproj; path = DIKitExampleBackend/DIKitExampleBackend.xcodeproj; sourceTree = "<group>"; };
 		4B6F9F39212BFAFA00B6CEDE /* DIKitExampleBackend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DIKitExampleBackend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6F9F4E212BFC2400B6CEDE /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				4B858B2E210B83B500C3F07A /* LocalStorageProtocol.swift */,
 				4B858B2C210B839B00C3F07A /* LocalStorage.swift */,
+				1FA1997C243BB1F70042CE9B /* StorageContext.swift */,
 			);
 			path = LocalStorageLayer;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BD95DD52008B379009CE38D /* SecondViewController.swift in Sources */,
+				1FA1997D243BB1F70042CE9B /* StorageContext.swift in Sources */,
 				4B858B2F210B83B500C3F07A /* LocalStorageProtocol.swift in Sources */,
 				4BD95DD42008B379009CE38D /* AppDelegate.swift in Sources */,
 				4BD95DD02008B379009CE38D /* FirstViewController.swift in Sources */,
