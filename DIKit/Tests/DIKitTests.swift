@@ -26,9 +26,11 @@ class DIKitTests: XCTestCase {
         let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
             c.register { ComponentA() }
             c.register { ComponentB() }
+            c.register(tag: "tag") { ComponentB() }
         }
 
-        guard let componentA = dependencyContainer.componentStack.index(forKey: "ComponentA") else {
+        let componentAIdentifier = ComponentIdentifier(type: ComponentA.self)
+        guard let componentA = dependencyContainer.componentStack.index(forKey: componentAIdentifier) else {
             return XCTFail("ComponentStack does not contain `ComponentA`.")
         }
         let componentProtocolA = dependencyContainer.componentStack[componentA].value
@@ -37,7 +39,8 @@ class DIKitTests: XCTestCase {
         XCTAssertTrue(instanceA is ComponentA)
         XCTAssertFalse(instanceA is ComponentB)
 
-        guard let componentB = dependencyContainer.componentStack.index(forKey: "ComponentB") else {
+        let componentBIdentifier = ComponentIdentifier(type: ComponentB.self)
+        guard let componentB = dependencyContainer.componentStack.index(forKey: componentBIdentifier) else {
             return XCTFail("ComponentStack does not contain `ComponentB`.")
         }
         let componentProtocolB = dependencyContainer.componentStack[componentB].value
@@ -45,6 +48,16 @@ class DIKitTests: XCTestCase {
         let instanceB = componentProtocolB.componentFactory()
         XCTAssertTrue(instanceB is ComponentB)
         XCTAssertFalse(instanceB is ComponentA)
+
+        let taggedComponentBIdentifier = ComponentIdentifier(tag: "tag", type: ComponentB.self)
+        guard let taggedComponentB = dependencyContainer.componentStack.index(forKey: taggedComponentBIdentifier) else {
+            return XCTFail("ComponentStack does not contain `ComponentB`.")
+        }
+        let taggedComponentProtocolB = dependencyContainer.componentStack[taggedComponentB].value
+        XCTAssertEqual(taggedComponentProtocolB.lifetime, .singleton)
+        let taggedInstanceB = taggedComponentProtocolB.componentFactory()
+        XCTAssertTrue(taggedInstanceB is ComponentB)
+        XCTAssertFalse(taggedInstanceB is ComponentA)
     }
 
     func testDependencyContainerResolve() {
@@ -55,6 +68,17 @@ class DIKitTests: XCTestCase {
         }
 
         let componentA: ComponentA = dependencyContainer.resolve()
+        XCTAssertNotNil(componentA)
+    }
+
+    func testDependencyContainerTaggedResolve() {
+        class ComponentA {}
+
+        let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
+            c.register(tag: "tag") { ComponentA() }
+        }
+
+        let componentA: ComponentA = dependencyContainer.resolve(tag: "tag")
         XCTAssertNotNil(componentA)
     }
 
@@ -72,10 +96,14 @@ class DIKitTests: XCTestCase {
         let dependencyContainerC = DependencyContainer { (c: DependencyContainer) in
             c.register { ComponentC() }
         }
+        let dependencyContainerD = DependencyContainer { (c: DependencyContainer) in
+            c.register(tag: "tag") { ComponentC() }
+        }
 
         let dependencyContainer = DependencyContainer.derive(from: dependencyContainerA,
                                                              dependencyContainerB,
-                                                             dependencyContainerC)
+                                                             dependencyContainerC,
+                                                             dependencyContainerD)
 
         let componentA: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentA)
@@ -85,6 +113,9 @@ class DIKitTests: XCTestCase {
 
         let componentC: ComponentC = dependencyContainer.resolve()
         XCTAssertNotNil(componentC)
+
+        let taggedComponentC: ComponentC = dependencyContainer.resolve(tag: "tag")
+        XCTAssertNotNil(taggedComponentC)
     }
 
     func testDependencyContainerDeriveDSL() {
@@ -101,8 +132,11 @@ class DIKitTests: XCTestCase {
         let dependencyContainerC = module {
             single { ComponentC() }
         }
+        let dependencyContainerD = module {
+            single(tag: "tag") { ComponentC() }
+        }
 
-        let dependencyContainer = modules { dependencyContainerA; dependencyContainerB; dependencyContainerC }
+        let dependencyContainer = modules { dependencyContainerA; dependencyContainerB; dependencyContainerC; dependencyContainerD }
 
         let componentA: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentA)
@@ -112,6 +146,9 @@ class DIKitTests: XCTestCase {
 
         let componentC: ComponentC = dependencyContainer.resolve()
         XCTAssertNotNil(componentC)
+
+        let taggedComponentC: ComponentC = dependencyContainer.resolve(tag: "tag")
+        XCTAssertNotNil(taggedComponentC)
     }
 
     func testFactoryOfComponents() {
@@ -350,6 +387,7 @@ class DIKitTests: XCTestCase {
 
         let dependencyContainer = DependencyContainer { (c: DependencyContainer) in
             c.register(lifetime: .singleton) { ComponentA() }
+            c.register(lifetime: .singleton, tag: "tag") { ComponentA() }
         }
 
         let componentAinstanceA: ComponentA = dependencyContainer.resolve()
@@ -358,12 +396,16 @@ class DIKitTests: XCTestCase {
         let componentAinstanceB: ComponentA = dependencyContainer.resolve()
         XCTAssertNotNil(componentAinstanceB)
 
-        let componentAinstanceAobjectIdA = ObjectIdentifier(componentAinstanceA)
-        let componentAinstanceAobjectIdB = ObjectIdentifier(componentAinstanceA)
-        let componentAinstanceBobjectId = ObjectIdentifier(componentAinstanceB)
+        let taggedComponentAinstanceA: ComponentA = dependencyContainer.resolve(tag: "tag")
+        XCTAssertNotNil(taggedComponentAinstanceA)
 
-        XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceAobjectIdB)
-        XCTAssertEqual(componentAinstanceAobjectIdA, componentAinstanceBobjectId)
+        let taggedComponentAinstanceB: ComponentA = dependencyContainer.resolve(tag: "tag")
+        XCTAssertNotNil(taggedComponentAinstanceB)
+
+        XCTAssertTrue(componentAinstanceA === componentAinstanceB)
+        XCTAssertTrue(taggedComponentAinstanceA === taggedComponentAinstanceB)
+        XCTAssertTrue(componentAinstanceA !== taggedComponentAinstanceA)
+        XCTAssertTrue(componentAinstanceA !== taggedComponentAinstanceB)
     }
 
     func testSingletonLifetimeOfComponentsDSL() {

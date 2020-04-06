@@ -13,8 +13,8 @@ import Foundation
 public final class DependencyContainer {
     // MARK: - Typealiases
     public typealias BootstrapBlock = (DependencyContainer) -> Void
-    internal typealias ComponentStack = [String: ComponentProtocol]
-    internal typealias InstanceStack = [String: Any]
+    internal typealias ComponentStack = [AnyHashable: ComponentProtocol]
+    internal typealias InstanceStack = [AnyHashable: Any]
 
     // MARK: - Properties
     internal var bootstrapped = false
