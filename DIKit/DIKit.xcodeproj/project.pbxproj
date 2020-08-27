@@ -17,7 +17,11 @@
 		4BC7ED862126C19A0033BE1D /* DIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC7ED852126C19A0033BE1D /* DIKit.swift */; };
 		4BD95D922008B1C9009CE38D /* DIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD95D882008B1C8009CE38D /* DIKit.framework */; };
 		4BD95DED2008B3CA009CE38D /* DIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BD95DEB2008B3CA009CE38D /* DIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BD95DF22008B3CF009CE38D /* DIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD95DF02008B3CF009CE38D /* DIKitTests.swift */; };
+		520D13E424F7995E00B81E2D /* LazyInjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D13E224F7995700B81E2D /* LazyInjectTests.swift */; };
+		520D13E624F799A100B81E2D /* OptionalInjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D13E524F799A100B81E2D /* OptionalInjectTests.swift */; };
+		520D13E824F79BF900B81E2D /* TaggedComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D13E724F79BF900B81E2D /* TaggedComponentTests.swift */; };
+		520D13EA24F79C2700B81E2D /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D13E924F79C2700B81E2D /* DependencyContainerTests.swift */; };
+		520D13EC24F79C8300B81E2D /* DIKitDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D13EB24F79C8300B81E2D /* DIKitDSLTests.swift */; };
 		521C9748235D922A00C33B59 /* ContainerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C9747235D922A00C33B59 /* ContainerContext.swift */; };
 		521C974A235D934000C33B59 /* DependencyContainer+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C9749235D934000C33B59 /* DependencyContainer+Context.swift */; };
 		52914F00235C85270084611C /* DIKit+Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52914EFF235C85270084611C /* DIKit+Inject.swift */; };
@@ -46,8 +50,12 @@
 		4BD95D912008B1C9009CE38D /* DIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD95DEB2008B3CA009CE38D /* DIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIKit.h; sourceTree = "<group>"; };
 		4BD95DEC2008B3CA009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BD95DF02008B3CF009CE38D /* DIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIKitTests.swift; sourceTree = "<group>"; };
 		4BD95DF12008B3CF009CE38D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520D13E224F7995700B81E2D /* LazyInjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyInjectTests.swift; sourceTree = "<group>"; };
+		520D13E524F799A100B81E2D /* OptionalInjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalInjectTests.swift; sourceTree = "<group>"; };
+		520D13E724F79BF900B81E2D /* TaggedComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggedComponentTests.swift; sourceTree = "<group>"; };
+		520D13E924F79C2700B81E2D /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
+		520D13EB24F79C8300B81E2D /* DIKitDSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIKitDSLTests.swift; sourceTree = "<group>"; };
 		521C9747235D922A00C33B59 /* ContainerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerContext.swift; sourceTree = "<group>"; };
 		521C9749235D934000C33B59 /* DependencyContainer+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Context.swift"; sourceTree = "<group>"; };
 		52914EFF235C85270084611C /* DIKit+Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DIKit+Inject.swift"; sourceTree = "<group>"; };
@@ -137,7 +145,11 @@
 		4BD95DEF2008B3CF009CE38D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4BD95DF02008B3CF009CE38D /* DIKitTests.swift */,
+				520D13EB24F79C8300B81E2D /* DIKitDSLTests.swift */,
+				520D13E924F79C2700B81E2D /* DependencyContainerTests.swift */,
+				520D13E724F79BF900B81E2D /* TaggedComponentTests.swift */,
+				520D13E224F7995700B81E2D /* LazyInjectTests.swift */,
+				520D13E524F799A100B81E2D /* OptionalInjectTests.swift */,
 				4BD95DF12008B3CF009CE38D /* Info.plist */,
 			);
 			path = Tests;
@@ -315,7 +327,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD95DF22008B3CF009CE38D /* DIKitTests.swift in Sources */,
+				520D13E424F7995E00B81E2D /* LazyInjectTests.swift in Sources */,
+				520D13EA24F79C2700B81E2D /* DependencyContainerTests.swift in Sources */,
+				520D13E624F799A100B81E2D /* OptionalInjectTests.swift in Sources */,
+				520D13E824F79BF900B81E2D /* TaggedComponentTests.swift in Sources */,
+				520D13EC24F79C8300B81E2D /* DIKitDSLTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

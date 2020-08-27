@@ -41,7 +41,11 @@ public func resolvable<T>(lifetime: Lifetime = .singleton, _ factory: @escaping 
     Component(lifetime: lifetime, factory: factory) as ComponentProtocol
 }
 
-public func resolvable<T>(lifetime: Lifetime = .singleton, tag: AnyHashable, _ factory: @escaping () -> T) -> ComponentProtocol {
+public func resolvable<T>(
+    lifetime: Lifetime = .singleton,
+    tag: AnyHashable,
+    _ factory: @escaping () -> T
+) -> ComponentProtocol {
     Component(lifetime: lifetime, tag: tag, factory: factory) as ComponentProtocol
 }
 
