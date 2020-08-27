@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "DIKit"
-  s.version = "1.5.0"
+  s.version = "1.6.0"
   s.license = { :type => "MIT", :file => "LICENSE" }
 
   s.summary = "Dependency Injection Framework for Swift."
