@@ -7,7 +7,7 @@
 //
 // Copyright © 2019 Ben John. All rights reserved.
 
-@_functionBuilder
+@resultBuilder
 public struct ModuleBuilder {
     public static func buildBlock(_ children: [ComponentProtocol]...) -> [ComponentProtocol] {
         children.flatMap { $0 }
@@ -22,7 +22,7 @@ public func module(@ModuleBuilder makeChildren: () -> [ComponentProtocol]) -> De
     DependencyContainer { container in makeChildren().forEach { c in container.register(c) } }
 }
 
-@_functionBuilder
+@resultBuilder
 public struct ModulesBuilder {
     public static func buildBlock(_ children: DependencyContainer...) -> [DependencyContainer] {
         children.compactMap { $0 }
