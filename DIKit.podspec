@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "DIKit"
-  s.version = "1.6.0"
+  s.version = "1.6.1"
   s.license = { :type => "MIT", :file => "LICENSE" }
 
   s.summary = "Dependency Injection Framework for Swift."
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.social_media_url = "http://twitter.com/benjohnde"
 
   s.platform         = :ios, "9.0"
-  s.swift_version    = "5.1"
+  s.swift_version    = "5.4"
 
   s.source           = { :git => "https://github.com/benjohnde/DIKit.git", :tag => "#{s.version}" }
 
