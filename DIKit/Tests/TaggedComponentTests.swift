@@ -4,7 +4,6 @@
 // Ben John
 //
 // - Date: 27.08.20
-// swiftlint:disable nesting
 // Copyright © 2020 Ben John. All rights reserved.
 
 import XCTest

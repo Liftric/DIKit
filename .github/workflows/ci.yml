@@ -8,9 +8,9 @@ jobs:
     name: Build & Test DIKit
     steps:
     - uses: actions/checkout@v1
-    - uses: YOCKOW/Action-setup-swift@master
+    - uses: fwal/setup-swift@v1
       with:
-        swift-version: "5.2"
+        swift-version: "5.4"
     - name: View Swift Version
       run: swift --version
     - name: Build

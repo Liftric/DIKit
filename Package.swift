@@ -1,13 +1,29 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.4
 import PackageDescription
 
 let package = Package(
     name: "DIKit",
     products: [
-        .library(name: "DIKit", targets: ["DIKit"]),
+        .library(
+            name: "DIKit",
+            targets: ["DIKit"]
+        ),
     ],
     targets: [
-        .target(name: "DIKit", dependencies: [], path: "DIKit/Sources"),
-        .testTarget(name: "DIKitTests", dependencies: ["DIKit"], path: "DIKit/Tests"),
+        .target(
+            name: "DIKit",
+            path: "DIKit/Sources",
+            exclude: [
+                "Resources"
+            ]
+        ),
+        .testTarget(
+            name: "DIKitTests",
+            dependencies: ["DIKit"],
+            path: "DIKit/Tests",
+            exclude: [
+                "Info.plist"
+            ]
+        ),
     ]
 )
