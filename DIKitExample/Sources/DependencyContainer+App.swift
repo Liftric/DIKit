@@ -16,6 +16,8 @@ public extension DependencyContainer {
         factory(tag: StorageContext.systemdata) { LocalStorage(name: "system") as LocalStorageProtocol }
         factory(tag: StorageContext.userdata) { LocalStorage(name: "userdata") as LocalStorageProtocol }
 
-        factory { name in LocalStorage(name: name ?? "default") as LocalStorageProtocol }
+        factory { LocalStorage(name: "default") as LocalStorageProtocol }
+        factory { name in LocalStorage(name: name) as LocalStorageProtocol }
+        factory { (args: (name: String, other: Int)) in LocalStorage(name: args.name) as LocalStorageProtocol }
     }
 }

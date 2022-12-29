@@ -13,7 +13,7 @@ extension DependencyContainer {
     /// - Parameter tag: An optional *tag* to identify the Component. `nil` per default.
     /// - Returns: The resolved `Optional<Component<T>>`.
     func _resolve<A, T>(_ argument: A, tag: AnyHashable? = nil) -> T? {
-        let identifier = ComponentIdentifier(tag: tag, type: T.self)
+        let identifier = ComponentIdentifier(tag: tag, type: T.self, argumentType: A.self)
         guard let foundComponent = self.componentStack[identifier] else {
             return nil
         }
@@ -37,7 +37,7 @@ extension DependencyContainer {
     ///
     /// - Returns: `Bool` whether `Component<T>` is resolvable or not.
     func resolvable<T>(type: T.Type, tag: AnyHashable? = nil) -> Bool {
-        let identifier = ComponentIdentifier(tag: tag, type: T.self)
+        let identifier = ComponentIdentifier(tag: tag, type: T.self, argumentType: Void.self)
         return self.componentStack[identifier] != nil
     }
 
