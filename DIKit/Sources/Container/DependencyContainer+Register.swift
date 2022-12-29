@@ -41,7 +41,7 @@ extension DependencyContainer {
 
     /// Convenience function without any arguments
     public func register<T>(lifetime: Lifetime = .singleton, _ factory: @escaping () -> T) {
-        let newFactory: (Any) -> T = { _ in factory() }
+        let newFactory: (()) -> T = { _ in factory() }
         register(lifetime: lifetime, newFactory)
     }
 }
