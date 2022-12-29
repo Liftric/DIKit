@@ -173,9 +173,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BD95D9C2008B1C9009CE38D /* Build configuration list for PBXNativeTarget "DIKit" */;
 			buildPhases = (
+				4BD95D852008B1C8009CE38D /* Headers */,
 				4BD95D832008B1C8009CE38D /* Sources */,
 				4BD95D842008B1C8009CE38D /* Frameworks */,
-				4BD95D852008B1C8009CE38D /* Headers */,
 				4BD95D862008B1C8009CE38D /* Resources */,
 				A24242A72343AA95002FAD54 /* SwiftLint */,
 				A24242A82343AAA0002FAD54 /* SwiftLint Autocorrect */,
@@ -300,7 +300,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nif which swiftlint >/dev/null; then\nswiftlint autocorrect\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint or run brew install swiftlint from your CLI\"\nfi\nelse\necho \"warning: Skipping SwiftLint autocorrect, this is not a Debug build\"\nfi\n";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nif which swiftlint >/dev/null; then\nswiftlint autocorrect ./\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint or run brew install swiftlint from your CLI\"\nfi\nelse\necho \"warning: Skipping SwiftLint autocorrect, this is not a Debug build\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

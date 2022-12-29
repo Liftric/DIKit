@@ -12,8 +12,10 @@ class LocalStorage: LocalStorageProtocol {
     var id: ObjectIdentifier {
         return ObjectIdentifier.init(self)
     }
+    let name: String
     
-    init() {
+    init(name: String) {
+        self.name = name
         print("LocalStorage init")
         print("LocalStorage instance \(ObjectIdentifier.init(self))")
     }

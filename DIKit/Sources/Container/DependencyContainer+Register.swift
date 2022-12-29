@@ -13,7 +13,7 @@ extension DependencyContainer {
     /// - Parameters:
     ///     - lifetime: The *scope* of the `Component`, defaults to `Lifetime.singleton`.
     ///     - factory: The *factory* for the initialization of the `Component`.
-    public func register<T>(lifetime: Lifetime = .singleton, _ factory: @escaping () -> T) {
+    public func register<A, T>(lifetime: Lifetime = .singleton, _ factory: @escaping (A) -> T) {
         let component = Component(lifetime: lifetime, factory: factory)
         register(component)
     }
@@ -37,5 +37,11 @@ extension DependencyContainer {
             }
             self.componentStack[component.identifier] = component
         }
+    }
+
+    /// Convenience function without any arguments
+    public func register<T>(lifetime: Lifetime = .singleton, _ factory: @escaping () -> T) {
+        let newFactory: (()) -> T = { _ in factory() }
+        register(lifetime: lifetime, newFactory)
     }
 }

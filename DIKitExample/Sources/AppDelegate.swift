@@ -18,6 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     override init() {
         super.init()
-        DependencyContainer.defined(by: modules { .app; .backend })
+        DependencyContainer.defined(by: modules { DependencyContainer.app; DependencyContainer.backend })
     }
 }

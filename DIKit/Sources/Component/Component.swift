@@ -7,48 +7,51 @@
 //
 // Copyright © 2018 Ben John. All rights reserved.
 
-public typealias ComponentFactory = () -> Any
+public typealias ComponentFactory = (Any?) -> Any
 
-class Component<T>: ComponentProtocol {
+class Component<A, T>: ComponentProtocol {
     let lifetime: Lifetime
     let identifier: AnyHashable
     let type: Any.Type
     let componentFactory: ComponentFactory
 
-    init(lifetime: Lifetime, factory: @escaping () -> T) {
+    init(lifetime: Lifetime, factory: @escaping (_ argument: A) -> T) {
         self.lifetime = lifetime
-        self.identifier = ComponentIdentifier(type: T.self)
+        self.identifier = ComponentIdentifier(type: T.self, argumentType: A.self)
         self.type = T.self
-        self.componentFactory = { factory() }
+        self.componentFactory = { factory($0 as! A) } // swiftlint:disable:this force_cast
     }
 
-    init(lifetime: Lifetime, tag: AnyHashable, factory: @escaping () -> T) {
+    init(lifetime: Lifetime, tag: AnyHashable, factory: @escaping (_ argument: A) -> T) {
         self.lifetime = lifetime
-        self.identifier = ComponentIdentifier(tag: tag, type: T.self)
+        self.identifier = ComponentIdentifier(tag: tag, type: T.self, argumentType: A.self)
         self.type = T.self
-        self.componentFactory = { factory() }
+        self.componentFactory = { factory($0 as! A) } // swiftlint:disable:this force_cast
     }
 }
 
 struct ComponentIdentifier: Hashable {
     let tag: AnyHashable?
     let type: Any.Type
+    let argumentType: Any.Type
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(String(describing: type))
+        hasher.combine(String(describing: argumentType))
         if let tag = tag {
             hasher.combine(tag)
         }
     }
 
     static func == (lhs: ComponentIdentifier, rhs: ComponentIdentifier) -> Bool {
-        lhs.type == rhs.type && lhs.tag == rhs.tag
+        lhs.type == rhs.type && lhs.tag == rhs.tag && lhs.argumentType == rhs.argumentType
     }
 }
 
 extension ComponentIdentifier {
-    init(type: Any.Type) {
+    init(type: Any.Type, argumentType: Any.Type) {
         self.type = type
+        self.argumentType = argumentType
         self.tag = nil
     }
 }
