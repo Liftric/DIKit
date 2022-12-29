@@ -10,4 +10,5 @@
 
 protocol LocalStorageProtocol {
     var id: ObjectIdentifier { get }
+    var name: String { get }
 }

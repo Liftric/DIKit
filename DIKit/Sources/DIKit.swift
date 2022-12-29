@@ -13,6 +13,8 @@
 /// - Returns: The resolved `Component<T>`.
 public func resolve<T>(tag: AnyHashable? = nil) -> T { DependencyContainer.shared.resolve(tag: tag) }
 
+public func resolve<A, T>(_ argument: A, tag: AnyHashable? = nil) -> T { DependencyContainer.shared.resolve(argument, tag: tag) }
+
 /// Resolves nil safe given `Component<T>`.
 ///
 /// - Parameter tag: An optional *tag* to identify the Component. `nil` per default.
@@ -20,4 +22,9 @@ public func resolve<T>(tag: AnyHashable? = nil) -> T { DependencyContainer.share
 public func resolveOptional<T>(tag: AnyHashable? = nil) -> T? {
     guard DependencyContainer.shared.resolvable(type: T.self, tag: tag) else { return nil }
     return DependencyContainer.shared._resolve(tag: tag)
+}
+
+public func resolveOptional<A, T>(_ argument: A, tag: AnyHashable? = nil) -> T? {
+    guard DependencyContainer.shared.resolvable(type: T.self, tag: tag) else { return nil }
+    return DependencyContainer.shared._resolve(argument, tag: tag)
 }

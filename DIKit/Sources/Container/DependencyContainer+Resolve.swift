@@ -12,18 +12,18 @@ extension DependencyContainer {
     ///
     /// - Parameter tag: An optional *tag* to identify the Component. `nil` per default.
     /// - Returns: The resolved `Optional<Component<T>>`.
-    func _resolve<T>(tag: AnyHashable? = nil) -> T? {
+    func _resolve<A, T>(_ argument: A, tag: AnyHashable? = nil) -> T? {
         let identifier = ComponentIdentifier(tag: tag, type: T.self)
         guard let foundComponent = self.componentStack[identifier] else {
             return nil
         }
         if foundComponent.lifetime == .factory {
-            return foundComponent.componentFactory() as? T
+            return foundComponent.componentFactory(argument) as? T
         }
         if let instanceOfComponent = self.instanceStack[identifier] as? T {
             return instanceOfComponent
         }
-        let instance = foundComponent.componentFactory() as! T
+        let instance = foundComponent.componentFactory(argument) as! T
         self.instanceStack[identifier] = instance
         return instance
     }
@@ -48,10 +48,21 @@ extension DependencyContainer {
     /// - Parameter tag: An optional *tag* to identify the Component. `nil` per default.
     ///
     /// - Returns: The resolved `Component<T>`.
+    public func resolve<A, T>(_ argument: A, tag: AnyHashable? = nil) -> T {
+        if let t: T = _resolve(argument, tag: tag) {
+            return t
+        }
+        fatalError("Component `\(String(describing: T.self))` could not be resolved.")
+    }
+
+    /// Convenience function without any arguments
     public func resolve<T>(tag: AnyHashable? = nil) -> T {
         if let t: T = _resolve(tag: tag) {
             return t
         }
         fatalError("Component `\(String(describing: T.self))` could not be resolved.")
+    }
+    func _resolve<T>(tag: AnyHashable? = nil) -> T? {
+        _resolve((), tag: tag)
     }
 }

@@ -49,6 +49,10 @@ public struct Inject<Component> {
     public init(tag: AnyHashable? = nil) {
         self.wrappedValue = resolve(tag: tag)
     }
+
+    public init<A>(_ argument: A) {
+        self.wrappedValue = resolve(argument)
+    }
 }
 
 /// A property wrapper (SE-0258) to make a `Optional<Component>` injectable
