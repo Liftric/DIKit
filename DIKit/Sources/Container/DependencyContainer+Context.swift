@@ -19,4 +19,13 @@ extension DependencyContainer {
         }
         self.root = root
     }
+    
+    /// Defines the used `DependencyContainer` root at runtime for resolving components.
+    /// Can can be statically resolved for injection.
+    ///
+    /// - Parameters:
+    ///     - by: *DependencyContainer* the root `DependencyContainer`
+    public static func definedAtRuntime(by root: DependencyContainer) {
+        self.root = root
+    }
 }
